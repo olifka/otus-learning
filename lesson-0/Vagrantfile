@@ -3,6 +3,7 @@ MACHINES = {
   # VM name "kernel update"
   :"kernel-update" => {
               # VM box
+	      #:box_name => "oliferuk/centos-7-5.7",
               :box_name => "oliferuk/centos-7-5.8",
               # VM CPU count
               :cpus => 1,
