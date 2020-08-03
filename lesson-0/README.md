@@ -18,8 +18,11 @@ OTUS Learning
 Базовое задание- в репозитории есть рабочий Vagrantfile с образом
 
 Практически всё сделано по методичке. Сделал исправления только для packer'а.
+
 В centos.json изменил ссылку на дистрибутив:
+
 https://github.com/olifka/manual_kernel_update/blob/master/packer/centos.json
+
 и в одном из конфигов поменял заполнение файла sudoers:
 echo '%vagrant ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/vagrant
 (https://github.com/olifka/manual_kernel_update/blob/master/packer/http/vagrant.ks)
