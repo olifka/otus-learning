@@ -36,6 +36,7 @@ echo '%vagrant ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/vagrant
 
 Первый скрипт (bootstrap-1.sh) устанавливает всё необходимое для сборки ядра и записывает в bash_profile нужную
 нам версию gcc: echo "scl enable devtoolset-8 bash" >> ~/.bash_profile
+https://github.com/olifka/otus-learning/blob/master/lesson-0/bootstrap-1.sh
 
 Чтобы перечитать профиль bash я варваски делаю exit...
 
@@ -45,3 +46,4 @@ echo '%vagrant ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/vagrant
     * копирует подготовленный конфиг из synced folder: cp /vagrant/make_kernel_config .config
     * собирает ядро из исходников * :  make -j3 (система дала только два ядра) && make modules_install && make install
     * настраивает grub: grub2-mkconfig -o /boot/grub2/grub.cfg && grubby --set-default /boot/vmlinuz-5.8.0-rc7 && reboot
+https://github.com/olifka/otus-learning/blob/master/lesson-0/bootstrap-2.sh
