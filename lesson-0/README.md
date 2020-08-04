@@ -29,7 +29,7 @@ echo '%vagrant ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/vagrant
 
 (https://github.com/olifka/manual_kernel_update/blob/master/packer/http/vagrant.ks)
 
-*На дефолтоах оно ругалось на синтаксис файла
+*На дефолтах оно ругалось на синтаксис файла
 
 
 # Задание со звёздочкой - Ядро собрано из исходников
