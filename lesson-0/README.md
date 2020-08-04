@@ -59,7 +59,7 @@ https://github.com/olifka/otus-learning/blob/master/lesson-0/bootstrap-1.sh
 
     * копирует подготовленный конфиг из synced folder: cp /vagrant/make_kernel_config .config
 
-    * собирает ядро из исходников * :  make -j3 (система дала только два ядра) && make modules_install && make install
+    * собирает ядро из исходников:  make -j3 (система дала только два ядра) && make modules_install && make install
 
     * настраивает grub: grub2-mkconfig -o /boot/grub2/grub.cfg && grubby --set-default /boot/vmlinuz-5.8.0-rc7 && reboot
 
