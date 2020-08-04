@@ -24,21 +24,29 @@
 https://github.com/olifka/manual_kernel_update/blob/master/packer/centos.json
 
 и в одном из конфигов поменял заполнение файла sudoers:
+
 echo '%vagrant ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/vagrant
+
 (https://github.com/olifka/manual_kernel_update/blob/master/packer/http/vagrant.ks)
+
 *На дефолтоах оно ругалось на синтаксис файла
+
 
 # Задание со звёздочкой - Ядро собрано из исходников
 
 В Vagrantfile (https://github.com/olifka/otus-learning/blob/master/lesson-0/Vagrantfile) включен synced folders,
 и совершенно читерски подготовлены:
+
 .config для компляции ядра, Vagrantfile и два скрипта в синхронизируемой папке 
 
 Директивой config.vm.provision :shell, path: провижинер выполняет скрипты bootstrap-1.sh и bootstrap-2.sh
 поочереди. 
 
 Первый скрипт (bootstrap-1.sh) устанавливает всё необходимое для сборки ядра и записывает в bash_profile нужную
-нам версию gcc: echo "scl enable devtoolset-8 bash" >> ~/.bash_profile
+нам версию gcc:
+
+echo "scl enable devtoolset-8 bash" >> ~/.bash_profile
+
 https://github.com/olifka/otus-learning/blob/master/lesson-0/bootstrap-1.sh
 
 Чтобы перечитать профиль bash я варваски делаю exit...
