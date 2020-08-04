@@ -1,5 +1,5 @@
-#OTUS Learning
-#Урок 1 "С чего начинается Linux"
+# OTUS Learning
+# Урок 1 "С чего начинается Linux"
 
 
 #Задача:
@@ -13,9 +13,9 @@
 ДЗ с **: В вашем образе нормально работают VirtualBox Shared Folders
 
 
-#Решение:
+# Решение:
 
-#Базовое задание- в репозитории есть рабочий Vagrantfile с образом
+# Базовое задание- в репозитории есть рабочий Vagrantfile с образом
 
 Практически всё сделано по методичке. Сделал исправления только для packer'а.
 
@@ -28,7 +28,7 @@ echo '%vagrant ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/vagrant
 (https://github.com/olifka/manual_kernel_update/blob/master/packer/http/vagrant.ks)
 *На дефолтоах оно ругалось на синтаксис файла
 
-#Задание со звёздочкой - Ядро собрано из исходников
+# Задание со звёздочкой - Ядро собрано из исходников
 
 В Vagrantfile (https://github.com/olifka/otus-learning/blob/master/lesson-0/Vagrantfile) включен synced folders,
 и совершенно читерски подготовлены:
