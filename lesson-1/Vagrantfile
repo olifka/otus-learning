@@ -48,8 +48,8 @@ Vagrant.configure("2") do |config|
         v.memory = boxconfig[:memory]
         v.cpus = boxconfig[:cpus]
 
-        disk1 = './disk1.vdi'
-        disk2 = './disk2.vdi'
+        disk1 = 'disk1.vdi'
+        disk2 = 'disk2.vdi'
 
         unless File.exist?(disk1)
           v.customize ['createhd', '--filename', disk1, '--size', 4096]
