@@ -1,13 +1,13 @@
 # Describe VMs
 MACHINES = {
-  # VM name "kernel update"
-  :"kernel-update" => {
+  # VM name "software-raid"
+  :"software-raid" => {
               # VM box
               :box_name => "centos/7",
               # VM CPU count
               :cpus => 2,
               # VM RAM size (Mb)
-              :memory => 10240,
+              :memory => 4096,
               # networks
               :net => [],
               # forwarded ports
@@ -17,17 +17,19 @@ MACHINES = {
 
 Vagrant.configure("2") do |config|
   MACHINES.each do |boxname, boxconfig|
-    # Disable shared folders
+    # Enable shared folders
     config.vm.synced_folder ".", "/vagrant", disabled: false
-    #config.vm.provision :shell, path: "bootstrap-1.sh"
-    #config.vm.provision :shell, path: "bootstrap-2.sh"
+    # config.vm.provision :shell, path: "bootstrap-1.sh"
+    # config.vm.provision :shell, path: "bootstrap-2.sh"
+
 
     # Apply VM config
     config.vm.define boxname do |box|
       # Set VM base box and hostname
       box.vm.box = boxconfig[:box_name]
-	  box.vm.box_version = "2004.01"
+	    box.vm.box_version = "2004.01"
       box.vm.host_name = boxname.to_s
+
       # Additional network config if present
       if boxconfig.key?(:net)
         boxconfig[:net].each do |ipconf|
@@ -45,6 +47,18 @@ Vagrant.configure("2") do |config|
         # Set VM RAM size and CPU count
         v.memory = boxconfig[:memory]
         v.cpus = boxconfig[:cpus]
+
+        disk1 = '/home/oliferuk/vm_disks/sata1.vdi'
+        disk2 = '/home/oliferuk/vm_disks/sata2.vdi'
+
+        unless File.exist?(disk1)
+          v.customize ['createhd', '--filename', disk1, '--size', 4096]
+        end
+        unless File.exist?(disk2)
+          v.customize ['createhd', '--filename', disk2, '--size', 4096]
+        end
+        v.customize ['storageattach', :id, '--storagectl', 'IDE', '--port', 1, '--device', 0, '--type', 'hdd', '--medium', disk1]
+        v.customize ['storageattach', :id, '--storagectl', 'IDE', '--port', 1, '--device', 1, '--type', 'hdd', '--medium', disk2]
       end
     end
   end
