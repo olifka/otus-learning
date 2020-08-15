@@ -7,7 +7,7 @@ MACHINES = {
               #:box_name => "oliferuk/centos-7-5.8",
               :box_name => "centos/7",
               # VM CPU count
-              :cpus => 2,
+              :cpus => 4,
               # VM RAM size (Mb)
               :memory => 10240,
               # networks

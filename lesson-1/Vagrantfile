@@ -5,7 +5,7 @@ MACHINES = {
               # VM box
               :box_name => "centos/7",
               # VM CPU count
-              :cpus => 2,
+              :cpus => 4,
               # VM RAM size (Mb)
               :memory => 4096,
               # networks
@@ -16,12 +16,18 @@ MACHINES = {
 }
 
 Vagrant.configure("2") do |config|
+  config.vbguest.auto_update = false
   MACHINES.each do |boxname, boxconfig|
     # Disable shared folders
     config.vm.synced_folder ".", "/vagrant", disabled: true
-    config.vm.provision :shell, path: "bootstrap.sh"
-    # config.vm.provision :shell, inline: "lsblk"
-
+    # config.vm.provision :shell, path: "bootstrap.sh"
+    # config.vm.provision :shell, inline: "chroot /mnt ./grub_installer.sh"
+    # config.vm.provision :shell, inline: "rm -rf /mnt/grub_installer.sh"
+    # config.vm.provision :shell, inline: "umount /mnt/sys"
+    # config.vm.provision :shell, inline: "umount /mnt/proc"
+    # config.vm.provision :shell, inline: "umount /mnt/dev"
+    # config.vm.provision :shell, inline: "umount /mnt"
+    # config.vm.provision :shell, inline: "reboot"
     # Apply VM config
     config.vm.define boxname do |box|
       # Set VM base box and hostname
