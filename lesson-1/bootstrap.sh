@@ -5,9 +5,11 @@ yum -y install mdadm
 yes | mdadm --create /dev/md/raid1 --level=1 --raid-devices=2 /dev/sdb /dev/sdc
 mkfs.xfs /dev/md/raid1
 RAID_UUID=`blkid -o udev /dev/md/raid1|grep ID_FS_UUID=|awk -F "=" '{print $2}'`
+HDD_UUID=`blkid -o udev /dev/sda1|grep ID_FS_UUID=|awk -F "=" '{print $2}'`
 echo "UUID=$RAID_UUID						xfs	defaults	0 0" > /etc/fstab
 echo "/swapfile none swap defaults 0 0" >> /etc/fstab
 sed -i 's/GRUB_DEFAULT=saved/GRUB_DEFAULT=1/g' /etc/default/grub
+sed -i "s/$HDD_UUID/$RAID_UUID/g" /boot/grub2/grub.cfg
 echo -e "\nlsblk after RAID creation:\n"
 lsblk
 mount /dev/md/raid1 /mnt
