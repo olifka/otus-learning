@@ -27,6 +27,8 @@ echo "mount /dev/VolGroup00/LogVol00 /mnt" >> /mnt/etc/rc.d/rc.local
 echo "xfsdump -J - /dev/vg_tmp_root/lv_tmp_root | xfsrestore -J - /mnt" >> /mnt/etc/rc.d/rc.local
 echo "for i in /proc/ /sys/ /dev/ /run/ /boot/; do mount --bind $i /mnt/$i; done" >> /mnt/etc/rc.d/rc.local
 echo "chroot /mnt ./grub_installer.sh" >> /mnt/etc/rc.d/rc.local
+echo 'echo "#!/bin/bash" > /mnt/etc/rc.d/rc.local'
+echo 'echo "reboot" >> /mnt/etc/rc.d/rc.local' >> /mnt/etc/rc.d/rc.local
 echo 'echo "" > /mnt/etc/rc.d/rc.local' >> /mnt/etc/rc.d/rc.local
 echo "reboot" >> /mnt/etc/rc.d/rc.local
 chmod +x /mnt/etc/rc.d/rc.local
