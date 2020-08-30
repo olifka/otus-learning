@@ -15,14 +15,14 @@ MACHINES = {
         :disks => {
           :sata1 => {
             :dfile => 'sata1.vdi',
-            :size => 4096,
+            :size => 8192,
             :port => 1,
           },
-          :sata2 => {
-            :dfile => 'sata2.vdi',
-            :size => 4096, # Megabytes
-            :port => 2,
-          },
+          # :sata2 => {
+          #   :dfile => 'sata2.vdi',
+          #   :size => 4096, # Megabytes
+          #   :port => 2,
+          # },
     }
   }
 }
