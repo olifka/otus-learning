@@ -1,0 +1,13 @@
+[Unit]
+Description = Mount NFS Share
+Requires=network-online.service
+After=network-online.service
+
+[Mount]
+What=192.168.50.10:/var/nfs_share
+Where=/mnt
+Type=nfs
+Options=rw,vers=3,udp,rsize=32768,wsize=32768,hard,intr,retry=100,timeo=3
+
+[Install]
+WantedBy=multi-user.target
