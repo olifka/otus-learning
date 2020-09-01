@@ -12,11 +12,11 @@
 
 # Решение:
 
-Скрипты [repo_script.sh](repo_script.sh) и [client_script.sh](repo_script.sh) выполняют первичную подготовку сервера-репозитория и клиента соответственно.
+Скрипты [repo_script.sh](repo_script.sh) и [client_script.sh](client_script.sh) выполняют первичную подготовку сервера-репозитория и клиента соответственно.
 
 Также заранее подготовлены файлы:
 * [nginx.spec](nginx.spec) - подготовленная спека для сборки кастомного nginx. Отличается от оригинальной строкой "--add-module=/root/nginx_upstream_check_module-master" (добавляет в нашу сборку пропатченный нами модуль upstream_check)
 * [repos.conf](repos.conf) - настройки nginx для работы в качестве репозитория (включён автоиндекс на папку /var/www/html/repos)
 * [local.repo](local.repo) - настройки клиента для использования нашего локального репозитория
 
-Подробнее путь выполнения описан в виде комментариев к скриптам [repo_script.sh](repo_script.sh) и [client_script.sh](repo_script.sh)
+Подробнее путь выполнения описан в виде комментариев к скриптам [repo_script.sh](repo_script.sh) и [client_script.sh](client_script.sh)
