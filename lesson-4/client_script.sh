@@ -5,7 +5,7 @@ cp /vagrant/local.repo /etc/yum.repos.d/local.repo
 # Устанавливаем пакет
 yum -y install nginx
 echo -e "\n"
-# Проверяем, что установился наш кастомный nginx, в выоде должна быть следующая строка:
+# Проверяем, что установился наш кастомный nginx, в выводе должна быть следующая строка:
 # module=/root/nginx_upstream_check_module
 nginx -V 2>&1 | tr -- - '\n' | grep module
 echo -e "\n"
