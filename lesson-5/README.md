@@ -75,3 +75,12 @@ Vagrantfile поднимает ВМ с именем vg-rename. Скрипт [vg-
 * пытается ребутнуть машину ("пытается" - потому что в VBox виртуалка никак не хотела перезагружаться. В итоге использовал hard-reset)
 
 После перезапуска ВМ lsblk покажет, что / смонтирован на VG с новым именем
+
+# Добавить модуль в initrd
+
+Сделал по [методичке](https://docs.google.com/document/d/1c6DM3vJ06-SSESpWpWk_vaZy4bvL1CUrFV81cPNGy4c/). Скрипт [initrd-module.sh](initrd-module.sh):
+* Создаёт папку для нового модуля /usr/lib/dracut/modules.d/01test
+* Копирует туда подготовленные скрипты [module-setup.sh](module-setup.sh) и [test.sh](test.sh):
+[module-setup.sh](module-setup.sh) - содержит информацию для установки модуля
+[test.sh](test.sh) будет выполнен при загрузке ядра и выведет нам на экран надпись "Loading my test module..."
+* Перезагружает ВМ (перезагрузка отрабатывает корректно)
