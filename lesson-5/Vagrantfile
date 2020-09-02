@@ -3,6 +3,7 @@
 
 Vagrant.configure(2) do |config|
   config.vm.box = "centos/7"
+  config.vm.box_version = "1804.02"
   # Disable GuestAdditions installation
   config.vbguest.auto_update = false
 
@@ -11,10 +12,10 @@ Vagrant.configure(2) do |config|
     v.cpus = 2
   end
 
-  config.vm.define "no_quiet" do |repo|
+  config.vm.define "vg-rename" do |repo|
     repo.vm.network "private_network", ip: "192.168.50.10", virtualbox__intnet: "net1"
-    repo.vm.hostname = "repo"
-    # repo.vm.provision "shell", path: "repo_script.sh"
+    repo.vm.hostname = "vg-rename"
+    repo.vm.provision "shell", path: "vg-rename.sh"
   end
 
   # config.vm.define "client" do |client|
