@@ -5,6 +5,7 @@ YEAR_TIME=(`awk -F " - - " '{print $2}' access-4560-644067.log|awk '{print $1}'|
 DAY_MONTH=(`awk -F " - - " '{print $2}' access-4560-644067.log|awk '{print $1}'|awk -F "/" '{print $1 " " $2 " " $3}'|awk '{print $1 " " $2}'|sed -e 's/\[//g'|sed -e 's/ /-/g'|sed -e 's/Aug/08/g'`)
 COUNTER=${#YEAR_TIME[*]}
 
+
 while [ "$i" -lt "$COUNTER" ]
 do
         #echo $i
