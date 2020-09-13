@@ -41,7 +41,7 @@ echo -e "\nDownloading sample file...\n"
 wget -q -O War_and_Peace.txt http://www.gutenberg.org/ebooks/2600.txt.utf-8
 xargs -n 1 cp -v War_and_Peace.txt<<<"/mnt/gzip9/ /mnt/lz4/ /mnt/lzjb/ /mnt/zle/ /mnt/dedup/"
 
-echo -e "\nWating for zfs to make it's cool fings...\n"
+echo -e "\nWating for zfs to make it's cool things...\n"
 sleep 5
 
 du -s -B1 /mnt/gzip9/ > file_size
