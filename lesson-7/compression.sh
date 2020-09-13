@@ -56,4 +56,5 @@ sort -u file_size
 # 1214464 /mnt/zle/
 # 1220608 /mnt/lzjb/
 # 1314816 /mnt/dedup/
+poweroff
 exit 0
