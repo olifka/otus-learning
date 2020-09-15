@@ -39,7 +39,10 @@ zfs set dedup=on dedup/data
 cd /tmp
 echo -e "\nDownloading sample file...\n"
 wget -q -O War_and_Peace.txt http://www.gutenberg.org/ebooks/2600.txt.utf-8
-xargs -n 1 cp -v War_and_Peace.txt<<<"/mnt/gzip9/ /mnt/lz4/ /mnt/lzjb/ /mnt/zle/ /mnt/dedup/"
+echo -e "\nCopying files to zfs-directories...\n"
+xargs -n 1 cp War_and_Peace.txt<<<"/mnt/gzip9/ /mnt/lz4/ /mnt/lzjb/ /mnt/zle/ /mnt/dedup/"
+xargs -n 1 cp -r /usr/share/man<<<"/mnt/gzip9/ /mnt/lz4/ /mnt/lzjb/ /mnt/zle/ /mnt/dedup/"
+xargs -n 1 cp -r /usr/bin<<<"/mnt/gzip9/ /mnt/lz4/ /mnt/lzjb/ /mnt/zle/ /mnt/dedup/"
 
 echo -e "\nWating for zfs to make it's cool things...\n"
 sleep 5
@@ -51,10 +54,10 @@ du -s -B1 /mnt/zle/ >> file_size
 du -s -B1 /mnt/dedup/ >> file_size
 
 sort -u file_size
-# 1213952 /mnt/gzip9/
-# 1214464 /mnt/lz4/
-# 1214464 /mnt/zle/
-# 1220608 /mnt/lzjb/
-# 1314816 /mnt/dedup/
+# 41887232	/mnt/gzip9/
+# 52237824	/mnt/lz4/
+# 55330304	/mnt/lzjb/
+# 71471104	/mnt/zle/
+# 86922752	/mnt/dedup/
 poweroff
 exit 0
