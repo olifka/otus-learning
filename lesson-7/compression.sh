@@ -50,32 +50,48 @@ zfs set compress=zle zle/data
 zfs set dedup=on dedup/data
 
 cd /tmp
-echo -e "\rDownloading sample file (the 'World & Peace')..."
+echo -e "\nDownloading sample file (the 'World & Peace')...\n"
 wget -q -O War_and_Peace.txt http://www.gutenberg.org/ebooks/2600.txt.utf-8
-echo -e "\rCopying sample file to zfs-directories..."
+echo -e "\nCopying sample file to zfs-directories..."
 xargs -n 1 cp War_and_Peace.txt<<<"/mnt/gzip9/ /mnt/lz4/ /mnt/lzjb/ /mnt/zle/ /mnt/dedup/"
-echo -e "\rCalculating located space..."
+echo -e "\nCalculating located space...\n"
 calculate_zfs_space
-echo -e "\rCopying /usr/share/man to zfs-directories..."
+# 1024	/mnt/dedup/
+# 1024	/mnt/gzip9/
+# 1024	/mnt/lz4/
+# 1024	/mnt/lzjb/
+# 1024	/mnt/zle/
+echo -e "\nCopying /usr/share/man to zfs-directories...\n"
 xargs -n 1 cp -r /usr/share/man<<<"/mnt/gzip9/ /mnt/lz4/ /mnt/lzjb/ /mnt/zle/ /mnt/dedup/"
-echo -e "\rCalculating located space..."
+echo -e "\nCalculating located space...\n"
 calculate_zfs_space
-echo -e "\rCopying /usr/bin to zfs-directories..."
+# 12346368	/mnt/zle/
+# 13079552	/mnt/dedup/
+# 13153792	/mnt/gzip9/
+# 13172224	/mnt/lz4/
+# 13261312	/mnt/lzjb/
+echo -e "\nCopying /usr/bin to zfs-directories...\n"
 xargs -n 1 cp -r /usr/bin<<<"/mnt/gzip9/ /mnt/lz4/ /mnt/lzjb/ /mnt/zle/ /mnt/dedup/"
-echo -e "\rCalculating located space..."
-calculate_zfs_space
-
-  # # #  # # #
- #  Task 2  #
-# # #  # # #
-echo -e "\rCreating 10Mb dummy filled with zeros..."
+echo -e "\nCalculating located space...\n"
+# calculate_zfs_space
+# 40675328	/mnt/gzip9/
+# 51025408	/mnt/lz4/
+# 54110720	/mnt/lzjb/
+# 70258688	/mnt/zle/
+# 85270528	/mnt/dedup/
+echo -e "\nCreating 10Mb dummy filled with zeros...\n"
 dd if=/dev/zero of=/tmp/0dummy bs=1 count=10000000
 du -hs /tmp/0dummy
-echo -e "\rCopying 0dummy to zfs-directories..."
+echo -e "\nCopying 0dummy to zfs-directories...\n"
 xargs -n 1 cp /tmp/0dummy<<<"/mnt/gzip9/ /mnt/lz4/ /mnt/lzjb/ /mnt/zle/ /mnt/dedup/"
-echo -e "\rCalculating located space..."
+echo -e "\nCalculating located space...\n"
 calculate_zfs_space
-echo -e "\rCopying 0dummy to zfs-directories by 5 times..."
+# 40675840	/mnt/gzip9/
+# 51026944	/mnt/lz4/
+# 54112256	/mnt/lzjb/
+# 70260224	/mnt/zle/
+# 95706112	/mnt/dedup/
+echo -e "\nCopying 0dummy to zfs-directories by 5 times...\n"
 touch /mnt/gzip9/0dummy0
 touch /mnt/lz4/0dummy1
 touch /mnt/lzjb/0dummy2
@@ -86,12 +102,20 @@ xargs -n 1 cp /tmp/0dummy<<<"/mnt/gzip9/0dummy1 /mnt/lz4/0dummy1 /mnt/lzjb/0dumm
 xargs -n 1 cp /tmp/0dummy<<<"/mnt/gzip9/0dummy2 /mnt/lz4/0dummy2 /mnt/lzjb/0dummy2 /mnt/zle/0dummy2 /mnt/dedup/0dummy2"
 xargs -n 1 cp /tmp/0dummy<<<"/mnt/gzip9/0dummy3 /mnt/lz4/0dummy3 /mnt/lzjb/0dummy3 /mnt/zle/0dummy3 /mnt/dedup/0dummy3"
 xargs -n 1 cp /tmp/0dummy<<<"/mnt/gzip9/0dummy4 /mnt/lz4/0dummy4 /mnt/lzjb/0dummy4 /mnt/zle/0dummy4 /mnt/dedup/0dummy4"
-echo -e "\rCalculating located space..."
+echo -e "\nCalculating located space...\n"
 calculate_zfs_space
+# 40679424	/mnt/gzip9/
+# 51029504	/mnt/lz4/
+# 54114816	/mnt/lzjb/
+# 70262784	/mnt/zle/
+# 146185728	/mnt/dedup/
 
-echo -e "\rDownloading archive with test zpool..."
+  # # #  # # #
+ #  Task 2  #
+# # #  # # #
+echo -e "\nDownloading archive with test zpool...\n"
 wget -q --no-check-certificate 'https://docs.google.com/uc?export=download&id=1KRBNW33QWqbvbVHa3hLJivOAt60yukkg' -O zfs_task1.tar.gz
-echo -e "\rUnarchiving..."
+echo -e "\nUnarchiving...\n"
 tar xf zfs_task1.tar.gz
 zpool import -d zpoolexport otus
 zpool get size otus
@@ -105,4 +129,14 @@ zpool history otus|grep checksum
 zpool history otus|grep compression
 # 2020-05-15.04:11:05 zfs set compression=zle otus
 
+  # # #  # # #
+ #  Task 3  #
+# # #  # # #
+wget -q --no-check-certificate 'https://docs.google.com/uc?export=download&id=1gH8gCL9y7Nd5Ti3IRmplZPF1XjzxeRAG' -O otus_task2.file
+zfs create otus/storage-task2
+zfs receive otus/storage-task2 < otus_task2.file -F
+secret_message=`find /otus/storage-task2/ -name secret_message`
+echo -e "\nSecret Message is:\n"
+cat $secret_message
+# https://github.com/sindresorhus/awesome
 exit 0
