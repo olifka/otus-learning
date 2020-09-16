@@ -42,7 +42,7 @@ Vagrant.configure("2") do |config|
 
     config.vm.box_version = "2004.01"
     MACHINES.each do |boxname, boxconfig|
-        config.vm.provision :shell, path: "compression.sh"  
+        config.vm.provision :shell, path: "zfs.sh"  
         config.vm.define boxname do |box|
   
             box.vm.box = boxconfig[:box_name]
