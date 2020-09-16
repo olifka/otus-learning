@@ -148,3 +148,5 @@ secret_message=`find /otus/storage-task2/ -name secret_message`
 cat $secret_message
 # https://github.com/sindresorhus/awesome
 ```
+# Ответ:
+https://github.com/sindresorhus/awesome
