@@ -26,7 +26,7 @@ zfs create lzjb/data
 zfs create zle/data
 zfs create dedup/data
 ```
-Устанавливаем тип сжатия для каждой ppol'а:
+Устанавливаем тип сжатия для каждого pool'а:
 ```
 zfs set compress=gzip-9 gzip9/data
 zfs set compress=lz4 lz4/data
