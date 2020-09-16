@@ -140,7 +140,7 @@ wget -q --no-check-certificate 'https://docs.google.com/uc?export=download&id=1g
 zfs create otus/storage-task2
 zfs receive otus/storage-task2 < otus_task2.file -F
 ```
-Ищём файл с секретным посланием и выводим его командой echo
+Ищём файл с секретным посланием и выводим его командой cat
 (Проверял файл утилитой file и пробовал открыть на редактирование в vi - 
 ничего, кроме ссылки на github не нашёл):
 ```
