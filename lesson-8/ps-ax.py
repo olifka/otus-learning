@@ -41,16 +41,18 @@ def get_time(pid):
     dt_start = datetime.strptime(dt_start_str.rstrip('\n'), "%Y %b %d %H:%M")
 
     delta = now - dt_start
+    delta = (datetime.min + delta).time()
 
-    print(pid, dt_start, now, delta)
+    return delta.strftime("%H:%M")
 
 cmds = []
+timers = []
 
 
 for pid in pids_list:
 #     get_tty(pid)
 #     get_stat(pid)
-    get_time(pid)
+    timers.append(get_time(pid))
     cmds.append(get_cmd(pid))
 
 exit(0)
