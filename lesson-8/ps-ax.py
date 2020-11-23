@@ -45,14 +45,25 @@ def get_time(pid):
 
     return delta.strftime("%H:%M")
 
-cmds = []
-timers = []
 
+def get_tty(pid):
+    path = "/proc/{}/fd/0".format(pid)
+    bashCmd = "/bin/ls -l {}|awk \'{{ print $11 }}\'".format(path)
+    tty = popen(bashCmd).read()
+    return tty.rstrip('\n').lstrip('/dev/')
+
+
+def get_stat(pid):
+    # something
+
+print("PID TTY TIME COMMAND")
 
 for pid in pids_list:
-#     get_tty(pid)
+    tty = get_tty(pid)
 #     get_stat(pid)
-    timers.append(get_time(pid))
-    cmds.append(get_cmd(pid))
+    work_time = get_time(pid)
+    cmd = get_cmd(pid)
+    print(pid, tty, work_time, cmd)
+
 
 exit(0)
