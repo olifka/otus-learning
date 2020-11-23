@@ -53,7 +53,7 @@ def get_tty(pid):
     return tty.rstrip('\n').lstrip('/dev/')
 
 
-def get_stat(pid):
+# def get_stat(pid):
     # something
 
 print("PID TTY TIME COMMAND")
