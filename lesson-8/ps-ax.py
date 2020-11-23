@@ -24,10 +24,6 @@ def get_pids():
     return pids_list
 
 
-# Список номеров процессов, запущенных в данный момент
-pids_list = get_pids()
-
-
 # Функция get_cmd().
 # Принимает на вход номер процесса (PID).
 # Путём чтения из файла /proc/PID/cmdline получает значение команды-запуска заданного PID'а
@@ -41,7 +37,7 @@ def get_cmd(pid):
     return cmd
 
 
-# Функция get_time().
+# Функция get_time(). Или выкрутасы_со_временем().
 # Принимает на вход номер процесса (PID).
 # Ихсодя из того, что папка-процесс создаётся в /proc одновременно с возникновением процесса
 # за счёт даты создания этой папки получаем время жизни процесса:
@@ -51,10 +47,15 @@ def get_time(pid):
     now = datetime.now()
     current_year = now.year
     path = "/proc/{}".format(pid)
+    # Т.к. popen возвращает данные совершенно неожиданным типом
+    # пришлось сначала вызвать команду "ls -ld > /tmp/pid_file_info",
+    # которая формирует временный файл в системе,
     bashCmd = "/bin/ls -ld {} > /tmp/pid_file_info".format(path)
     system(bashCmd)
+    # а затем из "peopen(cat|awk)" получать нужную строку с датой в удобном формате.
     dt_start_str = popen("cat /tmp/pid_file_info|awk \'{ print $6\" \"$7\" \"$8 }\'").read()
     dt_start_str = "{} ".format(current_year) + dt_start_str.rstrip('\n')
+    # Переводим строку в формат datetime.
     dt_start = datetime.strptime(dt_start_str.rstrip('\n'), "%Y %b %d %H:%M")
     delta = now - dt_start
     delta = (datetime.min + delta).time()
@@ -87,6 +88,9 @@ def get_stat(pid):
 
     return state.rstrip('\n')
 
+
+# Список номеров процессов, запущенных в данный момент
+pids_list = get_pids()
 
 # Пародируем вывод нативного 'ps ax'
 print("PID TTY STAT TIME COMMAND")
