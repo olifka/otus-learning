@@ -1,7 +1,7 @@
-from re import findall
 from os import listdir, system, popen
-from io import open
 from datetime import datetime
+from re import findall
+from io import open
 
 
 def get_pids():
@@ -39,7 +39,6 @@ def get_time(pid):
     dt_start_str = popen("cat /tmp/pid_file_info|awk \'{ print $6\" \"$7\" \"$8 }\'").read()
     dt_start_str = "{} ".format(current_year) + dt_start_str.rstrip('\n')
     dt_start = datetime.strptime(dt_start_str.rstrip('\n'), "%Y %b %d %H:%M")
-
     delta = now - dt_start
     delta = (datetime.min + delta).time()
 
@@ -50,20 +49,26 @@ def get_tty(pid):
     path = "/proc/{}/fd/0".format(pid)
     bashCmd = "/bin/ls -l {}|awk \'{{ print $11 }}\'".format(path)
     tty = popen(bashCmd).read()
+
     return tty.rstrip('\n').lstrip('/dev/')
 
 
-# def get_stat(pid):
-    # something
+def get_stat(pid):
+    path = "/proc/{}/status".format(pid)
+    bashCmd = "cat {} |grep State|awk \'{{ print $2 }}\'".format(path)
+    state = popen(bashCmd).read()
 
-print("PID TTY TIME COMMAND")
+    return state.rstrip('\n')
+
+
+print("PID TTY STAT TIME COMMAND")
 
 for pid in pids_list:
     tty = get_tty(pid)
-#     get_stat(pid)
+    state = get_stat(pid)
     work_time = get_time(pid)
     cmd = get_cmd(pid)
-    print(pid, tty, work_time, cmd)
+    print(pid, tty, state, work_time, cmd)
 
 
 exit(0)
