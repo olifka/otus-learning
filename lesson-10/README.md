@@ -43,7 +43,7 @@
 # Решение
 Также по методичке - в дефолтовый юнит httpd добавлена опция ```EnvironmentFile=/etc/sysconfig/httpd-%I```
 
-Конфигурационные файлы /etc/httpd/conf/first.conf и conf/second.conf являются копией основного конфига conf/httpd.conf, в них изменил только параметр ```ListenPort```, пути к логам и дополнительным конф.файлам (```/first-conf.d/*```, ```/second-conf.d/*```)
+Конфигурационные файлы /etc/httpd/conf/first.conf и conf/second.conf являются копией основного конфига conf/httpd.conf, в них изменил только параметры ```ListenPort```, ```PidFile```, пути к логам и дополнительным конф.файлам (```/first-conf.d/*```, ```/second-conf.d/*```)
 
 *systemctl status httpd@first:*
 ```
