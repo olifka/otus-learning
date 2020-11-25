@@ -6,7 +6,13 @@
 Написать service, который будет раз в 30 секунд мониторить лог на предмет наличия ключевого слова (файл лога и ключевое слово должны задаваться в /etc/sysconfig)
 
 # Решение:
-РЕШЕНИЕ
+По методичке создал четыре файла:
+* [sysconfig-watchlog](sysconfig-watchlog) - файл с переменными для работы юнита
+* [watchlog.service](watchlog.service) - описание юнита systemd
+* [watchlog.sh](watchlog.sh) - рабочий скрипт, вызываемый юнитом (```ExecStart```)
+* [watchlog.timer](watchlog.timer) - таймер для запуска нашего юнита (раписание событий)
+
+Всё заработало почти сразу, исправил только ошибку в [watchlog.service](watchlog.service) - поправил путь до ```/etc/sysconfig```
 
 # Задача 2
 Из репозитория epel установить spawn-fcgi и переписать init-скрипт на unit-файл (имя service должно называться так же: spawn-fcgi)
