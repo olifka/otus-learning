@@ -22,7 +22,7 @@
 
 Playbook, написанный по методичке - [nginx.yml](nginx.yml)
 
-Роль, написанная по примеру из интернета - [roles/nginx](role/nginx)
+Роль, написанная по примеру из интернета - [roles/nginx](roles/nginx)
 Запуск роли осуществялется с помощью плэйбука [nginx_run_role.yml](nginx_run_role.yml)
 
 Вывод установки nginx через роль:
