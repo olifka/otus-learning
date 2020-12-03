@@ -11,6 +11,7 @@ Vagrant.configure("2") do |config|
 
   MACHINES.each do |boxname, boxconfig|
 
+      config.vm.synced_folder ".", "/vagrant", disabled: true
       config.vm.define boxname do |box|
 
           box.vm.box = boxconfig[:box_name]
@@ -34,7 +35,8 @@ Vagrant.configure("2") do |config|
             systemctl restart sshd
             echo '*;*;*;Wd' > /etc/security/time.conf
             echo -e 'admin\nvagrant' > /etc/login.group.allowed
-            cat /vagrant/pam-sshd > /etc/pam.d/sshd
+            sed -i '/account    include      password-auth/i account    required     pam_time.so' /etc/pam.d/sshd
+            sed -i '/account    required     pam_time.so/i account    sufficient   pam_listfile.so onerr=fail item=group sense=allow file=/etc/login.group.allowed' /etc/pam.d/sshd
           SHELL
 
       end
