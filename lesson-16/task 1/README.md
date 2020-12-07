@@ -80,7 +80,3 @@ setsebool -P nis_enabled 0
 libsemanage.semanage_validate_and_compile_fcontexts: setfiles returned error code 1.
 ```
 После разворотки стенда в файле ```/etc/nginx/nginx.conf``` меняем *listen_port* на 34567, делаем ```systemctl restart nginx```, и радуемся, что всё работает.
-
-## Задача 2 - Обеспечить работоспособность приложения при включенном selinux
-
-РЕШЕНИЕ
