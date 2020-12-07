@@ -54,7 +54,7 @@ setsebool -P nis_enabled 0
 
 ## Формирование и установка модуля SELinux
 
-Делал по статья с Habr'а - https://habr.com/ru/post/320100/
+Делал по [статье с Habr'а](https://habr.com/ru/post/320100/)
 
 Компиляция и установка модуля происходит при разворачивании стенда (см. [Vagrantfile](Vagrantfile))
 
