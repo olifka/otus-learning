@@ -43,9 +43,13 @@ Vagrant.configure("2") do |config|
             cp /vagrant/nginx_custom* /var/tmp/nginx_custom
             cd /var/tmp/nginx_custom
             make -f /usr/share/selinux/devel/Makefile
+            echo -e "\nInstalling custom se module..."
             semodule -i nginx_custom.pp
+            echo -e "\nEnabling custom se module..."
             semodule -e nginx_custom
+            echo -e "\nAdding custom binkp_port_t..."
             semanage port -a -t binkp_port_t -p tcp 34567
+            echo -e "\nSetup is done!\n"
           SHELL
 
       end
