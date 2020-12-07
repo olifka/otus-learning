@@ -1,0 +1,27 @@
+policy_module(nginx_custom, 1.0.0)
+# Process type
+type nginx_custom_t;
+# Exec file type
+type nginx_custom_exec_t;
+# Config file type
+type nginx_custom_conf_t;
+# Cache type
+type nginx_custom_cache_t;
+# Log file type
+type nginx_custom_log_t;
+# Tmp file type
+type nginx_custom_tmp_t;
+# Listened port type
+type binkp_port_t;
+# Attribute macroses
+files_config_file(nginx_custom_conf_t)
+files_type(nginx_custom_cache_t)
+logging_log_file(nginx_custom_log_t)
+files_tmp_file(nginx_custom_tmp_t)
+corenet_port(binkp_port_t)
+# Standard permossions macroses
+files_config_file(nginx_custom_conf_t)
+files_type(nginx_custom_cache_t)
+logging_log_file(nginx_custom_log_t)
+files_tmp_file(nginx_custom_tmp_t)
+corenet_port(binkp_port_t)

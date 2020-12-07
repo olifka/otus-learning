@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 
   MACHINES.each do |boxname, boxconfig|
 
-      config.vm.synced_folder ".", "/vagrant", disabled: true
+      config.vm.synced_folder ".", "/vagrant", disabled: false
       config.vm.network "forwarded_port", guest: 80, host: 8080
       config.vm.network "forwarded_port", guest: 12345, host: 12345
       config.vm.network "forwarded_port", guest: 23456, host: 23456
@@ -28,17 +28,30 @@ Vagrant.configure("2") do |config|
           box.vm.provider :virtualbox do |vb|
             vb.customize ["modifyvm", :id, "--memory", "200"]
           end
-          
-          box.vm.provision "shell", inline: <<-SHELL
-            yum -y install policycoreutils-python policycoreutils-devel
-            mkdir -p ~root/.ssh; cp ~vagrant/.ssh/auth* ~root/.ssh
-            sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
-            systemctl restart sshd
-          SHELL
+
+          # box.vm.provision "shell", inline: <<-SHELL
+          #   mkdir -p ~root/.ssh; cp ~vagrant/.ssh/auth* ~root/.ssh
+          #   systemctl restart sshd
+          # SHELL
 
           box.vm.provision "ansible" do |ansible|
             ansible.playbook = "nginx.yml"
           end
+
+          box.vm.provision "shell", inline: <<-SHELL
+            yum -y install policycoreutils-python policycoreutils-devel
+            ln -s /usr/sbin/nginx /usr/sbin/nginx_custom
+            ln -s /etc/nginx /etc/nginx_custom
+            ln -s /var/log/nginx /var/log/nginx_custom
+            ln -s /usr/share/nginx /usr/share/nginx_custom
+            mkdir /var/tmp/nginx_custom
+            cp /vagrant/nginx_custom* /var/tmp/nginx_custom
+            cd /var/tmp/nginx_custom
+            make -f /usr/share/selinux/devel/Makefile
+            semodule -i nginx_custom.pp
+            semodule -e nginx_custom
+            semanage port -a -t binkp_port_t -p tcp 34567
+          SHELL
 
       end
   end

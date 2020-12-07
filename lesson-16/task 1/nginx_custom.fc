@@ -1,0 +1,5 @@
+/usr/sbin/nginx_custom          --      gen_context(system_u:object_r:nginx_custom_exec_t)
+/etc/nginx_custom(/.*)?                 gen_context(system_u:object_r:nginx_custom_conf_t)
+/etc/nginx_custom/.*\.cfg               gen_context(system_u:object_r:nginx_custom_conf_t)
+/usr/share/nginx_custom/html(/.*)?              gen_context(system_u:object_r:nginx_custom_cache_t)
+/var/log/nginx_custom(/.*)? gen_context(system_u:object_r:nginx_custom_log_t)
