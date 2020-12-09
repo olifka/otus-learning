@@ -2,7 +2,7 @@
 # Урок 17 "Практика с SELinux"
 
 
-## Задача 2
+## Задание 2
 Обеспечить работоспособность приложения при включенном selinux.
 - Развернуть приложенный стенд
 https://github.com/mbfx/otus-linux-adm/tree/master/selinux_dns_problems
