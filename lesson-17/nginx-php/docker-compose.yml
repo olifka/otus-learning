@@ -4,6 +4,7 @@ services:
     build:
       context: ./
       dockerfile: php.Dockerfile
+    image: oliferuk/php-otus
     volumes:
       - ./data/index.php:/var/www/php/index.php
     networks:
@@ -12,6 +13,7 @@ services:
     build:
       context: ./
       dockerfile: nginx.Dockerfile
+    image: oliferuk/nginx-otus
     depends_on: 
         - php
     volumes:
