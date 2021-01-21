@@ -71,7 +71,7 @@ wal_level = hot_standby
 wal_level = minimal
 {% endif %}
 wal_log_hints = {{ postgresql_conf['wal_log_hints']|d()|ternary('on','off') }}
-max_wal_senders = 5
+max_wal_senders = 0
 
 # Archiving
 {% if postgresql_wal_backup_enable and wal_archive_command is defined%}
