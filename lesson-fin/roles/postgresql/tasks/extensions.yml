@@ -1,0 +1,11 @@
+---
+- name: PostgreSQL extensions
+  become_user: postgres
+  postgresql_ext:
+    db: "{{ item.db }}"
+    name: "{{ item.ext }}"
+    state: present
+  ignore_errors: yes
+  loop: "{{ postgresql_extensions | flatten(1) }}"
+  when: postgresql_extensions|length > 0
+...
