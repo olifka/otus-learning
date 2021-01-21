@@ -15,4 +15,12 @@
       - start/enable nginx
     when: nginx_version is not defined
 
+  - name: install specific version nginx
+    yum:
+      name: nginx-{{ nginx_version }}
+    notify:
+      - start/enable nginx
+    when: nginx_version is defined
+
   when: ansible_os_family == 'RedHat'
+  

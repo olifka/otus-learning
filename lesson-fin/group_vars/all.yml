@@ -1,0 +1,8 @@
+---
+# clean_up_vms: true
+# create_vms: true
+# prometheus_server: 10.100.100.X
+# restore_db: true
+# restore_jira: true
+# backup_date: "{{ ansible_date_time.date }}"
+# backup_date: "2020-10-01"
