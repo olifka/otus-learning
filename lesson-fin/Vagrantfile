@@ -46,7 +46,7 @@ Vagrant.configure("2") do |config|
 
       config.vm.define "webserver" do |webserver|
         webserver.vm.provision "ansible" do |ansible|
-          ansible.playbook = "nginx_run_role.yml"
+          ansible.playbook = "nginx.yml"
         end
       end
   end
