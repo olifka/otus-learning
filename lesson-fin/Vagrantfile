@@ -2,10 +2,10 @@
 # vim: set ft=ruby :
 
 MACHINES = {
-  :webserver => {
-        :box_name => "centos/7",
-        :ip_addr => '10.100.100.100'
-  },
+  # :webserver => {
+  #       :box_name => "centos/7",
+  #       :ip_addr => '10.100.100.100'
+  # },
   :database => {
         :box_name => "centos/7",
         :ip_addr => '10.100.100.101'
@@ -45,11 +45,11 @@ Vagrant.configure("2") do |config|
 
       end
 
-      config.vm.define "webserver" do |webserver|
-        webserver.vm.provision "ansible" do |ansible|
-          ansible.playbook = "webserver.yml"
-        end
-      end
+      # config.vm.define "webserver" do |webserver|
+      #   webserver.vm.provision "ansible" do |ansible|
+      #     ansible.playbook = "webserver.yml"
+      #   end
+      # end
 
       config.vm.define "database" do |database|
         database.vm.provision "ansible" do |ansible|
