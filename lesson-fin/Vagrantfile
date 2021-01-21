@@ -43,13 +43,11 @@ Vagrant.configure("2") do |config|
           SHELL
 
       end
-  end
 
-  MACHINES.webserver do |boxname, boxconfig|
-    config.vm.define boxname do |box|
-      box.vm.provision "ansible" do |ansible|
-        ansible.playbook = "nginx_run_role.yml"
+      config.vm.define "webserver" do |webserver|
+        box.vm.provision "ansible" do |ansible|
+          ansible.playbook = "nginx_run_role.yml"
+        end
       end
-    end
   end
 end
