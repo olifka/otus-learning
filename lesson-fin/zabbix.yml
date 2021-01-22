@@ -1,0 +1,17 @@
+---
+- hosts: zabbix
+  become: true
+  roles:
+    # - pgbackrest
+    - postgresql
+    - nginx
+    - zabbix-server
+    # - role: borgbackup
+    #   borg_repository: /var/backups/borg/jira
+    #   borg_source_directories:
+    #     - /var/atlassian/application-data/jira
+    #   borg_retention_policy:
+    #     keep_hourly: 3
+    #     keep_daily: 7
+    #     keep_weekly: 4
+    #     keep_monthly: 6
