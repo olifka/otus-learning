@@ -16,7 +16,7 @@
       - postgresql{{ postgresql_version_norm }}-server
       - postgresql{{ postgresql_version_norm }}-contrib
       - python2-psycopg2-2.8.2
-      - pgbackrest
+      - https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 
 - name: Install additional packages
   yum:

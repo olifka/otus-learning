@@ -35,6 +35,7 @@ postgresql_conf:
 
 postgresql_additional_packages:
   - nfs-utils
+  - pgbackrest
 
 node_exporter: true
 postgresql_exporter: true
