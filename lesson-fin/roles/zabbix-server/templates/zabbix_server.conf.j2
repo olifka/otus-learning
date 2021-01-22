@@ -10,6 +10,7 @@
 # Range: 1024-32767
 # Default:
 # ListenPort=10051
+ListenPort={{ ListenPort }}
 
 ### Option: SourceIP
 #       Source IP address for outgoing connections.
@@ -17,6 +18,7 @@
 # Mandatory: no
 # Default:
 # SourceIP=
+SourceIP={{ SourceIP }}
 
 ### Option: LogType
 #       Specifies where log messages are written to:
@@ -27,6 +29,7 @@
 # Mandatory: no
 # Default:
 # LogType=file
+LogType={{ LogType }}
 
 ### Option: LogFile
 #       Log file name for LogType 'file' parameter.
@@ -35,7 +38,7 @@
 # Default:
 # LogFile=
 
-LogFile=/var/log/zabbix/zabbix_server.log
+LogFile={{ LogFile }}
 
 ### Option: LogFileSize
 #       Maximum size of log file in MB.
@@ -46,7 +49,7 @@ LogFile=/var/log/zabbix/zabbix_server.log
 # Default:
 # LogFileSize=1
 
-LogFileSize=0
+LogFileSize={{ LogFileSize }}
 
 ### Option: DebugLevel
 #       Specifies debug level:
@@ -61,6 +64,7 @@ LogFileSize=0
 # Range: 0-5
 # Default:
 # DebugLevel=3
+DebugLevel={{ DebugLevel }}
 
 ### Option: PidFile
 #       Name of PID file.
@@ -69,7 +73,7 @@ LogFileSize=0
 # Default:
 # PidFile=/tmp/zabbix_server.pid
 
-PidFile=/var/run/zabbix/zabbix_server.pid
+PidFile={{ PidFile }}
 
 ### Option: SocketDir
 #       IPC socket directory.
@@ -79,7 +83,7 @@ PidFile=/var/run/zabbix/zabbix_server.pid
 # Default:
 # SocketDir=/tmp
 
-SocketDir=/var/run/zabbix
+SocketDir={{ SocketDir }}
 
 ### Option: DBHost
 #       Database host name.
@@ -89,6 +93,7 @@ SocketDir=/var/run/zabbix
 # Mandatory: no
 # Default:
 # DBHost=localhost
+DBHost={{ DBHost }}
 
 ### Option: DBName
 #       Database name.
@@ -97,7 +102,7 @@ SocketDir=/var/run/zabbix
 # Default:
 # DBName=
 
-DBName=zabbix
+DBName={{ DBName }}
 
 ### Option: DBSchema
 #       Schema name. Used for PostgreSQL.
@@ -113,7 +118,7 @@ DBName=zabbix
 # Default:
 # DBUser=
 
-DBUser=zabbix
+DBUser={{ DBUser }}
 
 ### Option: DBPassword
 #       Database password.
@@ -122,6 +127,7 @@ DBUser=zabbix
 # Mandatory: no
 # Default:
 # DBPassword=
+DBPassword={{ DBPassword }}
 
 ### Option: DBSocket
 #       Path to MySQL socket.
@@ -371,7 +377,7 @@ SNMPTrapperFile=/var/log/snmptrap/snmptrap.log
 # Default:
 # ListenIP=0.0.0.0
 
-# ListenIP=127.0.0.1
+ListenIP={{ ListenIP }}
 
 ### Option: HousekeepingFrequency
 #       How often Zabbix will perform housekeeping procedure (in hours).
@@ -675,7 +681,7 @@ LogSlowQueries=3000
 # Mandatory: no
 # Default:
 # StatsAllowedIP=
-StatsAllowedIP=127.0.0.1
+StatsAllowedIP={{ StatsAllowedIP }}
 
 ####### LOADABLE MODULES #######
 

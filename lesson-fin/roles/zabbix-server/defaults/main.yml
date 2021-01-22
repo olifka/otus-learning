@@ -1,1 +1,15 @@
 zabbix_version: 5.0
+ListenPort: 10051
+SourceIP: 10.100.100.102
+LogType: system
+LogFile: /var/log/zabbix/zabbix_server.log
+LogFileSize: 100
+DebugLevel: 3
+PidFile: /var/run/zabbix/zabbix_server.pid
+SocketDir: /var/run/zabbix
+DBHost: localhost
+DBName: zabbix
+DBUser: zabbix
+DBPassword: zabbix
+ListenIP: 10.100.100.102
+StatsAllowedIP: 127.0.0.1,10.100.100.0/24
