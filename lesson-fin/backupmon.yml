@@ -1,5 +1,5 @@
 ---
-- hosts: backup_mon
+- hosts: backupmon
   become: true
   roles:
     - borgbackup
