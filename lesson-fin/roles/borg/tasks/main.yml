@@ -1,6 +1,0 @@
----
-- name: install borg
-  include_tasks: borg_install.yml
-
-- name: add borg user
-  include_tasks: add_borg_user.yml
