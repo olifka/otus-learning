@@ -10,7 +10,9 @@
       - zabbix-agent
 
 - name: Enable Red Hat Software Collections
-  shell: yum-config-manager --enable rhel-server-rhscl-7-rpms rhel-server-rhscl-7-eus-rpms
+  # shell: yum-config-manager --enable rhel-server-rhscl-7-rpms rhel-server-rhscl-7-eus-rpms
+  yum:
+    name: centos-release-scl
 
 - name: Install Zabbix fronted
   yum:
