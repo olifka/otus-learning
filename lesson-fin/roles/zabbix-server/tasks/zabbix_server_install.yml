@@ -3,19 +3,22 @@
     src: ../templates/zabbix.repo.j2
     dest: /etc/yum.repos.d/zabbix.repo
  
-- name: Install zabbix-server
+- name: Install zabbix-server and zabbix-agent
   yum:
     name:
       - zabbix-server-pgsql
       - zabbix-agent
 
 - name: Enable Red Hat Software Collections
-  # shell: yum-config-manager --enable rhel-server-rhscl-7-rpms rhel-server-rhscl-7-eus-rpms
   yum:
     name: centos-release-scl
 
-- name: Install Zabbix fronted
+- name: Install zabbix-web-pgsql
   yum:
     name:
       - zabbix-web-pgsql-scl
+
+- name: Install zabbix-nginx-conf
+  yum:
+    name:
       - zabbix-nginx-conf-scl
