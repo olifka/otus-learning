@@ -3,3 +3,7 @@
   become: true
   roles:
     - postgresql
+    - role: pgbackrest
+      pgbackrest_conf_cluster_stanzas:
+        main:
+          pg_path: /var/lib/pgsql/data

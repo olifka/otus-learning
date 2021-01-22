@@ -2,18 +2,18 @@
 # vim: set ft=ruby :
 
 MACHINES = {
-  :webserver => {
-        :box_name => "centos/7",
-        :ip_addr => '10.100.100.100'
-  },
-  # :database => {
+  # :webserver => {
   #       :box_name => "centos/7",
-  #       :ip_addr => '10.100.100.101'
+  #       :ip_addr => '10.100.100.100'
   # },
-  :backupmon => {
+  :database => {
         :box_name => "centos/7",
-        :ip_addr => '10.100.100.102'
+        :ip_addr => '10.100.100.101'
   },
+  # :backupmon => {
+  #       :box_name => "centos/7",
+  #       :ip_addr => '10.100.100.102'
+  # },
   # :zabbix => {
   #       :box_name => "centos/7",
   #       :ip_addr => '10.100.100.103'
@@ -45,22 +45,22 @@ Vagrant.configure("2") do |config|
 
       end
 
-      config.vm.define "webserver" do |webserver|
-        webserver.vm.provision "ansible" do |ansible|
-          ansible.playbook = "webserver.yml"
-        end
-      end
-
-      # config.vm.define "database" do |database|
-      #   database.vm.provision "ansible" do |ansible|
-      #     ansible.playbook = "database.yml"
+      # config.vm.define "webserver" do |webserver|
+      #   webserver.vm.provision "ansible" do |ansible|
+      #     ansible.playbook = "webserver.yml"
       #   end
       # end
 
-      config.vm.define "backupmon" do |backupmon|
-        backupmon.vm.provision "ansible" do |ansible|
-          ansible.playbook = "backupmon.yml"
+      config.vm.define "database" do |database|
+        database.vm.provision "ansible" do |ansible|
+          ansible.playbook = "database.yml"
         end
       end
+
+      # config.vm.define "backupmon" do |backupmon|
+      #   backupmon.vm.provision "ansible" do |ansible|
+      #     ansible.playbook = "backupmon.yml"
+      #   end
+      # end
   end
 end
