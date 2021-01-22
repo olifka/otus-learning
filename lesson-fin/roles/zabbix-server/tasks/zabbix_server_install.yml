@@ -6,7 +6,7 @@
     file: "zabbix"
     gpgcheck: yes
     enabled: yes
-    gpgkey: "https://repo.zabbix.com/RPM-GPG-KEY-ZABBIX"
+    gpgkey: "https://repo.zabbix.com/RPM-GPG-KEY-ZABBIX-A14FE591"
 
 - name: Install zabbix-server
   yum:
