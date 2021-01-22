@@ -6,14 +6,14 @@ MACHINES = {
   #       :box_name => "centos/7",
   #       :ip_addr => '10.100.100.100'
   # },
-  :database => {
-        :box_name => "centos/7",
-        :ip_addr => '10.100.100.101'
-  },
-  # :borg => {
+  # :database => {
   #       :box_name => "centos/7",
-  #       :ip_addr => '10.100.100.102'
+  #       :ip_addr => '10.100.100.101'
   # },
+  :backup_mon => {
+        :box_name => "centos/7",
+        :ip_addr => '10.100.100.102'
+  },
   # :zabbix => {
   #       :box_name => "centos/7",
   #       :ip_addr => '10.100.100.103'
@@ -51,9 +51,15 @@ Vagrant.configure("2") do |config|
       #   end
       # end
 
-      config.vm.define "database" do |database|
-        database.vm.provision "ansible" do |ansible|
-          ansible.playbook = "database.yml"
+      # config.vm.define "database" do |database|
+      #   database.vm.provision "ansible" do |ansible|
+      #     ansible.playbook = "database.yml"
+      #   end
+      # end
+
+      config.vm.define "backup_mon" do |backup_mon|
+        backup_mon.vm.provision "ansible" do |ansible|
+          ansible.playbook = "backup_mon.yml"
         end
       end
   end

@@ -1,0 +1,7 @@
+---
+- hosts: backup_mon
+  become: true
+  roles:
+    - pgbackrest
+    - borg
+    - zabbix_server
