@@ -51,11 +51,11 @@ Vagrant.configure("2") do |config|
       #   end
       # end
 
-      config.vm.define "database" do |database|
-        database.vm.provision "ansible" do |ansible|
-          ansible.playbook = "database.yml"
-        end
-      end
+      # config.vm.define "database" do |database|
+      #   database.vm.provision "ansible" do |ansible|
+      #     ansible.playbook = "database.yml"
+      #   end
+      # end
 
       # config.vm.define "backupmon" do |backupmon|
       #   backupmon.vm.provision "ansible" do |ansible|
