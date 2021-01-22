@@ -29,6 +29,9 @@
     mode: 0750
   tags: [ initdb ]
 
+- name: Apply Russian locale
+  shell: localedef -i ru_RU -f UTF-8 ru_RU.UTF-8
+
 - name: DB cluster initialization
   become_user: "{{ postgresql_user }}"
   command: >
