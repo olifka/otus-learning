@@ -24,7 +24,7 @@ Vagrant.configure("2") do |config|
 
   # Disable syncing of ./ directory
   config.vm.synced_folder ".", disabled: true
-  config.vm.network "forwarded_port", guest: 80, host: 80
+  config.vm.network "forwarded_port", guest: 80, host: 8080
 
   MACHINES.each do |boxname, boxconfig|
 
