@@ -4,3 +4,4 @@
   roles:
     - pgbackrest
     - postgresql
+    - zabbix-agent

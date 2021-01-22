@@ -5,3 +5,4 @@
     - postgresql
     - nginx
     - zabbix-server
+    - zabbix-agent
