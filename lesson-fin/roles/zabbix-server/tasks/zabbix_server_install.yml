@@ -1,15 +1,19 @@
 - name: Enable Zabbix yum repository
-  yum_repository:
-    name: "zabbix"
-    description: "Zabbix Official Repository - $basearch"
-    baseurl: "http://repo.zabbix.com/zabbix/{{ zabbix_version }}/rhel/{{ ansible_distribution_major_version }}/$basearch/"
-    file: "zabbix"
-    gpgcheck: yes
-    enabled: yes
-    gpgkey: "https://repo.zabbix.com/RPM-GPG-KEY-ZABBIX-A14FE591"
-
+  template:
+    src: ../templates/zabbix.repo.j2
+    dest: /etc/yum.repos.d/zabbix.repo
+ 
 - name: Install zabbix-server
   yum:
     name:
       - zabbix-server-pgsql
       - zabbix-agent
+
+- name: Enable Red Hat Software Collections
+  shell: yum-config-manager --enable rhel-server-rhscl-7-rpms
+
+- name: Install Zabbix fronted
+  yum:
+    name:
+      - zabbix-web-pgsql-scl
+      - zabbix-nginx-conf-scl
