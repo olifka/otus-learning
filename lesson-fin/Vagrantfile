@@ -2,10 +2,10 @@
 # vim: set ft=ruby :
 
 MACHINES = {
-  # :webserver => {
-  #       :box_name => "centos/7",
-  #       :ip_addr => '10.100.100.100'
-  # },
+  :webserver => {
+        :box_name => "centos/7",
+        :ip_addr => '10.100.100.100'
+  },
   # :database => {
   #       :box_name => "centos/7",
   #       :ip_addr => '10.100.100.101'
