@@ -2,7 +2,7 @@
 - hosts: backupmon
   become: true
   roles:
-    # - pgbackrest
+    - pgbackrest
     # - zabbix_server
     - role: borgbackup
       borg_repository: /var/backups/borg/jira
