@@ -12,6 +12,7 @@
 - name: Install pgbackrest
   yum:
     name:
+      - epel-release
       - pgbackrest
 
 - name: disable PostgreSQL common yum repository
