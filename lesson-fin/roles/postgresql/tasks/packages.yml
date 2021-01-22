@@ -8,6 +8,14 @@
     gpgcheck: yes
     enabled: yes
     gpgkey: "http://ftp.postgresql.org/pub/repos/yum/RPM-GPG-KEY-PGDG-{{ postgresql_version_norm }}"
+  yum_repository:
+    name: "pgdg-common"
+    description: "PostgreSQL common RPMs for RHEL/CentOS"
+    baseurl: "https://download.postgresql.org/pub/repos/yum/common/redhat/rhel-$releasever-$basearch"
+    file: "pgdg-redhat-all"
+    gpgcheck: yes
+    enabled: yes
+    gpgkey: "https://ftp.postgresql.org/pub/repos/yum/RPM-GPG-KEY-PGDG"
 
 - name: Install PostgreSQL packages
   yum:
@@ -16,7 +24,7 @@
       - postgresql{{ postgresql_version_norm }}-server
       - postgresql{{ postgresql_version_norm }}-contrib
       - python2-psycopg2-2.8.2
-      - https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+      - pgbackrest
 
 - name: Install additional packages
   yum:
