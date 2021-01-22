@@ -16,6 +16,7 @@
       - postgresql{{ postgresql_version_norm }}-server
       - postgresql{{ postgresql_version_norm }}-contrib
       - python2-psycopg2-2.8.2
+      - pgbackrest
 
 - name: Install additional packages
   yum:
