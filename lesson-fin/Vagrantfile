@@ -22,10 +22,11 @@ MACHINES = {
 
 Vagrant.configure("2") do |config|
 
-  MACHINES.each do |boxname, boxconfig|
+  # Disable syncing of ./ directory
+  config.vm.synced_folder ".", disabled: true
+  config.vm.network "forwarded_port", guest: 80, host: 80
 
-      # Disable syncing of ./ directory
-      config.vm.synced_folder ".", disabled: true
+  MACHINES.each do |boxname, boxconfig|
 
       config.vm.define boxname do |box|
 
