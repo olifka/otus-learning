@@ -2,115 +2,57 @@
 # HANDS OFF!
 
 # Connection Settings
-listen_addresses = '{{ postgresql_conf['listen_addresses']|default('*') }}'
-port = {{ postgresql_conf['port']|default('5432') }}
-{% set max_connections = postgresql_conf['max_connections']|default(100) %}
-max_connections = '{{ max_connections }}'
+listen_addresses = '*'
+port = '5432'
+max_connections = 100
 
 # CPU
-{% if ansible_processor_cores < 2 and postgresql_version_raw is version('9.5', '<') %}
-max_worker_processes = {{ postgresql_conf['max_worker_processes']|default(ansible_processor_cores) }}
-{%endif%}
-{% if postgresql_version_raw is version('9.6', '>=') %}
-{% set auto_max_parallel_workers_per_gather = ansible_processor_cores / 2 %}
-max_parallel_workers_per_gather = {{ postgresql_conf['max_parallel_workers_per_gather']|default(auto_max_parallel_workers_per_gather|int) }}
-{% endif %}
-{% if postgresql_version_raw is version('10', '>=') %}
-max_parallel_workers = {{ postgresql_conf['max_parallel_workers']|default(ansible_processor_cores|int) }}
-{% endif %}
+max_worker_processes = 2
+max_parallel_workers_per_gather = 1
 
 # Memory
-{% set max_memory_mb = postgresql_conf['max_memory_mb']|default(ansible_memtotal_mb) %}
-{% set auto_shared_buffers = max_memory_mb / 4 %}
-shared_buffers = {{ postgresql_conf['shared_buffers']|default(auto_shared_buffers|round|int ~ 'MB') }}
-{% set auto_effective_cache_size = max_memory_mb * 3 / 4 %}
-effective_cache_size = {{ postgresql_conf['effective_cache_size']|default(auto_effective_cache_size|round|int ~ 'MB') }}
-
-{% set auto_maintenance_work_mem = max_memory_mb / 16 %}
-{% if auto_maintenance_work_mem < 2048 %}
-maintenance_work_mem = {{ postgresql_conf['maintenance_work_mem']|default(auto_maintenance_work_mem|round|int ~ 'MB') }}
-{% else %}
-maintenance_work_mem = {{ postgresql_conf['maintenance_work_mem']|default('2GB') }}
-{% endif %}
-{% if auto_max_parallel_workers_per_gather is defined and auto_max_parallel_workers_per_gather > 0 %}
-{% set auto_work_mem = (max_memory_mb - auto_shared_buffers) / (max_connections * 3) / auto_max_parallel_workers_per_gather %}
-{% else %}
-{% set auto_work_mem = (max_memory_mb - auto_shared_buffers) / (max_connections * 3)%}
-{% endif %}
-work_mem = {{ postgresql_conf['work_mem']|default(auto_work_mem|round|int ~ 'MB') }}
-{% if postgresql_conf['max_stack_depth'] is defined %}
-max_stack_depth = {{ postgresql_conf['max_stack_depth'] }}
-{% endif %}
+max_memory_mb = 256
+shared_buffers = 64
+effective_cache_size = 192
+maintenance_work_mem = 16
+work_mem = 128
 
 # Disk
-random_page_cost = {{ postgresql_conf['random_page_cost']|default('4') }}
-effective_io_concurrency = {{ postgresql_conf['effective_io_concurrency']|default('2') }}
-{% if postgresql_version_raw is version('9.5', '<') %}
-checkpoint_segments = {{ postgresql_conf['checkpoint_segments']|default('32') }}
-{% endif %}
-{% if max_connections > 100 %}
-checkpoint_completion_target = {{ postgresql_conf['checkpoint_completion_target']|default('0.9') }}
-{% else %}
-checkpoint_completion_target = {{ postgresql_conf['checkpoint_completion_target']|default('0.7') }}
-{% endif %}
-{% if postgresql_version_raw is version('9.5', '<') %}
-checkpoint_segments = {{ postgresql_conf['checkpoint_segments']|default('32') }}
-{% endif %}
-huge_pages = {{ postgresql_conf['huge_pages']|default('try') }}
+random_page_cost = 4
+effective_io_concurrency = 2
+checkpoint_completion_target = 0.7
+checkpoint_segments = 32
+huge_pages = try
 
 # WAL
-min_wal_size = {{ postgresql_conf['min_wal_size']|default('1GB') }}
-max_wal_size = {{ postgresql_conf['max_wal_size']|default('2GB') }}
-{% if postgresql_wal_backup_enable %}
-{% if postgresql_version_raw is version('9.6', '>=') %}
+min_wal_size = 100MB
+max_wal_size = 500MB
 wal_level = replica
-{% else %}
-wal_level = hot_standby
-{% endif %}
-{% else %}
-wal_level = minimal
-{% endif %}
-wal_log_hints = {{ postgresql_conf['wal_log_hints']|d()|ternary('on','off') }}
+wal_log_hints = off
 max_wal_senders = 0
 
 # Archiving
-{% if postgresql_wal_backup_enable and wal_archive_command is defined%}
 archive_mode = off
 archive_command = '{{ wal_archive_command }}'
 archive_timeout = 1800
-{% endif %}
+
 
 # Log
-log_timezone = '{{ postgresql_conf['log_timezone']|default('W-SU') }}'
-
-# Query/Index Statistics Collector
-{% if postgresql_conf['track_activity_query_size'] is defined %}
-track_activity_query_size = {{ postgresql_conf['track_activity_query_size'] }}
-{% endif %}
+log_timezone = 'Europe/Moscow'
 
 # Autovacuum Parameters
 autovacuum = on
-autovacuum_max_workers = {{ postgresql_conf['autovacuum_max_workers']|default('3') }}
-autovacuum_vacuum_threshold = {{ postgresql_conf['autovacuum_vacuum_threshold']|default('50') }}
-autovacuum_analyze_threshold = {{ postgresql_conf['autovacuum_analyze_threshold']|default('50') }}
-autovacuum_vacuum_scale_factor = {{ postgresql_conf['autovacuum_vacuum_scale_factor']|default('0.2') }}
-autovacuum_analyze_scale_factor = {{ postgresql_conf['autovacuum_analyze_scale_factor']|default('0.1') }}
+autovacuum_max_workers = 3
+autovacuum_vacuum_threshold = 50
+autovacuum_analyze_threshold = 50
+autovacuum_vacuum_scale_factor = 0.2
+autovacuum_analyze_scale_factor = 0.1
 
 # Locale and Formatting
-datestyle = '{{ postgresql_conf['datestyle']|default('iso, dmy') }}'
-timezone = '{{ postgresql_conf['timezone']|default('W-SU') }}'
+datestyle = 'iso, dmy'
+timezone = 'Europe/Moscow'
 lc_messages = '{{ postgresql_lc_messages }}'
-lc_monetary = '{{ postgresql_lc_monetary|default(postgresql_locale) }}'
-lc_numeric = '{{ postgresql_lc_numeric|default(postgresql_locale) }}'
-lc_time = '{{ postgresql_lc_time|default(postgresql_locale) }}'
-default_text_search_config = '{{ postgresql_conf['default_text_search_config']|default('pg_catalog.russian') }}'
-
-# Shared Library Preloading
-{% if postgresql_conf['shared_preload_libraries'] is defined %}
-shared_preload_libraries = '{{ postgresql_conf['shared_preload_libraries']|join(',') }}'
-{% endif %}
-
-# Lock management
-{% if postgresql_conf['deadlock_timeout'] is defined %}
-deadlock_timeout = {{ postgresql_conf['deadlock_timeout'] }}
-{% endif %}
+lc_monetary = '{{ postgresql_locale }}'
+lc_numeric = '{{ postgresql_locale }}'
+lc_time = '{{ postgresql_locale }}'
+# default_text_search_config = '{{ postgresql_conf['default_text_search_config']|default('pg_catalog.russian') }}'
