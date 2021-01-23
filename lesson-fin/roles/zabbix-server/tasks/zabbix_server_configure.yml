@@ -10,13 +10,17 @@
     src: ../templates/nginx.conf.j2
     dest: /etc/nginx/nginx.conf
 
-- name: Apply php config
+- name: Apply php-ini config
   template:
     src: ../templates/php.ini.j2
     dest: /etc/php.ini
+
+- name: Apply php-fpm config
   template:
     src: ../templates/php-fpm.conf.j2
     dest: /etc/php-fpm.conf
+
+- name: Apply php-fpm www config
   template:
     src: ../templates/php-fpm.www.conf.j2
     dest: /etc/php-fpm.d/www.conf'
