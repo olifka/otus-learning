@@ -46,7 +46,7 @@
 
 - name: setup running JIRA as service
   template:
-    src: ../templates/jira.service.j2
+    src: jira.service.j2
     dest: /lib/systemd/system/jira.service
   notify: reload systemd
 

@@ -1,6 +1,6 @@
 - name: Apply zabbix-agentd config
   template:
-    src: ../templates/zabbix_agentd.conf.j2
+    src: zabbix_agentd.conf.j2
     dest: /etc/zabbix/zabbix_agentd.conf
  
 - name: Start and enable zabbix-agentd
