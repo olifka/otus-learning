@@ -10,17 +10,17 @@
     src: ../templates/nginx.conf.j2
     dest: /etc/nginx/nginx.conf
 
-- name: Apply php config
-  tasks:
-    - template:
-        src: ../templates/php.ini.j2
-        dest: /etc/php.ini
-    - template:
-        src: ../templates/php-fpm.conf.j2
-        dest: /etc/php-fpm.conf
-    - template:
-        src: ../templates/php-fpm.www.conf.j2
-        dest: /etc/php-fpm.d/www.conf'
+# - name: Apply php config
+tasks:
+  - template:
+      src: ../templates/php.ini.j2
+      dest: /etc/php.ini
+  - template:
+      src: ../templates/php-fpm.conf.j2
+      dest: /etc/php-fpm.conf
+  - template:
+      src: ../templates/php-fpm.www.conf.j2
+      dest: /etc/php-fpm.d/www.conf'
 
 - name: Apply zabbix-server config
   template:
