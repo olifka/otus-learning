@@ -35,6 +35,11 @@
     src: ../templates/zabbix_server.conf.j2
     dest: /etc/zabbix/zabbix_server.conf
 
+- name: Apply zabbix-web php config
+  template:
+    src: ../templates/zabbix.conf.php.j2
+    dest: /etc/zabbix/web/zabbix.conf.php
+
 - name: Disable SeLinux
   shell: setenforce 0 && sleep 3
 
