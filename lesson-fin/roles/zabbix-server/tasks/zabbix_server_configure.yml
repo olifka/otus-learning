@@ -5,15 +5,20 @@
     sudo -iu postgres createdb -O zabbix zabbix
     zcat /usr/share/doc/zabbix-server-pgsql*/create.sql.gz | sudo -u zabbix psql zabbix
 
-- name: Apply zabbix-server config
+- name: Apply nginx config for zabbix
   template:
-    src: ../templates/zabbix_server.conf.j2
+    src: ../templates/zabbix_nginx.conf.j2
     dest: /etc/opt/rh/rh-nginx116/nginx/conf.d/zabbix.conf
 
 - name: Apply php-fpm config
   template:
     src: ../templates/zabbix_php-fpm.conf.j2
     dest: /etc/opt/rh/rh-php72/php-fpm.d/zabbix.conf
+
+- name: Apply zabbix-server config
+  template:
+    src: ../templates/zabbix_server.conf.j2
+    dest: /etc/zabbix/zabbix_server.conf
 
 - name: Disable SeLinux
   shell: setenforce 0
