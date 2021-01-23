@@ -23,7 +23,7 @@
 - name: Apply php-fpm www config
   template:
     src: ../templates/php-fpm.www.conf.j2
-    dest: /etc/php-fpm.d/www.conf'
+    dest: /etc/php-fpm.d/www.conf
 
 - name: Apply zabbix-server config
   template:
