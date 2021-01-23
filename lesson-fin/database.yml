@@ -2,6 +2,6 @@
 - hosts: database
   become: true
   roles:
-    # - pgbackrest
     - postgresql
+    - pgbackrest
     - zabbix-agent
