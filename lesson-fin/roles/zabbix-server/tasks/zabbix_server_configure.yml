@@ -8,7 +8,7 @@
   shell: |
     psql -U postgres -w -p 5432 -h 10.100.100.101 -c "CREATE USER zabbix WITH PASSWORD 'zabbix';"
     psql -U postgres -w -p 5432 -h 10.100.100.101 -c "CREATE DATABASE zabbix WITH OWNER zabbix;"
-    zcat /usr/share/doc/zabbix-server-pgsql*/create.sql.gz | psql  -U zabbix -w -p 5432 -h 10.100.100.101 zabbix
+    zcat /usr/share/doc/zabbix-server-pgsql*/create.sql.gz | psql -U zabbix -w -p 5432 -h 10.100.100.101 zabbix
 
 - name: Apply nginx config for zabbix
   template:
