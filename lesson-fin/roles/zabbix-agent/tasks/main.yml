@@ -7,5 +7,5 @@
 - name: install zabbix-agent
   include_tasks: zabbix_agent_install.yml
 
-# - name: configure zabbix-agent
-#   include_tasks: zabbix_agent_configure.yml
+- name: configure zabbix-agent
+  include_tasks: zabbix_agent_configure.yml
