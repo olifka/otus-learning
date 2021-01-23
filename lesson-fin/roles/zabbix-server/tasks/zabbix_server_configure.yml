@@ -23,7 +23,7 @@
 - name: Disable SeLinux
   shell: setenforce 0
 
-- name: Start zabbix-server
+- name: Start and enable zabbix-server
   systemd:
     name: zabbix-server
     state: started
@@ -37,6 +37,6 @@
 
 - name: Start and enable nginx
   systemd:
-    name: rh-nginx116-nginx
+    name: nginx
     state: started
     enabled: yes
