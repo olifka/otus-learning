@@ -1,9 +1,13 @@
+- name: Save pgpass for access remote db
+  template:
+    src: ../templates/pgpass.j2
+    dest: /var/lib/pgsql/.pgpass
+
 - name: Setup PostgreSQL Database
   shell: |
-    sudo -iu postgres createuser -E zabbix
-    sudo -iu postgres psql -c "ALTER USER zabbix WITH PASSWORD 'zabbix';"
-    sudo -iu postgres createdb -O zabbix zabbix
-    zcat /usr/share/doc/zabbix-server-pgsql*/create.sql.gz | sudo -u zabbix psql zabbix
+    sudo -iu postgres psql -U postgres -w -p 5432 -h 10.100.100.101 -c "CREATE USER zabbix WITH PASSWORD 'zabbix';"
+    sudo -iu postgres psql -U postgres -w -p 5432 -h 10.100.100.101 -c "CREATE DATABASE zabbix WITH OWNER zabbix;"
+    zcat /usr/share/doc/zabbix-server-pgsql*/create.sql.gz | sudo -iu postgres psql  -U zabbix -w -p 5432 -h 10.100.100.101 zabbix
 
 - name: Apply nginx config for zabbix
   template:

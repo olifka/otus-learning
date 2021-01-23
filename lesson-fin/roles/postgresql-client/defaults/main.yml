@@ -1,0 +1,25 @@
+---
+postgresql_version: 9.6
+postgresql_version_raw: "{{ postgresql_version|string }}"
+postgresql_version_norm: "{{ postgresql_version_raw|regex_replace('\\.', '') }}"
+postgresql_homedir: "/var/lib/pgsql"
+postgresql_basedir: "{{ postgresql_homedir }}/{{ postgresql_version_raw }}"
+postgresql_datadir: "{{ postgresql_basedir }}/data"
+postgresql_encoding: "utf8"
+postgresql_locale: "ru_RU.UTF-8"
+postgresql_lc_messages: "en_US.UTF-8"
+postgresql_user: postgres
+postgresql_pgpass_entries: []
+postgresql_conf: {}
+postgresql_additional_packages: []
+postgresql_users: []
+postgresql_databases: []
+postgresql_extensions: []
+sysctl_conf: []
+disable_thp: false
+pg_stat_statements: {}
+postgresql_reload_direct: false
+postgresql_hba_enable: true
+postgresql_wal_backup_enable: false
+postgresql_drop_databases: false
+...
