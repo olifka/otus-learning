@@ -7,13 +7,14 @@
 
 - name: Apply nginx config for zabbix
   template:
-    src: ../templates/zabbix_nginx.conf.j2
-    dest: /etc/opt/rh/rh-nginx116/nginx/conf.d/zabbix.conf
+    src: ../templates/nginx.conf.j2
+    dest: /etc/nginx/nginx.conf
 
-- name: Apply php-fpm config
-  template:
-    src: ../templates/zabbix_php-fpm.conf.j2
-    dest: /etc/opt/rh/rh-php72/php-fpm.d/zabbix.conf
+- name: Apply php config
+  with_items:
+    - { src: '../templates/php.ini.j2', dest: '/etc/php.ini' }
+    - { src: '../templates/php-fpm.conf.j2', dest: '/etc/php-fpm.conf' }
+    - { src: '../templates/php-fpm.www.conf.j2', dest: '/etc/php-fpm.d/www.conf' }
 
 - name: Apply zabbix-server config
   template:
@@ -21,7 +22,7 @@
     dest: /etc/zabbix/zabbix_server.conf
 
 - name: Disable SeLinux
-  shell: setenforce 0
+  shell: setenforce 0 && sleep 3
 
 - name: Start and enable zabbix-server
   systemd:
@@ -31,7 +32,7 @@
 
 - name: Start and enable php-fpm
   systemd:
-    name: rh-php72-php-fpm
+    name: php-fpm
     state: started
     enabled: yes
 

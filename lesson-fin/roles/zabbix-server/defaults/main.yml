@@ -1,4 +1,4 @@
-zabbix_version: 5.0
+zabbix_version: 4.0
 ListenPort: 10051
 SourceIP: 10.100.100.102
 LogType: system

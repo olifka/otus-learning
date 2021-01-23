@@ -8,16 +8,12 @@
     name:
       - zabbix-server-pgsql
 
-- name: Enable Red Hat Software Collections
-  yum:
-    name: centos-release-scl
-
 - name: Install zabbix-web-pgsql
   yum:
     name:
-      - zabbix-web-pgsql-scl
+      - zabbix-web-pgsql
 
-- name: Install zabbix-nginx-conf
+- name: Install php-fpm
   yum:
     name:
-      - zabbix-nginx-conf-scl
+      - php-fpm
