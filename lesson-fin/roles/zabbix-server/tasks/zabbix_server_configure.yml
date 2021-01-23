@@ -8,7 +8,15 @@
 - name: Apply zabbix-server config
   template:
     src: ../templates/zabbix_server.conf.j2
-    dest: /etc/zabbix/zabbix_server.conf
+    dest: /etc/opt/rh/rh-nginx116/nginx/conf.d/zabbix.conf
+
+- name: Apply php-fpm config
+  template:
+    src: ../templates/zabbix_php-fpm.conf.j2
+    dest: /etc/opt/rh/rh-php72/php-fpm.d/zabbix.conf
+
+- name: Disable SeLinux
+  shell: setenforce 0
 
 - name: Start zabbix-server
   systemd:
@@ -16,19 +24,14 @@
     state: started
     enabled: yes
 
-- name: Apply nginx config for zabbix
-  template:
-    src: ../templates/zabbix_nginx.conf.j2
-    dest: /etc/nginx/nginx.conf
-
 - name: Start and enable php-fpm
   systemd:
     name: rh-php72-php-fpm
     state: started
     enabled: yes
 
-- name: Restart nginx 
+- name: Start and enable nginx
   systemd:
-    name: nginx
-    state: restarted
+    name: rh-nginx116-nginx
+    state: started
     enabled: yes

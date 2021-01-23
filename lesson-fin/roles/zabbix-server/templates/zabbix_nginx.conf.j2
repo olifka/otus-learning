@@ -1,11 +1,6 @@
-events {
-    worker_connections 1024;
-}
-
-http {
 server {
         listen          80;
-        server_name     10.100.100.2;
+        server_name     _;
 
         root    /usr/share/zabbix;
 
@@ -58,5 +53,4 @@ server {
                 fastcgi_busy_buffers_size       256k;
                 fastcgi_temp_file_write_size    256k;
         }
-}
 }

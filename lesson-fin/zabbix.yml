@@ -3,6 +3,5 @@
   become: true
   roles:
     - postgresql
-    - nginx
-    - zabbix-server
     - zabbix-agent
+    - zabbix-server
