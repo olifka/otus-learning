@@ -36,8 +36,8 @@
     state: started
     enabled: yes
 
-- name: Start and enable nginx
+- name: Restart and enable nginx
   systemd:
     name: nginx
-    state: started
+    state: restarted
     enabled: yes
