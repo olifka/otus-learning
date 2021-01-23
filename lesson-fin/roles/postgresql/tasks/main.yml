@@ -107,7 +107,7 @@
     enabled: yes
 
 - name: Set postgres passwd (NOT 4 PRODUCTION!)
-  shell: sudo -iu postgres psql -c "CREATE USER postgres WITH PASSWORD 'postgres';"
+  shell: sudo -iu postgres psql -c "ALTER USER postgres WITH PASSWORD 'postgres';"
 
 - name: Include users
   include: users.yml
