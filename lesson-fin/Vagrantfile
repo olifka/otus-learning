@@ -51,10 +51,11 @@ Vagrant.configure("2") do |config|
           
           box.vm.provision "shell", inline: <<-SHELL
             localedef -i ru_RU -f UTF-8 ru_RU.UTF-8
-            mkdir -p ~root/.ssh; cp ~vagrant/.ssh/auth* ~root/.ssh
-            sed -i '65s/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+            rm -rf /root/.ssh/* && cp -r /vagrant/ssh-keys/* /root/.ssh/.
+            sed -i 's/#PermitRootLogin yes/PermitRootLogin without-password/g' /etc/ssh/sshd_config
             systemctl restart sshd
             yum -y install telnet
+            cat /vagrant/hosts >> /etc/hosts
           SHELL
 
       end

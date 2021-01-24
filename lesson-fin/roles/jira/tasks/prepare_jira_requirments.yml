@@ -1,3 +1,7 @@
+- name:
+  yum:
+    name: fontconfig
+
 - name: Apply pgpass for user root
   template:
     src: pgpass.j2
