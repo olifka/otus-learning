@@ -4,10 +4,10 @@
     name: "{{ item.name }}"
     key: "{{ item.key }}"
   with_items:
-    - { path: '/root/.ssh/known_hosts', name: 'webserver', key: "{{ ssh_cluster_pub_key }}" }
-    - { path: '/root/.ssh/known_hosts', name: 'database', key: "{{ ssh_cluster_pub_key }}" }
-    - { path: '/root/.ssh/known_hosts', name: 'zabbix', key: "{{ ssh_cluster_pub_key }}" }
-    - { path: '/root/.ssh/known_hosts', name: 'backup', key: "{{ ssh_cluster_pub_key }}" }
+    - "{ path: '/root/.ssh/known_hosts', name: 'webserver', key: {{ ssh_cluster_pub_key }} }"
+    - "{ path: '/root/.ssh/known_hosts', name: 'database', key: {{ ssh_cluster_pub_key }} }"
+    - "{ path: '/root/.ssh/known_hosts', name: 'zabbix', key: {{ ssh_cluster_pub_key }} }"
+    - "{ path: '/root/.ssh/known_hosts', name: 'backup', key: {{ ssh_cluster_pub_key }} }"
 
 - name: Set ssh cluster authorized key
   authorized_key:
