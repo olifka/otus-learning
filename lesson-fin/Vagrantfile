@@ -88,4 +88,20 @@ Vagrant.configure("2") do |config|
       ansible.playbook = "backup.yml"
     end
   end
+
+  Vagrant.configure("2") do |config|
+
+    MACHINES.each do |boxname, boxconfig|
+            
+            box.vm.provision "shell", inline: <<-SHELL
+              rm -rf /root/.ssh/* && cp -r /vagrant/ssh-keys/* /root/.ssh/.
+              sed -i 's/#PermitRootLogin yes/PermitRootLogin without-password/g' /etc/ssh/sshd_config
+              systemctl restart sshd
+              cat /vagrant/hosts >> /etc/hosts
+            SHELL
+  
+        end
+  
+    end
+
 end
