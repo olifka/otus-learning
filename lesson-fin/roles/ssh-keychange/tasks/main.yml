@@ -1,8 +1,8 @@
 - name: Tell the host about our servers it might want to ssh to
   known_hosts:
-    path: {{ item.path }}
-    name: {{ item.name }}
-    key: {{ item.key }}
+    path: "{{ item.path }}"
+    name: "{{ item.name }}"
+    key: "{{ item.key }}"
   with_items:
     - { path: '/root/.ssh/known_hosts', name: 'webserver', key: {{ ssh_cluster_pub_key }} }
     - { path: '/root/.ssh/known_hosts', name: 'database', key: {{ ssh_cluster_pub_key }} }
