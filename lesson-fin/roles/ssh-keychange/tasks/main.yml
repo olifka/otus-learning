@@ -3,11 +3,7 @@
     path: '/root/.ssh/known_hosts'
     name: {{ item.name }}
     key: {{ ssh_cluster_pub_key }}
-  loop:
-    - { name: 'webserver' }
-    - { name: 'database' }
-    - { name: 'zabbix' }
-    - { name: 'backup' }
+    name: ['webserver', 'database', 'zabbix', 'backup']
 
 - name: Set ssh cluster authorized key
   authorized_key:
