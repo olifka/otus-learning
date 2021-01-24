@@ -1,7 +1,7 @@
 - name: Apply pgpass for user root
   template:
     src: pgpass.j2
-    dest: /root.pgpass
+    dest: /root/.pgpass
     mode: 0600
 
 
