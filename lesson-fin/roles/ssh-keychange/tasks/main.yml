@@ -1,13 +1,13 @@
 - name: Tell the host about our servers it might want to ssh to
   known_hosts:
-    path: /root/.ssh/known_hosts
-    name: {{ item.ip_addr }}
-    key: "{{ ssh_cluster_pub_key }}"
+    path: {{ item.path }}
+    name: {{ item.name }}
+    key: {{ item.key }}
   loop:
-    - { name: 10.100.100.100 }
-    - { name: 10.100.100.101 }
-    - { name: 10.100.100.102 }
-    - { name: 10.100.100.103 }
+    - { path: '/root/.ssh/known_hosts', name: 'webserver', key: {{ ssh_cluster_pub_key }} }
+    - { path: '/root/.ssh/known_hosts', name: 'database', key: {{ ssh_cluster_pub_key }} }
+    - { path: '/root/.ssh/known_hosts', name: 'zabbix', key: {{ ssh_cluster_pub_key }} }
+    - { path: '/root/.ssh/known_hosts', name: 'backup', key: {{ ssh_cluster_pub_key }} }
 
 - name: Set ssh cluster authorized key
   authorized_key:
