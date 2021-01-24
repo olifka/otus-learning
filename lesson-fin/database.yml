@@ -5,3 +5,4 @@
     - postgresql
     - pgbackrest
     - zabbix-agent
+    - ssh-keychange
