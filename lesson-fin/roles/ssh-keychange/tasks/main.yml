@@ -13,7 +13,7 @@
   authorized_key:
     user: root
     state: present
-    key: ""{{ ssh_cluster_pub_key }}""
+    key: "{{ ssh_cluster_pub_key }}"
 
 - name: Install private ssh key
   copy: 
