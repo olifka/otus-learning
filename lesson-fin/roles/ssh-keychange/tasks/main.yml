@@ -1,0 +1,30 @@
+- name: Tell the host about our servers it might want to ssh to
+  known_hosts:
+    path: /root/.ssh/known_hosts
+    name: {{ item.ip_addr }}
+    key: "{{ ssh_cluster_pub_key }}"
+
+- name: Set ssh cluster authorized key
+  authorized_key:
+    user: root
+    state: present
+    key: "{{ ssh_cluster_pub_key }}"
+
+- name: Install private ssh key
+  copy: 
+    src: id_rsa 
+    dest: /root/.ssh/id_rsa
+    mode: 0600
+    owner: user
+
+- name: Install public ssh key
+  copy: 
+    src: id_rsa.pub
+    dest: /root/.ssh/id_rsa.ub
+    mode: 0600
+    owner: user
+
+- name: Restart sshd
+  systemd:
+    name: sshd
+    state: restarted
