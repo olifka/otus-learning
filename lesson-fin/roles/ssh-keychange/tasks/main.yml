@@ -1,8 +1,8 @@
 - name: Tell the host about our servers it might want to ssh to
   known_hosts:
-    path: '/root/.ssh/known_hosts'
+    path: "/root/.ssh/known_hosts"
     name: ['webserver', 'database', 'zabbix', 'backup']
-    key: {{ ssh_cluster_pub_key }}
+    key: "{{ ssh_cluster_pub_key }}"
 
 
 - name: Set ssh cluster authorized key
