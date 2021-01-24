@@ -1,0 +1,3 @@
+---
+- name: Prepare jira DB
+  include_tasks: prepare_jira_requirments.yml

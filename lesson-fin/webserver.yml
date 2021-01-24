@@ -4,6 +4,7 @@
   roles:
     - nginx
     - java
+    - postgresql-client
     - role: borgbackup
       borg_repository: vagrant@10.100.100.102:/var/backups/borg/jira
       borg_source_directories:
@@ -13,5 +14,5 @@
         keep_daily: 7
         keep_weekly: 4
         keep_monthly: 6
-    # - jira
+    - jira
     - zabbix-agent
