@@ -85,7 +85,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "backup" do |backup|
-    zabbix.vm.network "forwarded_port", guest: 22, host: 2203
+    backup.vm.network "forwarded_port", guest: 22, host: 2203
     backup.vm.provision "ansible" do |ansible|
       ansible.playbook = "backup.yml"
     end
