@@ -91,9 +91,11 @@ Vagrant.configure("2") do |config|
     end
   end
 
-  config.vm.define boxname do |box|
-    box.vm.provision "ansible" do |ansible|
-      ansible.playbook = "ssh-keys.yml"
+  MACHINES.each do |boxname, boxconfig|
+    config.vm.define boxname do |box|
+      box.vm.provision "ansible" do |ansible|
+        ansible.playbook = "ssh-keys.yml"
+      end
     end
   end
 end
