@@ -15,9 +15,9 @@
     - zabbix-agent
     - ssh-keychange
 
-  tasks:
-    - name: Init borg repo
-      shell: borg init --encryption=none /var/backups/jira/home
-      environment:
-        BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK: yes
-      ignore_errors: True
+  # tasks:
+  #   - name: Init borg repo
+  #     shell: borg init --encryption=none /var/backups/jira/home
+  #     environment:
+  #       BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK: yes
+  #     ignore_errors: True
