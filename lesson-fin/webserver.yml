@@ -17,8 +17,4 @@
         keep_weekly: 4
         keep_monthly: 6
     - ssh-keychange
-
-  shell: ln -s /usr/local/bin/borg /sbin/.
-  
-  roles:
     - jira-restore

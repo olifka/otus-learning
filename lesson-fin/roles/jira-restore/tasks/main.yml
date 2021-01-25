@@ -15,14 +15,14 @@
     - "{{ jira_home_directory }}"
 
 - name: get backup jira home by date
-  shell: "borg list root@backup:/var/backups/jira/home | cut -f1 -d' ' | grep '{{ backup_date }}'"
+  shell: "/usr/local/bin/borg list root@backup:/var/backups/jira/home | cut -f1 -d' ' | grep '{{ backup_date }}'"
   register: borg_backup
   environment:
     BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK: 'yes'
   ignore_errors: True
 
 - name: restore JIRA home
-  shell: "borg extract root@backup:/var/backups/jira/home::{{ borg_backup.stdout }} var/atlassian"
+  shell: "/usr/local/bin/borg extract root@backup:/var/backups/jira/home::{{ borg_backup.stdout }} var/atlassian"
   args:
     chdir: /
   async: 7600
