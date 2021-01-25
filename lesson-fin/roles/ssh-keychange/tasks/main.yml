@@ -5,7 +5,6 @@
     state: directory
     owner: root
     group: root
-    mode: u=rwx,g=r,o=r
 
 - name: Add ssh private keys to the host
   template:
@@ -22,10 +21,10 @@
     src: authorized_keys.j2
     dest: /root/.ssh/authorized_keys
 
-- name: Add ssh known hosts to the host
-  template:
-    src: known_hosts
-    dest: /root/.ssh/known_hosts
+# - name: Add ssh known hosts to the host
+#   template:
+#     src: known_hosts
+#     dest: /root/.ssh/known_hosts
 
 - name: Restart sshd
   systemd:
