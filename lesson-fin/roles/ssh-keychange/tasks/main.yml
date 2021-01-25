@@ -1,6 +1,6 @@
 ---
 - name: Make .ssh dir
-  filansible.builtin.file:
+  ansible.builtin.file:
     path: /root/.ssh
     state: directory
     owner: root
