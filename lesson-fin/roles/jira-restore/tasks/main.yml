@@ -21,12 +21,10 @@
     BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK: 'yes'
   ignore_errors: True
 
-- name: restore JIRA home
+- name: restore jira home
   shell: "/usr/local/bin/borg extract root@backup:/var/backups/jira/home::{{ borg_backup.stdout }} var/atlassian"
   args:
     chdir: /
-  async: 7600
-  poll: 600
   register: restore_result
 
 - name: download and unarchive JIRA
