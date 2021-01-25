@@ -6,4 +6,3 @@
     - nginx
     - zabbix-agent
     - zabbix-server
-    - ssh-keychange
