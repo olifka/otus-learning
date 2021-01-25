@@ -8,7 +8,7 @@
     - jira
     - zabbix-agent
     - role: borgbackup
-      borg_repository: vagrant@10.100.100.102:/var/backups/borg/jira
+      borg_repository: vagrant@backup:/var/backups/jira/home
       borg_source_directories:
         - /var/atlassian/application-data/jira
       borg_retention_policy:
@@ -17,3 +17,8 @@
         keep_weekly: 4
         keep_monthly: 6
     - ssh-keychange
+
+  shell: ln -s /usr/local/bin/borg /sbin/.
+  
+  roles:
+    - jira-restore

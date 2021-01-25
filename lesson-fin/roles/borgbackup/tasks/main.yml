@@ -127,3 +127,6 @@
     name: PATH
     env: yes
     value: /usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+- name: Create symbolic link to /sbin/borg
+  shell: ln -s /usr/local/bin/borg /sbin/borg
