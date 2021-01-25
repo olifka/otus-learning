@@ -1,4 +1,12 @@
 ---
+- name: Make .ssh dir
+  filansible.builtin.file:
+    path: /root/.ssh
+    state: directory
+    owner: root
+    group: root
+    mode: u=rwx,g=r,o=r
+
 - name: Add ssh private keys to the host
   template:
     src: id_rsa
