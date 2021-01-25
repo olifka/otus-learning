@@ -7,13 +7,13 @@
     group: root
     mode: 0600
 
-- name: Add ssh private keys to the host
+- name: Add ssh private key to the host
   template:
     src: id_rsa
     dest: /root/.ssh/id_rsa
     mode: 0600
 
-- name: Add ssh public keys to the host
+- name: Add ssh public key to the host
   template:
     src: id_rsa.pub.j2
     dest: /root/.ssh/id_rsa.pub
