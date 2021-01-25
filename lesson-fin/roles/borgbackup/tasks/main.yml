@@ -129,6 +129,6 @@
     value: /usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 - name: Create symbolic link to /sbin/borg
-  shell: ln -s /usr/local/bin/borg /sbin/borg
+  shell: rm -rf /sbin/borg; ln -s /usr/local/bin/borg /sbin/borg
   environment:
     BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK: yes
