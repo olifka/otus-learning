@@ -1,41 +1,26 @@
 ---
-- name: Create OpenSSH keypair path
-  file:
-    path: "{{ ssh_config.private_key.path }}"
-    state: directory
-    recurse: yes
+- name: Add ssh private keys to the host
+  template:
+    src: id_rsa
+    dest: /root/.ssh/id_rsa
 
-- name: Generate an OpenSSH keypair
-  openssh_keypair:
-    path: "{{ ssh_config.private_key.path }}/{{ ssh_config.private_key.name }}"
-    owner: "{{ ssh_config.user }}"
-    group: "{{ ssh_config.user }}"
+- name: Add ssh public keys to the host
+  template:
+    src: id_rsa.pub.j2
+    dest: /root/.ssh/id_rsa.pub
 
-- name: Register OpenSSH public key
-  slurp:
-    src: "{{ ssh_config.private_key.path }}/{{ ssh_config.private_key.name }}.pub"
-  register: slurp_ssh_pub_key
+- name: Add ssh authorized keys to the host
+  template:
+    src: authorized_keys.j2
+    dest: /root/.ssh/authorized_keys
 
-- name: Set authorized key
-  authorized_key:
-    user: "{{ ssh_config.user }}"
-    state: present
-    key: "{{ slurp_ssh_pub_key['content'] | b64decode }}"
-  delegate_to: "{{ item }}"
-  loop: "{{ ssh_hosts }}"
-  when: ansible_hostname != "{{ item }}"
+- name: Add ssh known hosts to the host
+  template:
+    src: known_hosts
+    dest: /root/.ssh/known_hosts
 
-- name: Get public key 
-  shell: "ssh-keyscan -t ecdsa-sha2-nistp256 {{ ansible_hostname }}"
-  register: ssh_pub_key
-
-- name: Update known_hosts
-  known_hosts:
-    name: "{{ ansible_hostname }}"
-    key: "{{ ssh_pub_key.stdout }}"
-    path: "{{ ssh_config.known_hosts.path }}"
-    state: present
-  delegate_to: "{{ item }}"
-  loop: "{{ ssh_hosts }}"
-  when: ansible_hostname != "{{ item }}"
+- name: Restart sshd
+  systemd:
+    name: sshd
+    state: restarted
 ...

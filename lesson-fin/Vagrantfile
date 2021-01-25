@@ -90,15 +90,4 @@ Vagrant.configure("2") do |config|
       ansible.playbook = "backup.yml"
     end
   end
-
-  config.trigger.after :up do |trigger|
-    trigger.name = "Apply ssh-keys after vagrant up"
-    MACHINES.each do |boxname, boxconfig|
-      config.vm.define boxname do |box|
-        box.vm.provision "ansible" do |ansible|
-          ansible.playbook = "ssh-keys.yml"
-        end
-      end
-    end
-  end
 end
