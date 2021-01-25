@@ -16,6 +16,10 @@
     - ssh-keychange
 
   # tasks:
+  #   - name: Create backup dirs
+  #     file:
+  #       path: /var/backups
+  #       owner:
   #   - name: Init borg repo
   #     shell: borg init --encryption=none /var/backups/jira/home
   #     environment:

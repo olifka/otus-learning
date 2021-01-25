@@ -17,4 +17,4 @@
         keep_weekly: 4
         keep_monthly: 6
     - ssh-keychange
-    # - jira-restore
+    - jira-restore

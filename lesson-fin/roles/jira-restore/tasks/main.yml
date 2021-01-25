@@ -42,6 +42,8 @@
     src: jira.service.j2
     dest: /lib/systemd/system/jira.service
   notify: reload systemd
+  notify: Stop and disable nginx
+  notify: Start and enable jira
 
 - block:
   - name: find postgresql jdbc drivers
