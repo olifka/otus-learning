@@ -5,6 +5,7 @@
     state: directory
     owner: root
     group: root
+    mode: 0600
 
 - name: Add ssh private keys to the host
   template:
@@ -21,10 +22,33 @@
     src: authorized_keys.j2
     dest: /root/.ssh/authorized_keys
 
-# - name: Add ssh known hosts to the host
-#   template:
-#     src: known_hosts
-#     dest: /root/.ssh/known_hosts
+- name: Add webserver to known_hosts
+  known_hosts:
+    name: webserver
+    key: webserver,10.100.100.100 {{ ssh_cluster_pub_key }}  # some key gibberish
+    path: /root/.ssh/ssh_known_hosts
+    state: present
+
+- name: Add databse to known_hosts
+  known_hosts:
+    name: databse
+    key: databse,10.100.100.101 {{ ssh_cluster_pub_key }}  # some key gibberish
+    path: /root/.ssh/ssh_known_hosts
+    state: present
+
+- name: Add zabbix to known_hosts
+  known_hosts:
+    name: zabbix
+    key: zabbix,10.100.100.102 {{ ssh_cluster_pub_key }}  # some key gibberish
+    path: /root/.ssh/ssh_known_hosts
+    state: present
+
+- name: Add backup to known_hosts
+  known_hosts:
+    name: backup
+    key: backup,10.100.100.103 {{ ssh_cluster_pub_key }}  # some key gibberish
+    path: /root/.ssh/ssh_known_hosts
+    state: present
 
 - name: Restart sshd
   systemd:
