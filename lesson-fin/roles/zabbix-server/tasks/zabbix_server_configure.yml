@@ -6,9 +6,10 @@
 
 - name: Setup PostgreSQL Database
   shell: |
-    psql -U postgres -w -p 5432 -h 10.100.100.101 -c "CREATE USER zabbix WITH PASSWORD 'zabbix';"
-    psql -U postgres -w -p 5432 -h 10.100.100.101 -c "CREATE DATABASE zabbix WITH OWNER zabbix;"
-    zcat /usr/share/doc/zabbix-server-pgsql*/create.sql.gz | psql -U zabbix -w -p 5432 -h 10.100.100.101 zabbix
+    psql -U postgres -w -p 5432 -h database -c "CREATE USER zabbix WITH PASSWORD 'zabbix';"
+    psql -U postgres -w -p 5432 -h database -c "CREATE DATABASE zabbix WITH OWNER zabbix;"
+    psql -U {{ DBUser }} -w -d {{ DBName }} -p 5432 -h {{ DBHost }} < /vagrant/backups/zabbix.sql
+    # zcat /usr/share/doc/zabbix-server-pgsql*/create.sql.gz | psql -U zabbix -w -p 5432 -h database zabbix
 
 - name: Apply nginx config for zabbix
   template:

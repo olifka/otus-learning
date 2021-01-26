@@ -15,13 +15,11 @@
     - zabbix-agent
     - ssh-keychange
 
-  # tasks:
-  #   - name: Create backup dirs
-  #     file:
-  #       path: /var/backups
-  #       owner:
-  #   - name: Init borg repo
-  #     shell: borg init --encryption=none /var/backups/jira/home
-  #     environment:
-  #       BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK: yes
-  #     ignore_errors: True
+  tasks:
+    - name: Create backup dirs
+      file:
+        path: /var/backups
+        state: directory
+
+    - name: Download startup backups
+      shell: rsync -a /vagrant/backups/ /var/backups/

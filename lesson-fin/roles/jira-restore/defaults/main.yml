@@ -5,7 +5,7 @@ jira_home_directory: /var/atlassian/application-data/jira
 java_default_path: /opt/java/default
 jdbc_version: 42.2.18
 backup_date: 2021-01-25T21
-DBHost: 10.100.100.101
+DBHost: database
 DBName: jira
 DBUser: jira
 DBPassword: jira

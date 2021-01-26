@@ -37,6 +37,16 @@
     remote_src: true
   when: not ansible_check_mode
 
+- name: Apply pgpass for user root
+  template:
+    src: pgpass.j2
+    dest: /root/.pgpass
+    mode: 0600
+
+- name: Restore jira DB
+  tasks:
+    shell: psql -U {{ DBUser }} -w -d {{ DBName }} -p 5432 -h {{ DBHost }} < /vagrant/backups/jira/jira.sql
+
 - name: setup running JIRA as service
   template:
     src: jira.service.j2
