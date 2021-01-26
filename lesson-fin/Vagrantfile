@@ -10,25 +10,25 @@ MACHINES = {
   },
   :database => {
         :box_name => "centos/7",
-        :memory => 4096,
+        :memory => 3072,
         :cpus => 4,
         :ip_addr => '10.100.100.101'
   },
   :webserver => {
         :box_name => "centos/7",
-        :memory => 8192,
+        :memory => 6144,
         :cpus => 4,
         :ip_addr => '10.100.100.100'
   },
   :zabbix => {
         :box_name => "centos/7",
-        :memory => 1536,
+        :memory => 1024,
         :cpus => 4,
         :ip_addr => '10.100.100.102'
   },
   :elk => {
         :box_name => "centos/7",
-        :memory => 1536,
+        :memory => 5120,
         :cpus => 4,
         :ip_addr => '10.100.100.104'
   }
