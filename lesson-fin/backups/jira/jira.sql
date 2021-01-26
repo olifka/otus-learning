@@ -6732,7 +6732,7 @@ SELECT pg_catalog.setval('public."AO_4789DD_HEALTH_CHECK_STATUS_ID_seq"', 1, fal
 --
 
 COPY public."AO_4789DD_PROPERTIES" ("ID", "PROPERTY_NAME", "PROPERTY_VALUE") FROM stdin;
-1	last-run	1611610403087
+1	last-run	1611650784436
 \.
 
 
@@ -7160,7 +7160,7 @@ SELECT pg_catalog.setval('public."AO_60DB71_LEXORANKBALANCER_ID_seq"', 1, false)
 -- Name: AO_60DB71_LEXORANK_ID_seq; Type: SEQUENCE SET; Schema: public; Owner: jira
 --
 
-SELECT pg_catalog.setval('public."AO_60DB71_LEXORANK_ID_seq"', 31, true);
+SELECT pg_catalog.setval('public."AO_60DB71_LEXORANK_ID_seq"', 43, true);
 
 
 --
@@ -7583,6 +7583,9 @@ Board created	Board created	LOCAL_CONFIG_AND_ADMINISTRATION	[]	досок	jira.a
 Проект выпустил версию	jira.auditing.version.released	LOCAL_CONFIG_AND_ADMINISTRATION	[]	проекты	jira.auditing.category.projects	[]	1611610393189	76	BASE	Browser	\N	10000	VERSION	[{"name":"Version 1.0","type":"VERSION","uri":null,"id":"10000"},{"name":"Aleksandr Oliferuk Sample Project","type":"PROJECT","uri":null,"id":"10000"}]	\N	\N	\N	\N	\N	\N	version 1.0 aleksandr oliferuk sample project jira.auditing.version.released jira.auditing.category.projects проект выпустил версию проекты aleksandr.oliferuk 10.0.2.2	10000	PROJECT	10.0.2.2	http://192.168.12.43:8081	10000	aleksandr.oliferuk	ApplicationUser
 Созданная версия проекта	jira.auditing.version.created	LOCAL_CONFIG_AND_ADMINISTRATION	[]	проекты	jira.auditing.category.projects	[{"i18nKey":"Release date","key":"Release date","from":"","to":"2021-02-01"},{"i18nKey":"Name","key":"Name","from":"","to":"Version 2.0"}]	1611610393198	77	BASE	Browser	\N	10001	VERSION	[{"name":"Version 2.0","type":"VERSION","uri":null,"id":"10001"},{"name":"Aleksandr Oliferuk Sample Project","type":"PROJECT","uri":null,"id":"10000"}]	\N	\N	\N	\N	\N	\N	version 2.0 aleksandr oliferuk sample project jira.auditing.version.created jira.auditing.category.projects созданная версия проекта проекты aleksandr.oliferuk 10.0.2.2	10000	PROJECT	10.0.2.2	http://192.168.12.43:8081	10000	aleksandr.oliferuk	ApplicationUser
 Созданная версия проекта	jira.auditing.version.created	LOCAL_CONFIG_AND_ADMINISTRATION	[]	проекты	jira.auditing.category.projects	[{"i18nKey":"Name","key":"Name","from":null,"to":"Version 3.0"}]	1611610393204	78	BASE	Browser	\N	10002	VERSION	[{"name":"Version 3.0","type":"VERSION","uri":null,"id":"10002"},{"name":"Aleksandr Oliferuk Sample Project","type":"PROJECT","uri":null,"id":"10000"}]	\N	\N	\N	\N	\N	\N	version 3.0 aleksandr oliferuk sample project jira.auditing.version.created jira.auditing.category.projects созданная версия проекта проекты aleksandr.oliferuk 10.0.2.2	10000	PROJECT	10.0.2.2	http://192.168.12.43:8081	10000	aleksandr.oliferuk	ApplicationUser
+Пользователь создан	jira.auditing.user.created	USER_MANAGEMENT	[]	управление пользователями	jira.auditing.category.usermanagement	[{"i18nKey":"Email","key":"Email","from":"","to":"aleksandr.oliferuk@gmail.com"},{"i18nKey":"Username","key":"Username","from":"","to":"jira.otus"},{"i18nKey":"Active / Inactive","key":"Active / Inactive","from":"","to":"Active"},{"i18nKey":"Full name","key":"Full name","from":"","to":"Jira Otus"}]	1611650913510	81	BASE	Browser	\N	JIRAUSER10100	USER	[{"name":"jira.otus","type":"USER","uri":null,"id":"JIRAUSER10100"}]	\N	\N	\N	\N	\N	\N	jira.otus jira.auditing.user.created jira.auditing.category.usermanagement пользователь создан управление пользователями aleksandr.oliferuk 10.0.2.2	\N	\N	10.0.2.2	http://192.168.12.43:8081	10000	aleksandr.oliferuk	ApplicationUser
+Пользователь добавлен в группу	jira.auditing.user.added.to.group	USER_MANAGEMENT	[]	управление группой	jira.auditing.category.groupmanagement	[]	1611650913580	82	BASE	Browser	\N	\N	GROUP	[{"name":"jira-software-users","type":"GROUP","uri":null,"id":null},{"name":"jira.otus","type":"USER","uri":null,"id":"JIRAUSER10100"}]	\N	\N	\N	\N	\N	\N	jira-software-users jira.otus jira.auditing.user.added.to.group jira.auditing.category.groupmanagement пользователь добавлен в группу управление группой aleksandr.oliferuk 10.0.2.2	JIRAUSER10100	USER	10.0.2.2	http://192.168.12.43:8081	10000	aleksandr.oliferuk	ApplicationUser
+Пользователь добавлен в группу	jira.auditing.user.added.to.group	USER_MANAGEMENT	[]	управление группой	jira.auditing.category.groupmanagement	[]	1611650923759	83	BASE	Browser	\N	\N	GROUP	[{"name":"jira-administrators","type":"GROUP","uri":null,"id":null},{"name":"jira.otus","type":"USER","uri":null,"id":"JIRAUSER10100"}]	\N	\N	\N	\N	\N	\N	jira-administrators jira.otus jira.auditing.user.added.to.group jira.auditing.category.groupmanagement пользователь добавлен в группу управление группой aleksandr.oliferuk 10.0.2.2	JIRAUSER10100	USER	10.0.2.2	http://192.168.12.43:8081	10000	aleksandr.oliferuk	ApplicationUser
 \.
 
 
@@ -7590,7 +7593,7 @@ Board created	Board created	LOCAL_CONFIG_AND_ADMINISTRATION	[]	досок	jira.a
 -- Name: AO_C77861_AUDIT_ENTITY_ID_seq; Type: SEQUENCE SET; Schema: public; Owner: jira
 --
 
-SELECT pg_catalog.setval('public."AO_C77861_AUDIT_ENTITY_ID_seq"', 80, true);
+SELECT pg_catalog.setval('public."AO_C77861_AUDIT_ENTITY_ID_seq"', 83, true);
 
 
 --
@@ -8004,6 +8007,7 @@ SELECT pg_catalog.setval('public."AO_ED669C_SEEN_ASSERTIONS_ID_seq"', 1, false);
 
 COPY public.app_user (id, user_key, lower_user_name) FROM stdin;
 10000	JIRAUSER10000	aleksandr.oliferuk
+10100	JIRAUSER10100	jira.otus
 \.
 
 
@@ -8236,38 +8240,38 @@ COPY public.changeitem (id, groupid, fieldtype, field, oldvalue, oldstring, newv
 --
 
 COPY public.clusteredjob (id, job_id, job_runner_key, sched_type, interval_millis, first_run, cron_expression, time_zone, next_run, version, parameters) FROM stdin;
-10115	com.atlassian.jira.versioning.VersioningCleanupService	com.atlassian.jira.versioning.VersioningCleanupService	I	86400000	1611610454393	\N	\N	1611696854393	2	\N
-10216	com.atlassian.crowd.manager.directory.monitor.DirectoryMonitorRefresherStarter-job	com.atlassian.crowd.manager.directory.monitor.DirectoryMonitorRefresherJob-runner	I	120000	\N	\N	\N	1611610820594	5	\N
-10111	HistoryFlushJob	com.atlassian.ratelimiting.internal.history.HistoryFlushJob	I	300000	1611610453402	\N	\N	1611611053402	3	\N
-10106	data-provider-poll	com.atlassian.jira.plugin.devstatus.provider.DevSummaryUpdateJob	I	300000	1611610144039	\N	\N	1611611055017	4	\N
-10207	CompatibilityPluginScheduler.JobId.LEXO_RANK_SCHEDULER_JOB	CompatibilityPluginScheduler.JobRunnerKey.com.atlassian.greenhopper.service.lexorank.balance.LexoRankBalancePluginJob	I	60000	1611610336686	\N	\N	1611610819111	9	\N
-10214	com.atlassian.jira.plugin.ext.bamboo.service.PlanStatusUpdateJob-job	com.atlassian.jira.plugin.ext.bamboo.service.PlanStatusUpdateJob	I	60000	1611610340116	\N	\N	1611610820125	9	\N
-10215	com.atlassian.jira.plugins.inform.batching.cron.BatchNotificationJobSchedulerImpl	com.atlassian.jira.plugins.inform.batching.cron.BatchNotificationJobSchedulerImpl	I	60000	1611610400163	\N	\N	1611610820166	8	\\xaced000573720035636f6d2e676f6f676c652e636f6d6d6f6e2e636f6c6c6563742e496d6d757461626c654d61702453657269616c697a6564466f726d00000000000000000200025b00046b6579737400135b4c6a6176612f6c616e672f4f626a6563743b5b000676616c75657371007e00017870757200135b4c6a6176612e6c616e672e4f626a6563743b90ce589f1073296c0200007870000000027400116576656e74436f6e73756d65724e616d6574000d636c75737465724c6f636b49647571007e0003000000027400116d61696c4576656e74436f6e73756d6572740059636f6d2e61746c61737369616e2e6a6972612e706c7567696e732e696e666f726d2e6261746368696e672e63726f6e2e4f6e6365506572436c75737465724a6f6252756e6e65722e6d61696c4576656e74436f6e73756d6572
-10014	com.atlassian.jira.service.JiraService:10001	com.atlassian.jira.service.DefaultServiceManager	C	\N	\N	0 0 0/12 * * ?	\N	1611619200000	1	\\xaced000573720037636f6d2e676f6f676c652e636f6d6d6f6e2e636f6c6c6563742e496d6d757461626c6542694d61702453657269616c697a6564466f726d000000000000000002000078720035636f6d2e676f6f676c652e636f6d6d6f6e2e636f6c6c6563742e496d6d757461626c654d61702453657269616c697a6564466f726d00000000000000000200025b00046b6579737400135b4c6a6176612f6c616e672f4f626a6563743b5b000676616c75657371007e00027870757200135b4c6a6176612e6c616e672e4f626a6563743b90ce589f1073296c020000787000000001740033636f6d2e61746c61737369616e2e6a6972612e736572766963652e536572766963654d616e616765723a7365727669636549647571007e0004000000017372000e6a6176612e6c616e672e4c6f6e673b8be490cc8f23df0200014a000576616c7565787200106a6176612e6c616e672e4e756d62657286ac951d0b94e08b02000078700000000000002711
-10015	com.atlassian.jira.service.JiraService:10002	com.atlassian.jira.service.DefaultServiceManager	C	\N	\N	0 0 0 * * ?	\N	1611619200000	1	\\xaced000573720037636f6d2e676f6f676c652e636f6d6d6f6e2e636f6c6c6563742e496d6d757461626c6542694d61702453657269616c697a6564466f726d000000000000000002000078720035636f6d2e676f6f676c652e636f6d6d6f6e2e636f6c6c6563742e496d6d757461626c654d61702453657269616c697a6564466f726d00000000000000000200025b00046b6579737400135b4c6a6176612f6c616e672f4f626a6563743b5b000676616c75657371007e00027870757200135b4c6a6176612e6c616e672e4f626a6563743b90ce589f1073296c020000787000000001740033636f6d2e61746c61737369616e2e6a6972612e736572766963652e536572766963654d616e616765723a7365727669636549647571007e0004000000017372000e6a6176612e6c616e672e4c6f6e673b8be490cc8f23df0200014a000576616c7565787200106a6176612e6c616e672e4e756d62657286ac951d0b94e08b02000078700000000000002712
-10101	com.atlassian.oauth2.client.jobs.TokenPruningJob	TokenPruningJob	C	\N	\N	0 0 23 * * ?	\N	1611615600000	1	\N
-10102	com.atlassian.oauth2.client.analytics.StatisticsCollectionService	StatisticsCollectionService	C	\N	\N	0 0 23 * * ?	\N	1611615600000	1	\N
-10103	assertionId-cleanup	com.atlassian.plugins.authentication.impl.web.saml.SamlAssertionValidationService	I	3600000	1611613732523	\N	\N	1611613732523	1	\N
-10104	analytics-collection	com.atlassian.plugins.authentication.impl.analytics.ClusterWideStatisticsCollectionService	C	\N	\N	0 0 23 * * ?	\N	1611615600000	1	\N
-10105	OidcDiscoveryRefresh	com.atlassian.plugins.authentication.impl.web.oidc.OidcDiscoveryRefreshJob-refresh	C	\N	\N	0 0 1 * * ?	\N	1611622800000	1	\N
-10108	com.atlassian.audit.retention.RetentionJobRunner	com.atlassian.audit.retention.RetentionJobRunner	C	\N	\N	0 0 0 1/1 * ? *	\N	1611619200000	1	\N
-10109	com.atlassian.audit.schedule.db.limit.DbLimiterJobRunner	com.atlassian.audit.schedule.db.limit.DbLimiterJobRunner	I	3600000	1611613746770	\N	\N	1611613746770	1	\N
-10110	com.atlassian.diagnostics.internal.analytics.DailyAlertAnalyticsJob	DailyAlertAnalyticsJob	C	\N	\N	0 19 * * * ?	\N	1611613140000	1	\N
-10113	com.atlassian.jira.web.action.issue.DefaultTemporaryWebAttachmentsMonitor	com.atlassian.jira.web.action.issue.DefaultTemporaryWebAttachmentsMonitor	I	3600000	1611613754358	\N	\N	1611613754358	1	\N
+10207	CompatibilityPluginScheduler.JobId.LEXO_RANK_SCHEDULER_JOB	CompatibilityPluginScheduler.JobRunnerKey.com.atlassian.greenhopper.service.lexorank.balance.LexoRankBalancePluginJob	I	60000	1611610336686	\N	\N	1611651628751	25	\N
 10114	com.atlassian.jira.service.JiraService:10200	com.atlassian.jira.service.DefaultServiceManager	C	\N	\N	0 25 9/12 * * ?	\N	1611653100000	1	\\xaced000573720037636f6d2e676f6f676c652e636f6d6d6f6e2e636f6c6c6563742e496d6d757461626c6542694d61702453657269616c697a6564466f726d000000000000000002000078720035636f6d2e676f6f676c652e636f6d6d6f6e2e636f6c6c6563742e496d6d757461626c654d61702453657269616c697a6564466f726d00000000000000000200025b00046b6579737400135b4c6a6176612f6c616e672f4f626a6563743b5b000676616c75657371007e00027870757200135b4c6a6176612e6c616e672e4f626a6563743b90ce589f1073296c020000787000000001740033636f6d2e61746c61737369616e2e6a6972612e736572766963652e536572766963654d616e616765723a7365727669636549647571007e0004000000017372000e6a6176612e6c616e672e4c6f6e673b8be490cc8f23df0200014a000576616c7565787200106a6176612e6c616e672e4e756d62657286ac951d0b94e08b020000787000000000000027d8
-10107	data-provider-cleanup	com.atlassian.jira.plugin.devstatus.provider.DataProviderCleanupJob	I	1800000	1611610144437	\N	\N	1611611955017	2	\N
-10112	HistoryCleanupJob	com.atlassian.ratelimiting.internal.history.HistoryCleanupJob	I	86400000	1611610223408	\N	\N	1611696623408	2	\N
 10201	LocalPluginLicenseNotificationJob-job	LocalPluginLicenseNotificationJob-runner	I	86400000	1611610333607	\N	\N	1611696733610	2	\N
-10202	PluginRequestCheckJob-job	PluginRequestCheckJob-runner	I	3600000	1611610333611	\N	\N	1611613933616	2	\N
-10203	PluginUpdateCheckJob-job	PluginUpdateCheckJob-runner	I	86400000	1611611654703	\N	\N	1611611654703	1	\N
 10204	InstanceTopologyJob-job	InstanceTopologyJob-runner	I	86400000	1611659549442	\N	\N	1611659549442	1	\N
-10205	Service Provider Session Remover	com.atlassian.oauth.serviceprovider.internal.ExpiredSessionRemover	I	28800000	1611639133667	\N	\N	1611639133667	1	\N
-10206	com.atlassian.jira.analytics.scheduler.AnalyticsScheduler	com.atlassian.jira.analytics.scheduler.AnalyticsScheduler	I	604800000	1611696733682	\N	\N	1611696733682	1	\N
-10208	com.atlassian.whisper.plugin.fetch.FetchJob	com.atlassian.whisper.plugin.fetch.FetchJob	I	21600000	1611613939793	\N	\N	1611613939793	1	\N
-10209	applink-status-analytics-job	com.atlassian.applinks.analytics.ApplinkStatusJob	I	86400000	\N	\N	\N	1611696739799	2	\N
-10211	com.atlassian.jira.plugins.dvcs.scheduler.DvcsScheduler:job	com.atlassian.jira.plugins.dvcs.scheduler.DvcsScheduler	I	3600000	1611612020173	\N	\N	1611612020173	1	\N
-10212	com.atlassian.jira.plugins.inform.events.cleanup.CleanupJobScheduler	com.atlassian.jira.plugins.inform.events.cleanup.CleanupJobScheduler	C	\N	\N	0 0 0 1/1 * ? *	\N	1611619200000	1	\N
-10213	TruncateAlertsJobRunner	com.atlassian.diagnostics.internal.DefaultMonitoringService$TruncateAlertsJobRunner	I	86400000	1611696740088	\N	\N	1611696740088	1	\N
+10203	PluginUpdateCheckJob-job	PluginUpdateCheckJob-runner	I	86400000	1611611654703	\N	\N	1611736997203	2	\N
+10202	PluginRequestCheckJob-job	PluginRequestCheckJob-runner	I	3600000	1611610333611	\N	\N	1611654197211	3	\N
+10211	com.atlassian.jira.plugins.dvcs.scheduler.DvcsScheduler:job	com.atlassian.jira.plugins.dvcs.scheduler.DvcsScheduler	I	3600000	1611612020173	\N	\N	1611654197211	2	\N
+10014	com.atlassian.jira.service.JiraService:10001	com.atlassian.jira.service.DefaultServiceManager	C	\N	\N	0 0 0/12 * * ?	\N	1611662400000	2	\\xaced000573720037636f6d2e676f6f676c652e636f6d6d6f6e2e636f6c6c6563742e496d6d757461626c6542694d61702453657269616c697a6564466f726d000000000000000002000078720035636f6d2e676f6f676c652e636f6d6d6f6e2e636f6c6c6563742e496d6d757461626c654d61702453657269616c697a6564466f726d00000000000000000200025b00046b6579737400135b4c6a6176612f6c616e672f4f626a6563743b5b000676616c75657371007e00027870757200135b4c6a6176612e6c616e672e4f626a6563743b90ce589f1073296c020000787000000001740033636f6d2e61746c61737369616e2e6a6972612e736572766963652e536572766963654d616e616765723a7365727669636549647571007e0004000000017372000e6a6176612e6c616e672e4c6f6e673b8be490cc8f23df0200014a000576616c7565787200106a6176612e6c616e672e4e756d62657286ac951d0b94e08b02000078700000000000002711
+10015	com.atlassian.jira.service.JiraService:10002	com.atlassian.jira.service.DefaultServiceManager	C	\N	\N	0 0 0 * * ?	\N	1611705600000	2	\\xaced000573720037636f6d2e676f6f676c652e636f6d6d6f6e2e636f6c6c6563742e496d6d757461626c6542694d61702453657269616c697a6564466f726d000000000000000002000078720035636f6d2e676f6f676c652e636f6d6d6f6e2e636f6c6c6563742e496d6d757461626c654d61702453657269616c697a6564466f726d00000000000000000200025b00046b6579737400135b4c6a6176612f6c616e672f4f626a6563743b5b000676616c75657371007e00027870757200135b4c6a6176612e6c616e672e4f626a6563743b90ce589f1073296c020000787000000001740033636f6d2e61746c61737369616e2e6a6972612e736572766963652e536572766963654d616e616765723a7365727669636549647571007e0004000000017372000e6a6176612e6c616e672e4c6f6e673b8be490cc8f23df0200014a000576616c7565787200106a6176612e6c616e672e4e756d62657286ac951d0b94e08b02000078700000000000002712
+10421	com.atlassian.jira.plugin.ext.bamboo.service.PlanStatusUpdateJob-job	com.atlassian.jira.plugin.ext.bamboo.service.PlanStatusUpdateJob	I	60000	1611650723078	\N	\N	1611651629050	16	\N
+10411	HistoryCleanupJob	com.atlassian.ratelimiting.internal.history.HistoryCleanupJob	I	86400000	1611650786292	\N	\N	1611737186292	2	\N
+10400	com.atlassian.oauth2.client.jobs.TokenPruningJob	TokenPruningJob	C	\N	\N	0 0 23 * * ?	\N	1611702000000	1	\N
+10401	com.atlassian.oauth2.client.analytics.StatisticsCollectionService	StatisticsCollectionService	C	\N	\N	0 0 23 * * ?	\N	1611702000000	1	\N
+10402	assertionId-cleanup	com.atlassian.plugins.authentication.impl.web.saml.SamlAssertionValidationService	I	3600000	1611654287821	\N	\N	1611654287821	1	\N
+10403	analytics-collection	com.atlassian.plugins.authentication.impl.analytics.ClusterWideStatisticsCollectionService	C	\N	\N	0 0 23 * * ?	\N	1611702000000	1	\N
+10404	OidcDiscoveryRefresh	com.atlassian.plugins.authentication.impl.web.oidc.OidcDiscoveryRefreshJob-refresh	C	\N	\N	0 0 1 * * ?	\N	1611709200000	1	\N
+10425	com.atlassian.crowd.manager.directory.monitor.DirectoryMonitorRefresherStarter-job	com.atlassian.crowd.manager.directory.monitor.DirectoryMonitorRefresherJob-runner	I	120000	\N	\N	\N	1611651689090	9	\N
+10410	HistoryFlushJob	com.atlassian.ratelimiting.internal.history.HistoryFlushJob	I	300000	1611651016282	\N	\N	1611651916282	4	\N
+10407	com.atlassian.audit.retention.RetentionJobRunner	com.atlassian.audit.retention.RetentionJobRunner	C	\N	\N	0 0 0 1/1 * ? *	\N	1611705600000	1	\N
+10408	com.atlassian.audit.schedule.db.limit.DbLimiterJobRunner	com.atlassian.audit.schedule.db.limit.DbLimiterJobRunner	I	3600000	1611654308577	\N	\N	1611654308577	1	\N
+10409	com.atlassian.diagnostics.internal.analytics.DailyAlertAnalyticsJob	DailyAlertAnalyticsJob	C	\N	\N	0 19 * * * ?	\N	1611652740000	1	\N
+10417	com.atlassian.jira.plugins.inform.batching.cron.BatchNotificationJobSchedulerImpl	com.atlassian.jira.plugins.inform.batching.cron.BatchNotificationJobSchedulerImpl	I	60000	1611650782510	\N	\N	1611651682559	16	\\xaced000573720035636f6d2e676f6f676c652e636f6d6d6f6e2e636f6c6c6563742e496d6d757461626c654d61702453657269616c697a6564466f726d00000000000000000200025b00046b6579737400135b4c6a6176612f6c616e672f4f626a6563743b5b000676616c75657371007e00017870757200135b4c6a6176612e6c616e672e4f626a6563743b90ce589f1073296c0200007870000000027400116576656e74436f6e73756d65724e616d6574000d636c75737465724c6f636b49647571007e0003000000027400116d61696c4576656e74436f6e73756d6572740059636f6d2e61746c61737369616e2e6a6972612e706c7567696e732e696e666f726d2e6261746368696e672e63726f6e2e4f6e6365506572436c75737465724a6f6252756e6e65722e6d61696c4576656e74436f6e73756d6572
+10412	com.atlassian.jira.web.action.issue.DefaultTemporaryWebAttachmentsMonitor	com.atlassian.jira.web.action.issue.DefaultTemporaryWebAttachmentsMonitor	I	3600000	1611654318127	\N	\N	1611654318127	1	\N
+10416	Service Provider Session Remover	com.atlassian.oauth.serviceprovider.internal.ExpiredSessionRemover	I	28800000	1611679522492	\N	\N	1611679522492	1	\N
+10418	com.atlassian.jira.analytics.scheduler.AnalyticsScheduler	com.atlassian.jira.analytics.scheduler.AnalyticsScheduler	I	604800000	1611737122522	\N	\N	1611737122522	1	\N
+10419	com.atlassian.whisper.plugin.fetch.FetchJob	com.atlassian.whisper.plugin.fetch.FetchJob	I	21600000	1611654322530	\N	\N	1611654322530	1	\N
+10422	com.atlassian.jira.plugins.inform.events.cleanup.CleanupJobScheduler	com.atlassian.jira.plugins.inform.events.cleanup.CleanupJobScheduler	C	\N	\N	0 0 0 1/1 * ? *	\N	1611705600000	1	\N
+10424	TruncateAlertsJobRunner	com.atlassian.diagnostics.internal.DefaultMonitoringService$TruncateAlertsJobRunner	I	86400000	1611737123366	\N	\N	1611737123366	1	\N
+10406	data-provider-cleanup	com.atlassian.jira.plugin.devstatus.provider.DataProviderCleanupJob	I	1800000	1611650704363	\N	\N	1611652528691	2	\N
+10415	applink-status-analytics-job	com.atlassian.applinks.analytics.ApplinkStatusJob	I	86400000	\N	\N	\N	1611737128852	2	\N
+10413	com.atlassian.jira.versioning.VersioningCleanupService	com.atlassian.jira.versioning.VersioningCleanupService	I	86400000	1611651018151	\N	\N	1611737418152	2	\N
+10405	data-provider-poll	com.atlassian.jira.plugin.devstatus.provider.DevSummaryUpdateJob	I	300000	1611650703844	\N	\N	1611651628690	4	\N
 \.
 
 
@@ -8500,6 +8504,8 @@ COPY public.cwd_group_attributes (id, group_id, directory_id, attribute_name, at
 COPY public.cwd_membership (id, parent_id, child_id, membership_type, group_type, parent_name, lower_parent_name, child_name, lower_child_name, directory_id) FROM stdin;
 10000	10000	10000	GROUP_USER	\N	jira-administrators	jira-administrators	aleksandr.oliferuk	aleksandr.oliferuk	1
 10001	10010	10000	GROUP_USER	\N	jira-software-users	jira-software-users	aleksandr.oliferuk	aleksandr.oliferuk	1
+10100	10010	10100	GROUP_USER	\N	jira-software-users	jira-software-users	jira.otus	jira.otus	1
+10101	10000	10100	GROUP_USER	\N	jira-administrators	jira-administrators	jira.otus	jira.otus	1
 \.
 
 
@@ -8524,7 +8530,8 @@ COPY public.cwd_synchronisation_token (directory_id, sync_status_token) FROM std
 --
 
 COPY public.cwd_user (id, directory_id, user_name, lower_user_name, active, created_date, updated_date, first_name, lower_first_name, last_name, lower_last_name, display_name, lower_display_name, email_address, lower_email_address, credential, deleted_externally, external_id) FROM stdin;
-10000	1	aleksandr.oliferuk	aleksandr.oliferuk	1	2021-01-26 00:32:09.267+03	2021-01-26 00:32:20.679+03	Aleksandr	aleksandr	Oliferuk	oliferuk	Aleksandr Oliferuk	aleksandr oliferuk	aleksandr.oliferuk@gmail.com	aleksandr.oliferuk@gmail.com	{PKCS5S2}Bs5zwzuUuqJd+FkPY4/QgUZIIkzUkfp1yKKvPgCCUco7vnW75DrP/kMpQB/bhcCP	\N	ededf128-b0a5-4363-822d-51558f6b144f
+10000	1	aleksandr.oliferuk	aleksandr.oliferuk	1	2021-01-26 00:32:09.267+03	2021-01-26 11:48:00.915+03	Aleksandr	aleksandr	Oliferuk	oliferuk	Aleksandr Oliferuk	aleksandr oliferuk	aleksandr.oliferuk@gmail.com	aleksandr.oliferuk@gmail.com	{PKCS5S2}Bs5zwzuUuqJd+FkPY4/QgUZIIkzUkfp1yKKvPgCCUco7vnW75DrP/kMpQB/bhcCP	\N	ededf128-b0a5-4363-822d-51558f6b144f
+10100	1	jira.otus	jira.otus	1	2021-01-26 11:48:33.412+03	2021-01-26 11:49:00.399+03	Jira	jira	Otus	otus	Jira Otus	jira otus	aleksandr.oliferuk@gmail.com	aleksandr.oliferuk@gmail.com	{PKCS5S2}EGdPecmpa3syxT/vElIkVdIfBJWD4VY46JPa06/+WPn13ewa481ZDo7t7Z/u2Ssi	\N	3e3a8151-f600-46ae-b2c5-93c5b1c73f38
 \.
 
 
@@ -8539,8 +8546,20 @@ COPY public.cwd_user_attributes (id, user_id, directory_id, attribute_name, attr
 10003	10000	1	password.reset.request.expiry	1611696730519	1611696730519
 10004	10000	1	password.reset.request.token	dacbe82e7500d7f7dbe2c5bf6f8890ad2fafc26a	dacbe82e7500d7f7dbe2c5bf6f8890ad2fafc26a
 10100	10000	1	login.currentFailedCount	0	0
-10101	10000	1	login.lastLoginMillis	1611610340657	1611610340657
-10102	10000	1	login.count	1	1
+10200	10000	1	lastAuthenticated	1611650880891	1611650880891
+10101	10000	1	login.lastLoginMillis	1611650880901	1611650880901
+10201	10000	1	login.previousLoginMillis	1611650865808	1611650865808
+10102	10000	1	login.count	3	3
+10202	10100	1	requiresPasswordChange	false	false
+10203	10100	1	invalidPasswordAttempts	0	0
+10204	10100	1	passwordLastChanged	1611650913452	1611650913452
+10205	10100	1	password.reset.request.expiry	1611737313641	1611737313641
+10206	10100	1	password.reset.request.token	f1faee8abad3b4985e29c318b74a99b4301468ec	f1faee8abad3b4985e29c318b74a99b4301468ec
+10207	10100	1	com.atlassian.jira.dvcs.invite.groups	 	 
+10208	10100	1	lastAuthenticated	1611650940377	1611650940377
+10209	10100	1	login.currentFailedCount	0	0
+10210	10100	1	login.lastLoginMillis	1611650940390	1611650940390
+10211	10100	1	login.count	1	1
 \.
 
 
@@ -9777,6 +9796,7 @@ COPY public.pluginversion (id, pluginname, pluginkey, pluginversion, created) FR
 10121	JSON Library	com.atlassian.bundles.json-20070829.0.0.1	20070829.0.0.1	2021-01-26 00:25:10.446+03
 10122	JDOM DOM Processor	com.springsource.org.jdom-1.0.0	1.0.0	2021-01-26 00:25:10.447+03
 10123	JIRA Core Chinese (China) Language Pack	tac.jira core.languages.zh_CN	8.14.0.v20200826125100	2021-01-26 00:25:10.448+03
+10185	Streams API	com.atlassian.streams.streams-api	8.2.2	2021-01-26 00:25:10.526+03
 10124	Atlassian Jira - Plugins - Feedback Plugin	com.atlassian.feedback.jira-feedback-plugin	8.13.3	2021-01-26 00:25:10.449+03
 10125	Atlassian OAuth 2 Client - Plugin	com.atlassian.oauth2.oauth2-client-plugin	1.0.3	2021-01-26 00:25:10.45+03
 10126	ActiveObjects Plugin - OSGi Bundle	com.atlassian.activeobjects.activeobjects-plugin	3.2.4	2021-01-26 00:25:10.452+03
@@ -9838,7 +9858,6 @@ COPY public.pluginversion (id, pluginname, pluginkey, pluginversion, created) FR
 10182	Atlassian Jira - Plugins - Auditing Plugin [Audit Log]	com.atlassian.jira.plugins.jira-auditing-plugin	8.13.3	2021-01-26 00:25:10.523+03
 10183	Apache Apache HttpCore OSGi bundle	org.apache.httpcomponents.httpcore-4.4.12	4.4.12	2021-01-26 00:25:10.524+03
 10184	JIRA Remote Link Aggregator Plugin	com.atlassian.plugins.jira-remote-link-aggregator-plugin	3.0.0	2021-01-26 00:25:10.525+03
-10185	Streams API	com.atlassian.streams.streams-api	8.2.2	2021-01-26 00:25:10.526+03
 10186	Atlassian Jira - Plugins - Atlassian Notifications Plugin	com.atlassian.jira.jira-whisper-plugin	8.13.3	2021-01-26 00:25:10.527+03
 10187	Atlassian HTTP Client, Apache HTTP components impl	com.atlassian.httpclient.atlassian-httpclient-plugin	2.0.0	2021-01-26 00:25:10.528+03
 10188	Jira DVCS Connector Plugin	com.atlassian.jira.plugins.jira-bitbucket-connector-plugin	5.2.10	2021-01-26 00:25:10.529+03
@@ -10142,6 +10161,7 @@ COPY public.propertyentry (id, entity_name, entity_id, property_key, propertytyp
 10314	GreenHopper.properties	1	GreenHopper.EpicStatus.Default.customfield.id	3
 10315	GreenHopper.properties	1	GreenHopper.EpicLabel.Default.customfield.id	3
 10316	GreenHopper.properties	1	GreenHopper.EpicColor.Default.customfield.id	3
+10391	user.format.mapping	1	fullName	5
 10317	GreenHopper.properties	1	GreenHopper.Sprint.Default.customfield.id	3
 10319	GreenHopper.properties	1	GreenHopper.JIRA60.Version.Migration	1
 10321	GreenHopper.properties	1	GreenHopper.Epic.Default.issuetype.id	5
@@ -10200,7 +10220,6 @@ COPY public.propertyentry (id, entity_name, entity_id, property_key, propertytyp
 10361	jira.properties	1	com.atlassian.plugins.authentication.sso.config.sso-type	5
 10362	jira.properties	1	com.atlassian.jira.project-templates-plugin:build	5
 10364	jira.properties	1	com.atlassian.analytics.client.configuration..analytics_enabled	5
-10365	jira.properties	1	com.atlassian.upm.log.PluginSettingsAuditLogService:log:upm_audit_log_v3	5
 10366	jira.properties	1	com.atlassian.analytics.client.configuration.uuid	5
 10367	jira.properties	1	com.atlassian.analytics.client.configuration.serverid	5
 10368	jira.properties	1	jira-header-plugin.studio-tab-migration-complete	5
@@ -10215,7 +10234,26 @@ COPY public.propertyentry (id, entity_name, entity_id, property_key, propertytyp
 10388	ApplicationUser	10000	com.atlassian.jira.flag.dismissals	6
 10389	ApplicationUser	10000	jira.user.suppressedTips.qs-onboarding-tip	1
 10390	ApplicationUser	10000	jira.user.suppressedTips.onboarding-create-sprint	1
-10391	user.format.mapping	1	fullName	5
+10400	jira.properties	1	com.atlassian.jira.upgrade.untranslatedkeyfixer.disabled	5
+10365	jira.properties	1	com.atlassian.upm.log.PluginSettingsAuditLogService:log:upm_audit_log_v3	6
+10500	jira.properties	1	com.atlassian.analytics.client.configuration..logged_base_analytics_data	5
+10600	ApplicationUser	10000	jira.onboarding.first.use.flow.resolved	1
+10601	jira.properties	1	org.apache.shindig.common.crypto.BlobCrypter:key	5
+10602	jira.properties	1	jira.trustedapp.key.private.data	6
+10603	jira.properties	1	jira.trustedapp.key.public.data	6
+10604	jira.properties	1	jira.trustedapp.uid	5
+10605	ApplicationUser	10000	jira.user.suppressedTips.add.new.users	1
+10606	ApplicationUser	10100	com.atlassian.jira.flag.dismissals	6
+10607	ApplicationUser	10100	jira.onboarding.first.use.flow.started	5
+10608	ApplicationUser	10100	newsletter.signup.first.view	3
+10609	ApplicationUser	10100	jira.onboarding.first.use.flow.current.sequence	5
+10610	ApplicationUser	10100	user.avatar.id	3
+10611	ApplicationUser	10100	jira.onboarding.first.use.flow.completed	1
+10612	ApplicationUser	10100	com.atlassian.jira.jira-projects-plugin:release-page.badge	2
+10613	ApplicationUser	10100	last-visited-item.10000	5
+10614	ApplicationUser	10100	jira.user.suppressedTips.qs-onboarding-tip	1
+10615	ApplicationUser	10100	jira.user.suppressedTips.onboarding-create-sprint	1
+10616	ApplicationUser	10100	jira.onboarding.first.use.flow.resolved	1
 \.
 
 
@@ -10255,6 +10293,15 @@ COPY public.propertynumber (id, propertyvalue) FROM stdin;
 10389	1
 10390	1
 10115	2
+10600	1
+10605	1
+10608	1611650941132
+10610	10350
+10611	1
+10612	0
+10614	1
+10615	1
+10616	1
 \.
 
 
@@ -10276,7 +10323,6 @@ COPY public.propertystring (id, propertyvalue) FROM stdin;
 10220	true
 10221	813003
 10225	show
-10301	#java.util.List\n
 10302	#java.util.List\n
 10303	#java.util.List\n
 10304	#java.util.List\n
@@ -10347,18 +10393,15 @@ COPY public.propertystring (id, propertyvalue) FROM stdin;
 10362	2001
 10363	true
 10364	true
-10365	#java.util.List\n{"userKey":"JIRA","date":1611610339860,"i18nKey":"upm.auditLog.upm.startup","entryType":"UPM_STARTUP","params":[]}
 10366	c78ec2c6-a2c7-47e1-9b55-87574fbfd697
 10367	B24L-GIO2-41WW-6X7B
 10368	migrated
-10369	true
 10370	1
 10371	1
 10372	1
 10373	1
 10374	1
 10375	cyoaFirstUseFlow
-10377	#java.util.List\ncom.atlassian.jira.extra.jira-ical-feed\ncom.atlassian.troubleshooting.plugin-jira
 10379	en_US
 10380	cyoa:return
 10383	10000
@@ -10366,6 +10409,16 @@ COPY public.propertystring (id, propertyvalue) FROM stdin;
 10386	com.pyxis.greenhopper.jira:project-sidebar-plan-scrum
 10387	Europe/Moscow
 10391	jira.user.format:full-name-user-format
+10400	true
+10301	#java.util.List\n
+10369	true
+10377	#java.util.List\ncom.atlassian.jira.extra.jira-ical-feed\ncom.atlassian.troubleshooting.plugin-jira
+10500	true
+10601	DtaEAg2RYNdQ0RUsY5BUc+7Uv0CMNyHGzwg65KFT2p0=
+10604	jira:11529364
+10607	cyoaFirstUseFlow
+10609	cyoa
+10613	com.pyxis.greenhopper.jira:project-sidebar-plan-scrum
 \.
 
 
@@ -10377,7 +10430,6 @@ COPY public.propertytext (id, propertyvalue) FROM stdin;
 10	http://www.atlassian.com/*\n
 21	{\n    "edgeMap": {\n        "1DEDB66F-FE5C-EDFD-54D0-4D19CDC8CECA": {\n            "actionId": 5,\n            "allPoints": [\n                {\n                    "positiveController": null,\n                    "x": 1806.5,\n                    "y": 434.0\n                },\n                {\n                    "positiveController": null,\n                    "x": 1801.0,\n                    "y": 115.0\n                }\n            ],\n            "controlPoints": [],\n            "endNodeId": "6DA64EEB-08FE-2870-C90C-4D19CDA2F72D",\n            "endPoint": {\n                "positiveController": null,\n                "x": 1801.0,\n                "y": 115.0\n            },\n            "endStepId": 4,\n            "id": "1DEDB66F-FE5C-EDFD-54D0-4D19CDC8CECA",\n            "label": "Resolve Issue",\n            "labelPoint": {\n                "positiveController": null,\n                "x": 1776.85,\n                "y": 355.25\n            },\n            "lineType": "straight",\n            "startNodeId": "A8B1A431-AC3A-6DCD-BFF0-4D19CDBCAADB",\n            "startPoint": {\n                "positiveController": null,\n                "x": 1806.5,\n                "y": 434.0\n            },\n            "startStepId": 5\n        },\n        "3DF7CEC8-9FBC-C0D0-AFB1-4D19CE6EA230": {\n            "actionId": 2,\n            "allPoints": [\n                {\n                    "positiveController": null,\n                    "x": 1469.5,\n                    "y": 113.0\n                },\n                {\n                    "positiveController": null,\n                    "x": 1614.0,\n                    "y": 226.0\n                }\n            ],\n            "controlPoints": [],\n            "endNodeId": "1C846CFB-4F0D-2F40-D0AE-4D19CDAF5D34",\n            "endPoint": {\n                "positiveController": null,\n                "x": 1614.0,\n                "y": 226.0\n            },\n            "endStepId": 6,\n            "id": "3DF7CEC8-9FBC-C0D0-AFB1-4D19CE6EA230",\n            "label": "Close Issue",\n            "labelPoint": {\n                "positiveController": null,\n                "x": 1492.25,\n                "y": 154.25\n            },\n            "lineType": "straight",\n            "startNodeId": "778534F4-7595-88B6-45E1-4D19CD518712",\n            "startPoint": {\n                "positiveController": null,\n                "x": 1469.5,\n                "y": 113.0\n            },\n            "startStepId": 1\n        },\n        "483797F1-1BF4-5E0F-86C6-4D19CE6023A2": {\n            "actionId": 5,\n            "allPoints": [\n                {\n                    "positiveController": null,\n                    "x": 1469.5,\n                    "y": 113.0\n                },\n                {\n                    "positiveController": null,\n                    "x": 1763.0,\n                    "y": 113.0\n                }\n            ],\n            "controlPoints": [],\n            "endNodeId": "6DA64EEB-08FE-2870-C90C-4D19CDA2F72D",\n            "endPoint": {\n                "positiveController": null,\n                "x": 1763.0,\n                "y": 113.0\n            },\n            "endStepId": 4,\n            "id": "483797F1-1BF4-5E0F-86C6-4D19CE6023A2",\n            "label": "Resolve Issue",\n            "labelPoint": {\n                "positiveController": null,\n                "x": 1551.0,\n                "y": 104.0\n            },\n            "lineType": "straight",\n            "startNodeId": "778534F4-7595-88B6-45E1-4D19CD518712",\n            "startPoint": {\n                "positiveController": null,\n                "x": 1469.5,\n                "y": 113.0\n            },\n            "startStepId": 1\n        },\n        "517D7F32-20FB-309E-8639-4D19CE2ACB54": {\n            "actionId": 5,\n            "allPoints": [\n                {\n                    "positiveController": null,\n                    "x": 1434.0,\n                    "y": 435.0\n                },\n                {\n                    "positiveController": {\n                        "positiveController": null,\n                        "x": 0.0,\n                        "y": 0.0\n                    },\n                    "x": 1435.0,\n                    "y": 490.0\n                },\n                {\n                    "positiveController": {\n                        "positiveController": null,\n                        "x": 0.0,\n                        "y": 0.0\n                    },\n                    "x": 1947.0,\n                    "y": 494.0\n                },\n                {\n                    "positiveController": {\n                        "positiveController": null,\n                        "x": 0.0,\n                        "y": 0.0\n                    },\n                    "x": 1950.0,\n                    "y": 118.0\n                },\n                {\n                    "positiveController": null,\n                    "x": 1763.0,\n                    "y": 113.0\n                }\n            ],\n            "controlPoints": [\n                {\n                    "positiveController": {\n                        "positiveController": null,\n                        "x": 0.0,\n                        "y": 0.0\n                    },\n                    "x": 1435.0,\n                    "y": 490.0\n                },\n                {\n                    "positiveController": {\n                        "positiveController": null,\n                        "x": 0.0,\n                        "y": 0.0\n                    },\n                    "x": 1947.0,\n                    "y": 494.0\n                },\n                {\n                    "positiveController": {\n                        "positiveController": null,\n                        "x": 0.0,\n                        "y": 0.0\n                    },\n                    "x": 1950.0,\n                    "y": 118.0\n                }\n            ],\n            "endNodeId": "6DA64EEB-08FE-2870-C90C-4D19CDA2F72D",\n            "endPoint": {\n                "positiveController": null,\n                "x": 1763.0,\n                "y": 113.0\n            },\n            "endStepId": 4,\n            "id": "517D7F32-20FB-309E-8639-4D19CE2ACB54",\n            "label": "Resolve Issue",\n            "labelPoint": {\n                "positiveController": null,\n                "x": 1631.25,\n                "y": 479.5\n            },\n            "lineType": "poly",\n            "startNodeId": "0740FFFA-2AA1-C90A-38ED-4D19CD61899B",\n            "startPoint": {\n                "positiveController": null,\n                "x": 1434.0,\n                "y": 435.0\n            },\n            "startStepId": 3\n        },\n        "58BD4605-5FB9-84EA-6952-4D19CE7B454B": {\n            "actionId": 1,\n            "allPoints": [\n                {\n                    "positiveController": null,\n                    "x": 1470.0,\n                    "y": 16.0\n                },\n                {\n                    "positiveController": null,\n                    "x": 1469.5,\n                    "y": 113.0\n                }\n            ],\n            "controlPoints": [],\n            "endNodeId": "778534F4-7595-88B6-45E1-4D19CD518712",\n            "endPoint": {\n                "positiveController": null,\n                "x": 1469.5,\n                "y": 113.0\n            },\n            "endStepId": 1,\n            "id": "58BD4605-5FB9-84EA-6952-4D19CE7B454B",\n            "label": "Create Issue",\n            "labelPoint": {\n                "positiveController": null,\n                "x": 1475.5,\n                "y": 48.5\n            },\n            "lineType": "straight",\n            "startNodeId": "15174530-AE75-04E0-1D9D-4D19CD200835",\n            "startPoint": {\n                "positiveController": null,\n                "x": 1470.0,\n                "y": 16.0\n            },\n            "startStepId": 1\n        },\n        "92D3DEFD-13AC-06A7-E5D8-4D19CE537791": {\n            "actionId": 4,\n            "allPoints": [\n                {\n                    "positiveController": null,\n                    "x": 1439.5,\n                    "y": 116.0\n                },\n                {\n                    "positiveController": {\n                        "positiveController": null,\n                        "x": 0.0,\n                        "y": 0.0\n                    },\n                    "x": 1393.0,\n                    "y": 116.0\n                },\n                {\n                    "positiveController": null,\n                    "x": 1390.0,\n                    "y": 434.0\n                }\n            ],\n            "controlPoints": [\n                {\n                    "positiveController": {\n                        "positiveController": null,\n                        "x": 0.0,\n                        "y": 0.0\n                    },\n                    "x": 1393.0,\n                    "y": 116.0\n                }\n            ],\n            "endNodeId": "0740FFFA-2AA1-C90A-38ED-4D19CD61899B",\n            "endPoint": {\n                "positiveController": null,\n                "x": 1390.0,\n                "y": 434.0\n            },\n            "endStepId": 3,\n            "id": "92D3DEFD-13AC-06A7-E5D8-4D19CE537791",\n            "label": "Start Progress",\n            "labelPoint": {\n                "positiveController": null,\n                "x": 1323.65,\n                "y": 193.75\n            },\n            "lineType": "poly",\n            "startNodeId": "778534F4-7595-88B6-45E1-4D19CD518712",\n            "startPoint": {\n                "positiveController": null,\n                "x": 1439.5,\n                "y": 116.0\n            },\n            "startStepId": 1\n        },\n        "C049EE11-C5BB-F93B-36C3-4D19CDF12B8F": {\n            "actionId": 3,\n            "allPoints": [\n                {\n                    "positiveController": null,\n                    "x": 1677.0,\n                    "y": 227.0\n                },\n                {\n                    "positiveController": {\n                        "positiveController": null,\n                        "x": 0.0,\n                        "y": 0.0\n                    },\n                    "x": 1767.05,\n                    "y": 230.05\n                },\n                {\n                    "positiveController": null,\n                    "x": 1773.5,\n                    "y": 425.0\n                }\n            ],\n            "controlPoints": [\n                {\n                    "positiveController": {\n                        "positiveController": null,\n                        "x": 0.0,\n                        "y": 0.0\n                    },\n                    "x": 1767.05,\n                    "y": 230.05\n                }\n            ],\n            "endNodeId": "A8B1A431-AC3A-6DCD-BFF0-4D19CDBCAADB",\n            "endPoint": {\n                "positiveController": null,\n                "x": 1773.5,\n                "y": 425.0\n            },\n            "endStepId": 5,\n            "id": "C049EE11-C5BB-F93B-36C3-4D19CDF12B8F",\n            "label": "Reopen Issue",\n            "labelPoint": {\n                "positiveController": null,\n                "x": 1703.85,\n                "y": 218.5\n            },\n            "lineType": "poly",\n            "startNodeId": "1C846CFB-4F0D-2F40-D0AE-4D19CDAF5D34",\n            "startPoint": {\n                "positiveController": null,\n                "x": 1677.0,\n                "y": 227.0\n            },\n            "startStepId": 6\n        },\n        "C9EA1792-2332-8B56-A04D-4D19CD725367": {\n            "actionId": 301,\n            "allPoints": [\n                {\n                    "positiveController": null,\n                    "x": 1465.0,\n                    "y": 436.0\n                },\n                {\n                    "positiveController": null,\n                    "x": 1469.5,\n                    "y": 113.0\n                }\n            ],\n            "controlPoints": [],\n            "endNodeId": "778534F4-7595-88B6-45E1-4D19CD518712",\n            "endPoint": {\n                "positiveController": null,\n                "x": 1469.5,\n                "y": 113.0\n            },\n            "endStepId": 1,\n            "id": "C9EA1792-2332-8B56-A04D-4D19CD725367",\n            "label": "Stop Progress",\n            "labelPoint": {\n                "positiveController": null,\n                "x": 1407.8,\n                "y": 308.5\n            },\n            "lineType": "straight",\n            "startNodeId": "0740FFFA-2AA1-C90A-38ED-4D19CD61899B",\n            "startPoint": {\n                "positiveController": null,\n                "x": 1465.0,\n                "y": 436.0\n            },\n            "startStepId": 3\n        },\n        "CAF37138-6321-E03A-8E41-4D19CDD7DC78": {\n            "actionId": 2,\n            "allPoints": [\n                {\n                    "positiveController": null,\n                    "x": 1764.5,\n                    "y": 430.0\n                },\n                {\n                    "positiveController": null,\n                    "x": 1614.0,\n                    "y": 226.0\n                }\n            ],\n            "controlPoints": [],\n            "endNodeId": "1C846CFB-4F0D-2F40-D0AE-4D19CDAF5D34",\n            "endPoint": {\n                "positiveController": null,\n                "x": 1614.0,\n                "y": 226.0\n            },\n            "endStepId": 6,\n            "id": "CAF37138-6321-E03A-8E41-4D19CDD7DC78",\n            "label": "Close Issue",\n            "labelPoint": {\n                "positiveController": null,\n                "x": 1677.65,\n                "y": 365.0\n            },\n            "lineType": "straight",\n            "startNodeId": "A8B1A431-AC3A-6DCD-BFF0-4D19CDBCAADB",\n            "startPoint": {\n                "positiveController": null,\n                "x": 1764.5,\n                "y": 430.0\n            },\n            "startStepId": 5\n        },\n        "E1F8462A-8B0A-87EA-4F70-4D19CE423C83": {\n            "actionId": 2,\n            "allPoints": [\n                {\n                    "positiveController": null,\n                    "x": 1488.0,\n                    "y": 430.0\n                },\n                {\n                    "positiveController": null,\n                    "x": 1614.0,\n                    "y": 226.0\n                }\n            ],\n            "controlPoints": [],\n            "endNodeId": "1C846CFB-4F0D-2F40-D0AE-4D19CDAF5D34",\n            "endPoint": {\n                "positiveController": null,\n                "x": 1614.0,\n                "y": 226.0\n            },\n            "endStepId": 6,\n            "id": "E1F8462A-8B0A-87EA-4F70-4D19CE423C83",\n            "label": "Close Issue",\n            "labelPoint": {\n                "positiveController": null,\n                "x": 1492.0,\n                "y": 345.0\n            },\n            "lineType": "straight",\n            "startNodeId": "0740FFFA-2AA1-C90A-38ED-4D19CD61899B",\n            "startPoint": {\n                "positiveController": null,\n                "x": 1488.0,\n                "y": 430.0\n            },\n            "startStepId": 3\n        },\n        "E27D8EB8-8E49-430B-8FCB-4D19CE127171": {\n            "actionId": 3,\n            "allPoints": [\n                {\n                    "positiveController": null,\n                    "x": 1840.0,\n                    "y": 130.0\n                },\n                {\n                    "positiveController": null,\n                    "x": 1846.5,\n                    "y": 428.0\n                }\n            ],\n            "controlPoints": [],\n            "endNodeId": "A8B1A431-AC3A-6DCD-BFF0-4D19CDBCAADB",\n            "endPoint": {\n                "positiveController": null,\n                "x": 1846.5,\n                "y": 428.0\n            },\n            "endStepId": 5,\n            "id": "E27D8EB8-8E49-430B-8FCB-4D19CE127171",\n            "label": "Reopen Issue",\n            "labelPoint": {\n                "positiveController": null,\n                "x": 1814.05,\n                "y": 169.5\n            },\n            "lineType": "straight",\n            "startNodeId": "6DA64EEB-08FE-2870-C90C-4D19CDA2F72D",\n            "startPoint": {\n                "positiveController": null,\n                "x": 1840.0,\n                "y": 130.0\n            },\n            "startStepId": 4\n        },\n        "F79E742D-A9E4-0124-D7D4-4D19CDE48C9C": {\n            "actionId": 4,\n            "allPoints": [\n                {\n                    "positiveController": null,\n                    "x": 1806.5,\n                    "y": 434.0\n                },\n                {\n                    "positiveController": null,\n                    "x": 1434.0,\n                    "y": 435.0\n                }\n            ],\n            "controlPoints": [],\n            "endNodeId": "0740FFFA-2AA1-C90A-38ED-4D19CD61899B",\n            "endPoint": {\n                "positiveController": null,\n                "x": 1434.0,\n                "y": 435.0\n            },\n            "endStepId": 3,\n            "id": "F79E742D-A9E4-0124-D7D4-4D19CDE48C9C",\n            "label": "Start Progress",\n            "labelPoint": {\n                "positiveController": null,\n                "x": 1607.25,\n                "y": 423.5\n            },\n            "lineType": "straight",\n            "startNodeId": "A8B1A431-AC3A-6DCD-BFF0-4D19CDBCAADB",\n            "startPoint": {\n                "positiveController": null,\n                "x": 1806.5,\n                "y": 434.0\n            },\n            "startStepId": 5\n        },\n        "FD6BA267-475B-70B3-8AA4-4D19CE00BCD1": {\n            "actionId": 701,\n            "allPoints": [\n                {\n                    "positiveController": null,\n                    "x": 1763.0,\n                    "y": 113.0\n                },\n                {\n                    "positiveController": null,\n                    "x": 1614.0,\n                    "y": 226.0\n                }\n            ],\n            "controlPoints": [],\n            "endNodeId": "1C846CFB-4F0D-2F40-D0AE-4D19CDAF5D34",\n            "endPoint": {\n                "positiveController": null,\n                "x": 1614.0,\n                "y": 226.0\n            },\n            "endStepId": 6,\n            "id": "FD6BA267-475B-70B3-8AA4-4D19CE00BCD1",\n            "label": "Close Issue",\n            "labelPoint": {\n                "positiveController": null,\n                "x": 1635.75,\n                "y": 152.25\n            },\n            "lineType": "straight",\n            "startNodeId": "6DA64EEB-08FE-2870-C90C-4D19CDA2F72D",\n            "startPoint": {\n                "positiveController": null,\n                "x": 1763.0,\n                "y": 113.0\n            },\n            "startStepId": 4\n        }\n    },\n    "nodeMap": {\n        "0740FFFA-2AA1-C90A-38ED-4D19CD61899B": {\n            "id": "0740FFFA-2AA1-C90A-38ED-4D19CD61899B",\n            "inLinkIds": [\n                "F79E742D-A9E4-0124-D7D4-4D19CDE48C9C",\n                "92D3DEFD-13AC-06A7-E5D8-4D19CE537791"\n            ],\n            "isInitialAction": false,\n            "label": "In Progress",\n            "outLinkIds": [\n                "C9EA1792-2332-8B56-A04D-4D19CD725367",\n                "517D7F32-20FB-309E-8639-4D19CE2ACB54",\n                "E1F8462A-8B0A-87EA-4F70-4D19CE423C83"\n            ],\n            "rect": {\n                "height": 45.0,\n                "positiveController": null,\n                "width": 146.0,\n                "x": 1373.0,\n                "y": 419.0\n            },\n            "stepId": 3\n        },\n        "15174530-AE75-04E0-1D9D-4D19CD200835": {\n            "id": "15174530-AE75-04E0-1D9D-4D19CD200835",\n            "inLinkIds": [],\n            "isInitialAction": true,\n            "label": "Create Issue",\n            "outLinkIds": [\n                "58BD4605-5FB9-84EA-6952-4D19CE7B454B"\n            ],\n            "rect": {\n                "height": 45.0,\n                "positiveController": null,\n                "width": 157.0,\n                "x": 1405.0,\n                "y": 0.0\n            },\n            "stepId": 1\n        },\n        "1C846CFB-4F0D-2F40-D0AE-4D19CDAF5D34": {\n            "id": "1C846CFB-4F0D-2F40-D0AE-4D19CDAF5D34",\n            "inLinkIds": [\n                "CAF37138-6321-E03A-8E41-4D19CDD7DC78",\n                "E1F8462A-8B0A-87EA-4F70-4D19CE423C83",\n                "FD6BA267-475B-70B3-8AA4-4D19CE00BCD1",\n                "3DF7CEC8-9FBC-C0D0-AFB1-4D19CE6EA230"\n            ],\n            "isInitialAction": false,\n            "label": "Closed",\n            "outLinkIds": [\n                "C049EE11-C5BB-F93B-36C3-4D19CDF12B8F"\n            ],\n            "rect": {\n                "height": 45.0,\n                "positiveController": null,\n                "width": 120.0,\n                "x": 1569.0,\n                "y": 210.0\n            },\n            "stepId": 6\n        },\n        "6DA64EEB-08FE-2870-C90C-4D19CDA2F72D": {\n            "id": "6DA64EEB-08FE-2870-C90C-4D19CDA2F72D",\n            "inLinkIds": [\n                "517D7F32-20FB-309E-8639-4D19CE2ACB54",\n                "1DEDB66F-FE5C-EDFD-54D0-4D19CDC8CECA",\n                "483797F1-1BF4-5E0F-86C6-4D19CE6023A2"\n            ],\n            "isInitialAction": false,\n            "label": "Resolved",\n            "outLinkIds": [\n                "FD6BA267-475B-70B3-8AA4-4D19CE00BCD1",\n                "E27D8EB8-8E49-430B-8FCB-4D19CE127171"\n            ],\n            "rect": {\n                "height": 44.0,\n                "positiveController": null,\n                "width": 137.0,\n                "x": 1709.0,\n                "y": 97.0\n            },\n            "stepId": 4\n        },\n        "778534F4-7595-88B6-45E1-4D19CD518712": {\n            "id": "778534F4-7595-88B6-45E1-4D19CD518712",\n            "inLinkIds": [\n                "C9EA1792-2332-8B56-A04D-4D19CD725367",\n                "58BD4605-5FB9-84EA-6952-4D19CE7B454B"\n            ],\n            "isInitialAction": false,\n            "label": "Open",\n            "outLinkIds": [\n                "92D3DEFD-13AC-06A7-E5D8-4D19CE537791",\n                "483797F1-1BF4-5E0F-86C6-4D19CE6023A2",\n                "3DF7CEC8-9FBC-C0D0-AFB1-4D19CE6EA230"\n            ],\n            "rect": {\n                "height": 45.0,\n                "positiveController": null,\n                "width": 106.0,\n                "x": 1429.5,\n                "y": 97.0\n            },\n            "stepId": 1\n        },\n        "A8B1A431-AC3A-6DCD-BFF0-4D19CDBCAADB": {\n            "id": "A8B1A431-AC3A-6DCD-BFF0-4D19CDBCAADB",\n            "inLinkIds": [\n                "E27D8EB8-8E49-430B-8FCB-4D19CE127171",\n                "C049EE11-C5BB-F93B-36C3-4D19CDF12B8F"\n            ],\n            "isInitialAction": false,\n            "label": "Reopened",\n            "outLinkIds": [\n                "1DEDB66F-FE5C-EDFD-54D0-4D19CDC8CECA",\n                "CAF37138-6321-E03A-8E41-4D19CDD7DC78",\n                "F79E742D-A9E4-0124-D7D4-4D19CDE48C9C"\n            ],\n            "rect": {\n                "height": 45.0,\n                "positiveController": null,\n                "width": 142.0,\n                "x": 1749.5,\n                "y": 418.0\n            },\n            "stepId": 5\n        }\n    },\n    "rootIds": [\n        "15174530-AE75-04E0-1D9D-4D19CD200835"\n    ],\n    "width": 1136\n}\n
 10104	<map>\n  <entry>\n    <string>pluginVersion</string>\n    <string>8.13.3</string>\n  </entry>\n  <entry>\n    <string>ranOn</string>\n    <string>2021-01-25T21:24:57.325Z</string>\n  </entry>\n  <entry>\n    <string>buildDate</string>\n    <string>2021-01-14T13:49:11.200Z</string>\n  </entry>\n  <entry>\n    <string>latestUpgradeTaskRun</string>\n    <string>0</string>\n  </entry>\n  <entry>\n    <string>changeSet</string>\n    <string>aaffa01d8cbab744</string>\n  </entry>\n</map>
-10103	<map>\n  <entry>\n    <string>pluginVersion</string>\n    <string>8.13.3</string>\n  </entry>\n  <entry>\n    <string>ranOn</string>\n    <string>2021-01-25T21:29:05.119Z</string>\n  </entry>\n  <entry>\n    <string>buildDate</string>\n    <string>2021-01-14T13:49:11.200Z</string>\n  </entry>\n  <entry>\n    <string>latestUpgradeTaskRun</string>\n    <string>0</string>\n  </entry>\n  <entry>\n    <string>changeSet</string>\n    <string>aaffa01d8cbab744</string>\n  </entry>\n</map>
 10122	{"com.atlassian.jira.reindex.required":1611610337903}
 10329	<map>\n  <entry>\n    <string>timeTaken</string>\n    <string>-1</string>\n  </entry>\n  <entry>\n    <string>pluginVersion</string>\n    <string>8.13.3</string>\n  </entry>\n  <entry>\n    <string>ranOn</string>\n    <string>2021-01-25T21:32:18.290Z</string>\n  </entry>\n  <entry>\n    <string>buildNumber</string>\n    <string>46</string>\n  </entry>\n  <entry>\n    <string>changeSet</string>\n    <string>aaffa01d8cbab744</string>\n  </entry>\n</map>
 10330	<map>\n  <entry>\n    <string>timeTaken</string>\n    <string>9</string>\n  </entry>\n  <entry>\n    <string>pluginVersion</string>\n    <string>8.13.3</string>\n  </entry>\n  <entry>\n    <string>ranOn</string>\n    <string>2021-01-25T21:32:18.303Z</string>\n  </entry>\n  <entry>\n    <string>buildNumber</string>\n    <string>46</string>\n  </entry>\n  <entry>\n    <string>changeSet</string>\n    <string>aaffa01d8cbab744</string>\n  </entry>\n</map>
@@ -10391,8 +10443,13 @@ COPY public.propertytext (id, propertyvalue) FROM stdin;
 10340	<map>\n  <entry>\n    <string>timeTaken</string>\n    <string>18</string>\n  </entry>\n  <entry>\n    <string>pluginVersion</string>\n    <string>8.13.3</string>\n  </entry>\n  <entry>\n    <string>ranOn</string>\n    <string>2021-01-25T21:32:18.462Z</string>\n  </entry>\n  <entry>\n    <string>buildNumber</string>\n    <string>50</string>\n  </entry>\n  <entry>\n    <string>changeSet</string>\n    <string>aaffa01d8cbab744</string>\n  </entry>\n</map>
 10341	<map>\n  <entry>\n    <string>timeTaken</string>\n    <string>-1</string>\n  </entry>\n  <entry>\n    <string>pluginVersion</string>\n    <string>8.13.3</string>\n  </entry>\n  <entry>\n    <string>ranOn</string>\n    <string>2021-01-25T21:32:18.478Z</string>\n  </entry>\n  <entry>\n    <string>buildNumber</string>\n    <string>51</string>\n  </entry>\n  <entry>\n    <string>changeSet</string>\n    <string>aaffa01d8cbab744</string>\n  </entry>\n</map>
 10342	<map>\n  <entry>\n    <string>timeTaken</string>\n    <string>3</string>\n  </entry>\n  <entry>\n    <string>pluginVersion</string>\n    <string>8.13.3</string>\n  </entry>\n  <entry>\n    <string>ranOn</string>\n    <string>2021-01-25T21:32:18.484Z</string>\n  </entry>\n  <entry>\n    <string>buildNumber</string>\n    <string>51</string>\n  </entry>\n  <entry>\n    <string>changeSet</string>\n    <string>aaffa01d8cbab744</string>\n  </entry>\n</map>
-10376	database.setup=AWAITS;app.properties.setup=FULLFILLED;create.user.mail.properties.setup=ANNOUNCE;mail.properties.setup=ANNOUNCE
+10365	#java.util.List\n{"userKey":"JIRA","date":1611650722904,"i18nKey":"upm.auditLog.upm.startup","entryType":"UPM_STARTUP","params":[]}\n{"userKey":"JIRA","date":1611650592088,"i18nKey":"upm.auditLog.upm.startup","entryType":"UPM_STARTUP","params":[]}\n{"userKey":"JIRA","date":1611610339860,"i18nKey":"upm.auditLog.upm.startup","entryType":"UPM_STARTUP","params":[]}
+10103	<map>\n  <entry>\n    <string>pluginVersion</string>\n    <string>8.13.3</string>\n  </entry>\n  <entry>\n    <string>ranOn</string>\n    <string>2021-01-26T08:45:05.736Z</string>\n  </entry>\n  <entry>\n    <string>buildDate</string>\n    <string>2021-01-14T13:49:11.200Z</string>\n  </entry>\n  <entry>\n    <string>latestUpgradeTaskRun</string>\n    <string>0</string>\n  </entry>\n  <entry>\n    <string>changeSet</string>\n    <string>aaffa01d8cbab744</string>\n  </entry>\n</map>
+10376	app.properties.setup=FULLFILLED;create.user.mail.properties.setup=ANNOUNCED;database.setup=AWAITS;mail.properties.setup=ANNOUNCE
 10388	{"com.atlassian.jira.tzdetect.10800000,10800000":1611610423021}
+10606	{"com.atlassian.jira.tzdetect.10800000,10800000":1611650956441}
+10602	MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCfdDWaw9FYyrkSsUKbPF2aqZDVKiTqL3tdLcwlorznn9flhBjdsPrPZvAR/32aaIAGvRJsCzEH49BkJ6XPNckZrjA5NYnSTbFbKGT0Q/u2sVat7dWczCLyinBzBUWmii7bierWlO9CdDlgmn3/OuJ30vh2mo0DdskgOfC8yAO8OongiZPzW08Lg9icDPr3VsmfMesv8WZX+nfl/XHqG5DPUFcsmxsjeV7Zhm7+jTyrqPg6roKTJZPwuvYshEVNs4myrsb+fURI+m6uyY/eGaMUr+s7UoLYwbWJ+gtZwVC+G5x8OJ5lP/SDypBrHBOeiB5pDn4RtTuLJC+/2p2bnXC3AgMBAAECggEAEiDOoAKc5Y41U07he9pK6V9XeXyknMFQMlbswOdLDb7/ocw5CCnrod0Z9G81EvMdgbvzgQ1sAhx1ipAdYDzvrjfpAKAPGWCUMNZwqnqjfpuTzLYKP/IkvlQHQR8Q0kR0hlNxkPrMEXnlig+WZ92EdiCp9yX5W92giRrn5+E014HWtnEp61EGcGkBZ63zTD9cPeuNcR6JXGMAGE0Em9Se389c4XtVnSOXiWhVQvudiT/FpCX4BaNOzJnEXvLczdu7Q7sO3mBfNYyN97R0fFxcjES4f0uQBlsfJuzqCqxGyl8tC8X395aXcvprXiiAqfbP2zz08iRUA6z8HZ1JDsEHgQKBgQDgxlKOpyJk//QOpc/k72vpFLYo/eZKqtT/dpJr1nCNImrMrxn0lt3NQKgCRxvLatzAJP3pLmYamNGSIDGOX01C4yVxOOLYs0UUqcrXXItA6V6wdHp1SovvbbuDuLtup5c2C6IPx2OL6vtQOa0s8uIqVTv/Wv5+Fj+KbtuAARLoNwKBgQC1muFtQwEy4b/LUAuiJlwGpvNqw6IC+xxZUC0v6GoGGCT+pQ4mLwTyOB0lats7VnS5F6ra/2D6h3BS2ZiaSSmFTHzNXWiF3y/FSh2bttWbMELtY6SZ+GhJUvguh0tukEj9xKVXF1tJq/r+mBzOrwKwCj4cdM3+1cpCg9D3Vpx7gQKBgH+cOIyimKVMpuuV+YRY5SPLzWtSUmc7u3dZguFUOkv2KToRgyPYbw4zUe8RHdeL0M4JclnrLK6W6gwS2O+ibYO236/7AtbSWDrV9sHz2V893rNBPbDPZMjGvLmYrFizLubRDe31Xi+2dX1jcUzei8ZK46giqe89hE98hoOSmIBbAoGAd8iHpgTLFp+WXOkYM0Sv8GdQKPyOsP6mbTaYB4B55jkotZly4raiwY1HlDWOEu5soOU+eaJ2eei5qrwBjspxC44ux1o0JhDXNn8zVlDbRbgofOH7YN9bEfoa3r24gF3E9zUshWxPdyFrtV/pqF4BHNI0s5pLgSnMdeDyBSJopoECgYAhjAic1oN2EUO+l70T4spVbFvt2LZLmEn4DCiyCHtRSP0fQ+GsZsIqDILRkEd0IyyIodLCMELF74wROVq+zQX/udBfNuucaw2C6QcsZnVNorUCBlWoop/TorQt+fTcpLS8Io79k6RGf1R36v2oXm4aTBhbl83bqe1eqBSDSM6vyw==
+10603	MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAn3Q1msPRWMq5ErFCmzxdmqmQ1Sok6i97XS3MJaK855/X5YQY3bD6z2bwEf99mmiABr0SbAsxB+PQZCelzzXJGa4wOTWJ0k2xWyhk9EP7trFWre3VnMwi8opwcwVFpoou24nq1pTvQnQ5YJp9/zrid9L4dpqNA3bJIDnwvMgDvDqJ4ImT81tPC4PYnAz691bJnzHrL/FmV/p35f1x6huQz1BXLJsbI3le2YZu/o08q6j4Oq6CkyWT8Lr2LIRFTbOJsq7G/n1ESPpursmP3hmjFK/rO1KC2MG1ifoLWcFQvhucfDieZT/0g8qQaxwTnogeaQ5+EbU7iyQvv9qdm51wtwIDAQAB
 \.
 
 
@@ -10524,31 +10581,40 @@ COPY public.resolution (id, sequence, pname, description, iconurl) FROM stdin;
 
 COPY public.rundetails (id, job_id, start_time, run_duration, run_outcome, info_message) FROM stdin;
 10020	com.atlassian.jira.service.JiraService:10200	2021-01-26 00:27:42.181+03	4018	S	
-10168	com.atlassian.crowd.manager.directory.monitor.DirectoryMonitorRefresherStarter-job	2021-01-26 00:38:20.594+03	3	S	
 10027	com.atlassian.jira.cache.monitor.CacheStatisticsMonitor	2021-01-26 00:29:15.087+03	1	S	
-10028	com.atlassian.jira.user.UserHistoryDatabaseCompactor	2021-01-26 00:29:15.097+03	13	S	
-10029	data-provider-cleanup	2021-01-26 00:29:15.017+03	80	S	
-10030	ConfigurationLoggerJob	2021-01-26 00:29:15.082+03	36	S	
-10169	com.atlassian.jira.service.JiraService:10000	2021-01-26 00:39:00+03	2	S	
-10170	HistoryFlushJob	2021-01-26 00:39:13.402+03	6	S	
-10171	SettingsReloaderJob	2021-01-26 00:39:13.414+03	7	S	
-10172	data-provider-poll	2021-01-26 00:39:15.017+03	6	S	
-10173	com.atlassian.jira.plugin.cluster.monitoring.internal.job.ApplicationStatusCollector	2021-01-26 00:39:15.023+03	1	S	
-10174	class com.atlassian.scheduler.core.util.JobRunnerRegistry:com.atlassian.cluster.monitoring.cluster-monitoring-plugin:system-information	2021-01-26 00:39:15.04+03	1	S	
-10037	HistoryCleanupJob	2021-01-26 00:30:23.408+03	13	S	
-10175	class com.atlassian.scheduler.core.util.JobRunnerRegistry:com.atlassian.cluster.monitoring.cluster-monitoring-plugin:runtime-information	2021-01-26 00:39:15.045+03	2	S	
-10176	JiraPluginScheduler:LEXO_RANK_STATS_COLLECTOR_JOB	2021-01-26 00:39:19.112+03	1	S	
-10177	CompatibilityPluginScheduler.JobId.LEXO_RANK_SCHEDULER_JOB	2021-01-26 00:39:19.111+03	11	S	
-10178	com.atlassian.jira.plugin.ext.bamboo.service.PlanStatusUpdateJob-job	2021-01-26 00:39:20.125+03	7	S	
-10179	com.atlassian.jira.plugins.inform.batching.cron.BatchNotificationJobSchedulerImpl	2021-01-26 00:39:20.166+03	14	S	
-10100	BundledUpdateCheckJob-job	2021-01-26 00:32:13.606+03	7	S	
-10101	PluginRequestCheckJob-job	2021-01-26 00:32:13.616+03	26	S	
+10439	com.atlassian.jira.versioning.VersioningCleanupService	2021-01-26 11:50:18.152+03	16	S	
 10102	LocalPluginLicenseNotificationJob-job	2021-01-26 00:32:13.61+03	168	S	
-10108	applink-status-analytics-job	2021-01-26 00:32:19.799+03	15	S	
-10111	com.atlassian.troubleshooting.jira.scheduler.CustomisationsCheckScheduler:job	2021-01-26 00:32:19.856+03	3410	S	
-10120	JiraPluginScheduler:com.atlassian.troubleshooting.healthcheck.scheduler.HealthCheckSchedulerImpl:job	2021-01-26 00:33:20.122+03	3055	S	
-10124	com.atlassian.jira.versioning.VersioningCleanupService	2021-01-26 00:34:14.393+03	12	S	
-10135	com.atlassian.jira.plugins.software.monitor.ApplicationPluginsEnablerJobRunner	2021-01-26 00:35:11.352+03	11	S	
+10204	PluginRequestCheckJob-job	2021-01-26 11:43:17.211+03	36	S	
+10205	com.atlassian.jira.plugins.dvcs.scheduler.DvcsScheduler:job	2021-01-26 11:43:17.211+03	44	S	
+10206	com.atlassian.jira.service.JiraService:10002	2021-01-26 11:43:17.257+03	34	S	
+10522	com.atlassian.jira.plugin.cluster.monitoring.internal.job.ApplicationStatusCollector	2021-01-26 11:59:28.691+03	1	S	
+10523	CompatibilityPluginScheduler.JobId.LEXO_RANK_SCHEDULER_JOB	2021-01-26 11:59:28.751+03	9	S	
+10524	class com.atlassian.scheduler.core.util.JobRunnerRegistry:com.atlassian.cluster.monitoring.cluster-monitoring-plugin:runtime-information	2021-01-26 11:59:28.821+03	3	S	
+10525	JiraPluginScheduler:LEXO_RANK_STATS_COLLECTOR_JOB	2021-01-26 11:59:29.048+03	1	S	
+10526	com.atlassian.jira.plugin.ext.bamboo.service.PlanStatusUpdateJob-job	2021-01-26 11:59:29.05+03	11	S	
+10527	com.atlassian.crowd.manager.directory.monitor.DirectoryMonitorRefresherStarter-job	2021-01-26 11:59:29.09+03	5	S	
+10528	com.atlassian.jira.service.JiraService:10000	2021-01-26 12:00:00.001+03	2	S	
+10529	HistoryFlushJob	2021-01-26 12:00:16.282+03	7	S	
+10530	SettingsReloaderJob	2021-01-26 12:00:16.282+03	11	S	
+10531	RateLimitReaperJob	2021-01-26 12:00:16.303+03	1	S	
+10302	data-provider-cleanup	2021-01-26 11:45:28.691+03	89	S	
+10532	com.atlassian.jira.plugins.inform.batching.cron.BatchNotificationJobSchedulerImpl	2021-01-26 12:00:22.559+03	16	S	
+10304	com.atlassian.jira.user.UserHistoryDatabaseCompactor	2021-01-26 11:45:28.839+03	6	S	
+10305	ConfigurationLoggerJob	2021-01-26 11:45:28.815+03	31	S	
+10306	applink-status-analytics-job	2021-01-26 11:45:28.852+03	69	S	
+10308	BundledUpdateCheckJob-job	2021-01-26 11:45:29.011+03	15	S	
+10313	com.atlassian.troubleshooting.jira.scheduler.CustomisationsCheckScheduler:job	2021-01-26 11:45:28.854+03	471	S	
+10314	08c5cca2-de75-4365-b9ac-9f78b3dd29b5	2021-01-26 11:45:29.099+03	3429	S	
+10315	com.atlassian.analytics.client.upload.RemoteFilterRead:job	2021-01-26 11:45:32.47+03	3156	S	
+10316	2d290726-920a-4b76-a365-040620e714de	2021-01-26 11:45:29.178+03	20108	S	
+10318	com.atlassian.jira.plugins.software.monitor.ApplicationPluginsEnablerJobRunner	2021-01-26 11:46:13.706+03	13	S	
+10320	7fbb6b4a-6d92-44c8-b60f-214fbd66e065	2021-01-26 11:46:17.126+03	314	S	
+10400	com.atlassian.jira.upgrade.UpgradeService	2021-01-26 11:46:21.891+03	285	S	
+10402	JiraPluginScheduler:com.atlassian.troubleshooting.healthcheck.scheduler.HealthCheckSchedulerImpl:job	2021-01-26 11:46:22.504+03	1981	S	
+10403	HistoryCleanupJob	2021-01-26 11:46:26.292+03	19	S	
+10423	43c068e4-f5ae-4311-8c3a-efb30557bc2b	2021-01-26 11:48:28.714+03	45	S	
+10487	data-provider-poll	2021-01-26 11:55:28.69+03	10	S	
+10489	class com.atlassian.scheduler.core.util.JobRunnerRegistry:com.atlassian.cluster.monitoring.cluster-monitoring-plugin:system-information	2021-01-26 11:55:28.8+03	2	S	
 \.
 
 
@@ -10665,15 +10731,9 @@ ProductLicense	10100
 Group	10110
 LicenseRoleGroup	10100
 GlobalPermissionEntry	10200
-ApplicationUser	10100
-User	10100
-Membership	10100
 LicenseRoleDefault	10100
 ReindexComponent	10200
-OSPropertyEntry	10400
 FieldLayoutItem	10200
-ClusteredJob	10300
-RunDetails	10200
 CustomField	10200
 FieldConfiguration	10300
 FieldConfigScheme	10300
@@ -10692,8 +10752,6 @@ OAuthConsumer	10100
 PortalPage	10100
 PortletConfiguration	10100
 Priority	10000
-UserAttribute	10200
-UserHistoryItem	10100
 UpgradeTaskHistory	10100
 UpgradeTaskHistoryAuditLog	10100
 TaskIdSequence	10200
@@ -10737,6 +10795,14 @@ CustomFieldValue	10100
 Action	10100
 IssueLink	10100
 ChangeGroup	10100
+ClusteredJob	10500
+UserAttribute	10300
+UserHistoryItem	10200
+OSPropertyEntry	10700
+ApplicationUser	10200
+User	10200
+Membership	10200
+RunDetails	10600
 \.
 
 
@@ -10921,6 +10987,10 @@ COPY public.userbase (id, username, password_hash) FROM stdin;
 COPY public.userhistoryitem (id, entitytype, entityid, username, lastviewed, data) FROM stdin;
 10001	Project	10000	JIRAUSER10000	1611610407581	\N
 10000	RapidView	1	JIRAUSER10000	1611610415366	AOSP board
+10100	Dashboard	10000	JIRAUSER10000	1611650866713	\N
+10102	Project	10000	JIRAUSER10100	1611650965033	\N
+10101	RapidView	1	JIRAUSER10100	1611650967909	AOSP board
+10103	Dashboard	10000	JIRAUSER10100	1611650974709	\N
 \.
 
 
