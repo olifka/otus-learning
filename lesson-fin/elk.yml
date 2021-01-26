@@ -1,0 +1,7 @@
+---
+- hosts: elk
+  become: true
+  roles:
+    # - postgresql-client
+    # - zabbix-agent
+    - ssh-keychange
