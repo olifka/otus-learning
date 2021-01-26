@@ -40,7 +40,7 @@
 - name: apply jira server.xml config
   template:
     src: server.xml.j2
-    dest: "{{ jira_app_directory }}/jira/server.xml"
+    dest: "{{ jira_app_directory }}/conf/server.xml"
 
 - name: Restore jira DB
   shell: psql -U {{ DBUser }} -w -d {{ DBName }} -p 5432 -h {{ DBHost }} < /vagrant/backups/jira/jira.sql
