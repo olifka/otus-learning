@@ -3,11 +3,11 @@
   systemd:
     daemon_reload: yes
 
-- name: Stop and disable nginx
+- name: Restart and enable nginx
   systemd:
     name: nginx
-    state: stopped
-    enabled: no
+    state: restarted
+    enabled: yes
 
 - name: Start and enable jira
   systemd:
