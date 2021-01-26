@@ -44,7 +44,6 @@
     mode: 0600
 
 - name: Restore jira DB
-  tasks:
     shell: psql -U {{ DBUser }} -w -d {{ DBName }} -p 5432 -h {{ DBHost }} < /vagrant/backups/jira/jira.sql
 
 - name: setup running JIRA as service
