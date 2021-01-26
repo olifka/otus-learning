@@ -1,0 +1,9 @@
+- name: Install git
+  yum:
+    name: git
+    state: present
+
+- name: Create project dir
+  shell: git clone https://github.com/deviantony/docker-elk.git
+  args:
+    chdir: /var
