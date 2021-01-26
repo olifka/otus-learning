@@ -112,15 +112,15 @@
 - name: Restore DB from backup
   shell: sudo -iu postgres psql -U postgres -d postgres < /vagrant/backups/postgres.sql
 
-- name: Include users
-  include: users.yml
-  tags: [ users ]
+# - name: Include users
+#   include: users.yml
+#   tags: [ users ]
 
-- name: Include databases
-  include: databases.yml
-  tags: [ databases ]
+# - name: Include databases
+#   include: databases.yml
+#   tags: [ databases ]
 
-- name: Include extensions
-  include: extensions.yml
-  tags: [ extensions ]
+# - name: Include extensions
+#   include: extensions.yml
+#   tags: [ extensions ]
 ...

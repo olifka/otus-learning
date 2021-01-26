@@ -11,9 +11,9 @@
 
 - name: Setup PostgreSQL Database
   shell: |
-    psql -U postgres -w -p 5432 -h 10.100.100.101 -c "CREATE USER jira WITH PASSWORD 'jira';"
-    psql -U postgres -w -p 5432 -h 10.100.100.101 -c "CREATE DATABASE jira WITH ENCODING 'UTF8' LC_COLLATE='C' LC_CTYPE='C' TEMPLATE=template0 OWNER jira;"
-    psql -U postgres -w -p 5432 -h 10.100.100.101 -c "GRANT ALL ON DATABASE jira TO jira;"
+    psql -U postgres -w -p 5432 -h {{ DBHost }} -c "CREATE USER {{ DBUser }} WITH PASSWORD '{{ DBPassword }}';"
+    psql -U postgres -w -p 5432 -h {{ DBHost }} -c "CREATE DATABASE {{ DBName }} WITH ENCODING 'UTF8' LC_COLLATE='C' LC_CTYPE='C' TEMPLATE=template0 OWNER {{ DBUser }};"
+    psql -U postgres -w -p 5432 -h {{ DBHost }} -c "GRANT ALL ON DATABASE {{ DBName }} TO {{ DBUser }};"
 
 - name: Fetch jira binary installer
   get_url:

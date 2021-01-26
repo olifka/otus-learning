@@ -37,8 +37,6 @@ Vagrant.configure("2") do |config|
           box.vm.box = boxconfig[:box_name]
           # Disable Gueast Additions install
           box.vbguest.auto_update = false
-          # Disable syncing of ./ directory
-          box.vm.synced_folder ".", disabled: true
           box.vm.host_name = boxname.to_s
 
           box.vm.network "private_network", ip: boxconfig[:ip_addr]

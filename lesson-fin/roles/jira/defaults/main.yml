@@ -1,5 +1,5 @@
 jira_version: 8.13.3
-DBHost: 10.100.100.101
+DBHost: databse
 DBName: jira
 DBUser: jira
 DBPassword: jira
