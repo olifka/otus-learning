@@ -1,0 +1,22 @@
+- name:
+  yum:
+    name: fontconfig
+
+- name: Apply pgpass for user root
+  template:
+    src: pgpass.j2
+    dest: /root/.pgpass
+    mode: 0600
+
+
+- name: Setup PostgreSQL Database
+  shell: |
+    psql -U postgres -w -p 5432 -h 10.100.100.101 -c "CREATE USER jira WITH PASSWORD 'jira';"
+    psql -U postgres -w -p 5432 -h 10.100.100.101 -c "CREATE DATABASE jira WITH ENCODING 'UTF8' LC_COLLATE='C' LC_CTYPE='C' TEMPLATE=template0 OWNER jira;"
+    psql -U postgres -w -p 5432 -h 10.100.100.101 -c "GRANT ALL ON DATABASE jira TO jira;"
+
+- name: Fetch jira binary installer
+  get_url:
+    url: https://product-downloads.atlassian.com/software/jira/downloads/atlassian-jira-software-{{ jira_version }}-x64.bin
+    dest: /tmp/atlassian-jira-software-{{ jira_version }}-x64.bin
+    mode: u=rwx,g=rx,o=rx

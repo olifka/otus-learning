@@ -1,6 +1,6 @@
 - name: Enable Zabbix yum repository
   template:
-    src: ../templates/zabbix.repo.j2
+    src: zabbix.repo.j2
     dest: /etc/yum.repos.d/zabbix.repo
  
 - name: Install zabbix-agent

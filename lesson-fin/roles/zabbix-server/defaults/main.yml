@@ -7,7 +7,7 @@ LogFileSize: 100
 DebugLevel: 3
 PidFile: /var/run/zabbix/zabbix_server.pid
 SocketDir: /var/run/zabbix
-DBHost: 127.0.0.1
+DBHost: database
 DBName: zabbix
 DBUser: zabbix
 DBPassword: zabbix

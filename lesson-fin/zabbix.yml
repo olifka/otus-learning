@@ -2,7 +2,8 @@
 - hosts: zabbix
   become: true
   roles:
-    - postgresql
+    - postgresql-client
     - nginx
     - zabbix-agent
     - zabbix-server
+    - ssh-keychange

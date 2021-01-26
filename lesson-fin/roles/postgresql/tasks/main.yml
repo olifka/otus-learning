@@ -106,6 +106,12 @@
     state: started
     enabled: yes
 
+- name: Set postgres passwd (NOT 4 PRODUCTION!)
+  shell: sudo -iu postgres psql -c "ALTER USER postgres WITH PASSWORD 'postgres';"
+
+- name: Restore DB from backup
+  shell: sudo -iu postgres psql -U postgres -d postgres < /vagrant/backups/postgres.sql
+
 - name: Include users
   include: users.yml
   tags: [ users ]

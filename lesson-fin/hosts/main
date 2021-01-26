@@ -1,0 +1,2 @@
+[web]
+webserver ansible_host=127.0.0.1 ansible_port=50020 ansible_private_key_file=.vagrant/machines/webserver/virtualbox/private_key

@@ -2,21 +2,29 @@
 # vim: set ft=ruby :
 
 MACHINES = {
-  :webserver => {
+  :backup => {
         :box_name => "centos/7",
-        :ip_addr => '10.100.100.100'
+        :memory => 2048,
+        :cpus => 4,
+        :ip_addr => '10.100.100.103'
   },
   :database => {
         :box_name => "centos/7",
+        :memory => 4096,
+        :cpus => 4,
         :ip_addr => '10.100.100.101'
+  },
+  :webserver => {
+        :box_name => "centos/7",
+        :memory => 8192,
+        :cpus => 4,
+        :ip_addr => '10.100.100.100'
   },
   :zabbix => {
         :box_name => "centos/7",
+        :memory => 2048,
+        :cpus => 4,
         :ip_addr => '10.100.100.102'
-  },
-  :backup => {
-        :box_name => "centos/7",
-        :ip_addr => '10.100.100.103'
   }
 }
 
@@ -36,44 +44,50 @@ Vagrant.configure("2") do |config|
           box.vm.network "private_network", ip: boxconfig[:ip_addr]
 
           box.vm.provider :virtualbox do |vb|
-            vb.customize ["modifyvm", :id, "--memory", "200"]
+            # vb.customize ["modifyvm", :id, "--memory", "200"]
+            vb.memory = boxconfig[:memory]
+            vb.cpus = boxconfig[:cpus]
           end
           
           box.vm.provision "shell", inline: <<-SHELL
             localedef -i ru_RU -f UTF-8 ru_RU.UTF-8
-            mkdir -p ~root/.ssh; cp ~vagrant/.ssh/auth* ~root/.ssh
-            sed -i '65s/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+            # yum -y install telnet
+            sed -i 's/#PermitRootLogin yes/PermitRootLogin without-password/g' /etc/ssh/sshd_config
             systemctl restart sshd
+            cat /vagrant/hosts-file >> /etc/hosts
           SHELL
 
       end
 
   end
 
-  config.vm.define "webserver" do |webserver|
-    # webserver.vm.network "forwarded_port", guest: 80, host: 8080
-    webserver.vm.provision "ansible" do |ansible|
-      ansible.playbook = "webserver.yml"
+  config.vm.define "backup" do |backup|
+    backup.vm.network "forwarded_port", guest: 22, host: 50023
+    backup.vm.provision "ansible" do |ansible|
+      ansible.playbook = "backup.yml"
     end
   end
 
   config.vm.define "database" do |database|
-    # database.vm.network "forwarded_port", guest: 5432, host: 5432
+    database.vm.network "forwarded_port", guest: 22, host: 50021
     database.vm.provision "ansible" do |ansible|
       ansible.playbook = "database.yml"
     end
   end
 
-  config.vm.define "zabbix" do |zabbix|
-    zabbix.vm.network "forwarded_port", guest: 80, host: 8080
-    zabbix.vm.provision "ansible" do |ansible|
-      ansible.playbook = "zabbix.yml"
+  config.vm.define "webserver" do |webserver|
+    webserver.vm.network "forwarded_port", guest: 8080, host: 8081
+    webserver.vm.network "forwarded_port", guest: 22, host: 50020
+    webserver.vm.provision "ansible" do |ansible|
+      ansible.playbook = "webserver.yml"
     end
   end
 
-  config.vm.define "backup" do |backup|
-    backup.vm.provision "ansible" do |ansible|
-      ansible.playbook = "backup.yml"
+  config.vm.define "zabbix" do |zabbix|
+    zabbix.vm.network "forwarded_port", guest: 80, host: 8080
+    zabbix.vm.network "forwarded_port", guest: 22, host: 50022
+    zabbix.vm.provision "ansible" do |ansible|
+      ansible.playbook = "zabbix.yml"
     end
   end
 end

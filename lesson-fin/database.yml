@@ -2,6 +2,7 @@
 - hosts: database
   become: true
   roles:
-    - pgbackrest
     - postgresql
+    - pgbackrest
     - zabbix-agent
+    - ssh-keychange
