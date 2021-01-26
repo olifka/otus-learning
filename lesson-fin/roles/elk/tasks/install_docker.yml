@@ -11,10 +11,8 @@
 
 - name: Install docker engine packages
   yum:
-    name: '{{ item }}'
-    state: latest
-  with_items:
-    docker-ce
-    docker-ce-cli
-    containerd.io
+    name:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
 ...
