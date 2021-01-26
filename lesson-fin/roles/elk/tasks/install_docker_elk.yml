@@ -4,6 +4,4 @@
     state: present
 
 - name: Create project dir
-  shell: git clone https://github.com/deviantony/docker-elk.git
-  args:
-    chdir: /var
+  shell: cd /var && git clone https://github.com/deviantony/docker-elk.git
