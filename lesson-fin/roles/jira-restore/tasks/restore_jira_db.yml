@@ -1,2 +1,0 @@
-- name: Restore jira DB from sql
-  shell: psql -U {{ DBUser }} -w -d {{ DBName }} -p 5432 -h {{ DBHost }} < /vagrant/backups/jira/jira.sql
