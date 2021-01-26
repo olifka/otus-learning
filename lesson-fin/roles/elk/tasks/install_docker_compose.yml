@@ -1,7 +1,7 @@
 ---
 - name: Download docker-compose script
   get_url:
-    url: "https://github.com/docker/compose/releases/download/{{ docker_compose_ver }}/docker-compose-$(uname -s)-$(uname -m)"
+    url: "https://github.com/docker/compose/releases/download/{{ docker_compose_ver }}/docker-compose-Linux-x86_64"
     dest: /usr/sbin/docker-compose
     owner: root
     group: root
