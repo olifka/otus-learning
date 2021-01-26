@@ -16,5 +16,5 @@
       - docker-ce-cli
       - containerd.io
   notify:
-    name: start/enable docker
+    name: 'start/enable docker'
 ...
