@@ -22,7 +22,7 @@ MACHINES = {
   },
   :zabbix => {
         :box_name => "centos/7",
-        :memory => 1024,
+        :memory => 2048,
         :cpus => 4,
         :ip_addr => '10.100.100.102'
   },
