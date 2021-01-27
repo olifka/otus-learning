@@ -2,9 +2,29 @@
 - hosts: zabbix
   become: true
   roles:
+    - firewalld
     - postgresql-client
     - nginx
     - filebeat
     - zabbix-agent
     - zabbix-server
     - ssh-keychange
+
+  tasks:
+    - name: Open HTTP port for default zone
+        ansible.posix.firewalld:
+          service: http
+          permanent: yes
+          state: enabled
+
+    - name: Open HTTPS port for default zone
+        ansible.posix.firewalld:
+          service: https
+          permanent: yes
+          state: enabled
+
+    - name: Open zabbix-server port for default zone
+        ansible.posix.firewalld:
+          port: 10051
+          permanent: yes
+          state: enabled

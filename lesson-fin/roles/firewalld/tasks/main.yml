@@ -1,0 +1,26 @@
+---
+- name: Start and enable firewalld service
+  systemd:
+    name: firewalld
+    state: started
+    enabled: yes
+
+- name: Add local network to trusted zone
+  ansible.posix.firewalld:
+    source: {{ local_network }}
+    zone: trusted
+    permanent: yes
+    state: enabled
+
+- name: Open ssh-port for default zone
+  ansible.posix.firewalld:
+    service: ssh
+    permanent: yes
+    state: enabled
+
+- name: Open zabbix-agent port for default zone
+  ansible.posix.firewalld:
+    port: 10050
+    permanent: yes
+    state: enabled
+...

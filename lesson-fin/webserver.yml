@@ -2,6 +2,7 @@
 - hosts: webserver
   become: true
   roles:
+    - firewalld
     - nginx
     - java
     - postgresql-client
@@ -19,3 +20,16 @@
         keep_monthly: 6
     - ssh-keychange
     - jira-restore
+
+  tasks:
+    - name: Open HTTP port for default zone
+        ansible.posix.firewalld:
+          service: http
+          permanent: yes
+          state: enabled
+
+    - name: Open HTTPS port for default zone
+        ansible.posix.firewalld:
+          service: https
+          permanent: yes
+          state: enabled

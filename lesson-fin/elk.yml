@@ -4,5 +4,24 @@
   roles:
     # - postgresql-client
     # - zabbix-agent
+    - firewalld
     - ssh-keychange
     - elk
+  tasks:
+    - name: Open 5000 port for default zone
+        ansible.posix.firewalld:
+          port: 5000/tcp
+          permanent: yes
+          state: enabled
+
+    - name: Open 5601 port for default zone
+        ansible.posix.firewalld:
+          port: 5601/tcp
+          permanent: yes
+          state: enabled
+
+    - name: Open 9200 port for default zone
+        ansible.posix.firewalld:
+          port: 9200/tcp
+          permanent: yes
+          state: enabled
