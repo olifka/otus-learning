@@ -4,5 +4,29 @@
   roles:
     # - postgresql-client
     # - zabbix-agent
+    - firewall-setup
     - ssh-keychange
     - elk
+  tasks:
+    - name: Open 5000 port for default zone
+      firewalld:
+        port: 5000/tcp
+        permanent: yes
+        state: enabled
+
+    - name: Open 5601 port for default zone
+      firewalld:
+        port: 5601/tcp
+        permanent: yes
+        state: enabled
+
+    - name: Open 9200 port for default zone
+      firewalld:
+        port: 9200/tcp
+        permanent: yes
+        state: enabled
+    
+    - name: Restart firewalld
+      systemd:
+        name: firewalld
+        state: restarted
