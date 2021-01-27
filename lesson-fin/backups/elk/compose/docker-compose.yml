@@ -7,6 +7,7 @@ services:
       args:
         ELK_VERSION: $ELK_VERSION
     volumes:
+      - /var/docker-elk/certificates/:/usr/share/elasticsearch/config/certificates:z
       - type: bind
         source: ./elasticsearch/config/elasticsearch.yml
         target: /usr/share/elasticsearch/config/elasticsearch.yml
