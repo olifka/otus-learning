@@ -23,7 +23,7 @@
     dest: /tmp/atlassian-jira-software-{{ jira_version }}-x64.bin
     mode: u=rwx,g=rx,o=rx
 
-- name: Apply filebeat module
+- name: Apply filebeat nginx module
   template:
     src: filebeat-nginx.yml
     dest: /etc/filebeat/modules.d/nginx.yml

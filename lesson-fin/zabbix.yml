@@ -12,19 +12,19 @@
 
   tasks:
     - name: Open HTTP port for default zone
-        ansible.posix.firewalld:
+        firewalld:
           service: http
           permanent: yes
           state: enabled
 
     - name: Open HTTPS port for default zone
-        ansible.posix.firewalld:
+        firewalld:
           service: https
           permanent: yes
           state: enabled
 
     - name: Open zabbix-server port for default zone
-        ansible.posix.firewalld:
+        firewalld:
           port: 10051/tcp
           permanent: yes
           state: enabled
