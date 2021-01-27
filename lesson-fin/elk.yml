@@ -4,7 +4,7 @@
   roles:
     # - postgresql-client
     # - zabbix-agent
-    - firewalld
+    - firewall-setup
     - ssh-keychange
     - elk
   tasks:

@@ -2,7 +2,7 @@
 - hosts: backup
   become: true
   roles:
-    - firewalld
+    - firewall-setup
     - pgbackrest
     - role: borgbackup
       borg_repository: /var/backups/jira/home

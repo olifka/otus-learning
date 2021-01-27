@@ -2,7 +2,7 @@
 - hosts: zabbix
   become: true
   roles:
-    - firewalld
+    - firewall-setup
     - postgresql-client
     - nginx
     - filebeat

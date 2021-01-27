@@ -2,7 +2,7 @@
 - hosts: webserver
   become: true
   roles:
-    - firewalld
+    - firewall-setup
     - nginx
     - java
     - postgresql-client
