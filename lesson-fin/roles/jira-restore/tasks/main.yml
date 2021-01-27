@@ -55,16 +55,6 @@
   notify: reload systemd
   notify: Start and enable jira
 
-- name: copy ssl cert
-  template:
-    src: jira.cert
-    dest: /etc/ssl/jira.cert
-
-- name: copy ssl key
-  template:
-    src: jira.key
-    dest: /etc/ssl/jira.key
-
 - name: apply nginx conf for jira
   template:
     src: nginx.conf

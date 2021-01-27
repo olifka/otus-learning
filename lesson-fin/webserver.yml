@@ -28,12 +28,6 @@
         permanent: yes
         state: enabled
 
-    - name: Open HTTPS port for default zone
-      firewalld:
-        port: 443/tcp
-        permanent: yes
-        state: enabled
-
     - name: Restart firewalld
       systemd:
         name: firewalld
