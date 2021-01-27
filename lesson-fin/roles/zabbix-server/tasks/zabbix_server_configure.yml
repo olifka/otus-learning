@@ -51,7 +51,7 @@
 
 - name: Copy zabbix key
   template:
-    src: zabbix.cert
+    src: zabbix.key
     dest: /etc/ssl/zabbix.key
     owner: root
     group: root
