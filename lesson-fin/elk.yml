@@ -4,5 +4,5 @@
   roles:
     # - postgresql-client
     # - zabbix-agent
-    - elk
     - ssh-keychange
+    - elk

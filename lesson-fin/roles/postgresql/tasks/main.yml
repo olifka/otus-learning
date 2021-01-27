@@ -111,4 +111,9 @@
 
 - name: Restore DB from backup
   shell: sudo -iu postgres psql -U postgres -d postgres < /vagrant/backups/postgres.sql
+
+- name: Apply filebeat module
+  template:
+    src: filebeat-postgresql.yml
+    dest: /etc/filebeat/modules.d/postgresql.yml
 ...
