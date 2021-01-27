@@ -6,3 +6,12 @@
     # - zabbix-agent
     - elk
     - ssh-keychange
+    - role: borgbackup
+      borg_repository: root@backup:/var/backups/elk/docker
+      borg_source_directories:
+        - /var/lib/docker
+      borg_retention_policy:
+        keep_hourly: 3
+        keep_daily: 7
+        keep_weekly: 4
+        keep_monthly: 6
