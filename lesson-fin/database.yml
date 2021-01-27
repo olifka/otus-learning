@@ -14,3 +14,8 @@
         port: 5432/tcp
         permanent: yes
         state: enabled
+    
+    - name: Restart firewalld
+      systemd:
+        name: firewalld
+        state: restarted

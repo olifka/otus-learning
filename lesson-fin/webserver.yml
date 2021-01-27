@@ -33,3 +33,8 @@
         service: https
         permanent: yes
         state: enabled
+
+    - name: Restart firewalld
+      systemd:
+        name: firewalld
+        state: restarted

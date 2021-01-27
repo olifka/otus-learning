@@ -25,3 +25,8 @@
         port: 9200/tcp
         permanent: yes
         state: enabled
+    
+    - name: Restart firewalld
+      systemd:
+        name: firewalld
+        state: restarted

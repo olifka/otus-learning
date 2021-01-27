@@ -23,4 +23,9 @@
     port: 10050/tcp
     permanent: yes
     state: enabled
+
+- name: Restart firewalld
+  systemd:
+    name: firewalld
+    state: restarted
 ...
