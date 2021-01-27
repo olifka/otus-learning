@@ -10,7 +10,7 @@
     - ssh-keychange
   tasks:
     - name: Open 5432 port for default zone
-        firewalld:
-          port: 5432/tcp
-          permanent: yes
-          state: enabled
+      firewalld:
+        port: 5432/tcp
+        permanent: yes
+        state: enabled

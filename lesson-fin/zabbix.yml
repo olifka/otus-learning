@@ -12,19 +12,19 @@
 
   tasks:
     - name: Open HTTP port for default zone
-        firewalld:
-          service: http
-          permanent: yes
-          state: enabled
+      firewalld:
+        service: http
+        permanent: yes
+        state: enabled
 
     - name: Open HTTPS port for default zone
-        firewalld:
-          service: https
-          permanent: yes
-          state: enabled
+      firewalld:
+        service: https
+        permanent: yes
+        state: enabled
 
     - name: Open zabbix-server port for default zone
-        firewalld:
-          port: 10051/tcp
-          permanent: yes
-          state: enabled
+      firewalld:
+        port: 10051/tcp
+        permanent: yes
+        state: enabled
