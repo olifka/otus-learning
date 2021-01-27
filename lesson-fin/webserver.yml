@@ -5,6 +5,7 @@
     - nginx
     - java
     - postgresql-client
+    - filebeat
     - jira
     - zabbix-agent
     - role: borgbackup

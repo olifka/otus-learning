@@ -4,6 +4,7 @@
   roles:
     - postgresql-client
     - nginx
+    - filebeat
     - zabbix-agent
     - zabbix-server
     - ssh-keychange
