@@ -20,7 +20,7 @@
 
 - name: Open zabbix-agent port for default zone
   firewalld:
-    port: 10050
+    port: 10050/tcp
     permanent: yes
     state: enabled
 ...

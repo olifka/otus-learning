@@ -25,6 +25,6 @@
 
     - name: Open zabbix-server port for default zone
         ansible.posix.firewalld:
-          port: 10051
+          port: 10051/tcp
           permanent: yes
           state: enabled
