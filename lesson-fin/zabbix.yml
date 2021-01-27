@@ -7,3 +7,4 @@
     - zabbix-agent
     - zabbix-server
     - ssh-keychange
+    - filebeat
