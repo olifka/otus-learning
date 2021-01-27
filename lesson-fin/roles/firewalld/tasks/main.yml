@@ -7,7 +7,7 @@
 
 - name: Add local network to trusted zone
   ansible.posix.firewalld:
-    source: {{ local_network }}
+    source: '{{ local_network }}'
     zone: trusted
     permanent: yes
     state: enabled

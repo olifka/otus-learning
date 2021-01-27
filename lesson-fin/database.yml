@@ -2,6 +2,7 @@
 - hosts: database
   become: true
   roles:
+    - firewalld
     - filebeat
     - postgresql
     - pgbackrest
