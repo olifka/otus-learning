@@ -7,7 +7,7 @@
 
 - name: Open ssh-port for default zone
   firewalld:
-    service: ssh
+    port: 22/tcp
     permanent: yes
     state: enabled
 
