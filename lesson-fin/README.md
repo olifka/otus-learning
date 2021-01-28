@@ -14,7 +14,7 @@
 ## Проектная документация
 ## Описание стенда
 С помощью Vagrant и Ansible описано развёртывание стенда из пяти виртуальных машин:
-* [webserver](webserver.ynl) - сервер веб-приложения (Atlassian Jira)
+* [webserver](webserver.yml) - сервер веб-приложения (Atlassian Jira)
 * [database](database.yml) - сервер баз данных (PostgreSQL)
 * [zabbix](zabbix-server.yml) - сервер мониторинга (Zabbix)
 * [elk](elk.yml) - сервер централизованного сбора логов (Стек ELK)
