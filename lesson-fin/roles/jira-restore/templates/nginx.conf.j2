@@ -20,7 +20,7 @@ server {
 
 location / {
         add_header 'Access-Control-Allow-Origin' 'jira';
-        proxy_pass http://jira;
+        proxy_pass http://{{ parent_host_ip }};
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_set_header Host $host;
         proxy_set_header X-Forwarded-Host $host;
