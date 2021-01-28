@@ -61,7 +61,7 @@
 #   shell: setenforce 0 && sleep 3
 
 - name: Copy selinux module te-file
-  template:
+  copy:
     src: zabbix-custom.te
     dest: /tmp/zabbix-custom.te
 
