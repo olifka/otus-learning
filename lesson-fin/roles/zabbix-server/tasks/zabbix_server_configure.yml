@@ -57,8 +57,21 @@
     group: root
     mode: u=rw,g=r,o=r
 
-- name: Disable SeLinux
-  shell: setenforce 0 && sleep 3
+# - name: Disable SeLinux
+#   shell: setenforce 0 && sleep 3
+
+- name: Copy selinux module te-file
+  copy:
+    src: zabbix-custom.te
+    dest: /tmp/zabbix-custom.te
+
+- name: Copy selinux module pp-file
+  copy:
+    src: zabbix-custom.pp
+    dest: /tmp/zabbix-custom.pp
+
+- name: Apply selinux custom module
+  shell: cd /tmp && semodule -i zabbix-custom.pp
 
 - name: Start and enable zabbix-server
   systemd:
