@@ -37,7 +37,7 @@ location / {
 
 location /secure/TempoAccountBoard!report.jspa {
         if ($arg_account) {
-                return 302 http://jira/secure/Tempo.jspa#/accounts/?search=$arg_account;
+                return 302 http://{{ parent_host_ip }}/secure/Tempo.jspa#/accounts/?search=$arg_account;
         }
 }
 }
