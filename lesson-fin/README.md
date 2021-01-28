@@ -10,3 +10,42 @@
 - сбор метрик и настроенный алертинг
 - везде включен selinux
 - организован централизованный сбор логов
+
+## Проектная документация
+## Описание стенда
+С помощью Vagrant и Ansible описано развёртывание стенда из пяти виртуальных машин:
+* webserver - сервер веб-приложения (Atlassian Jira)
+* database - сервер баз данных (PostgreSQL)
+* zabbix - сервер мониторинга (Zabbix)
+* elk - сервер централизованного сбора логов (Стек ELK)
+* backup - сервер для хранения бэкапов (Borgbackup)
+
+Основная задача - обспечить автоматический deploy Jira Server и сопутствующей инфраструктуры (мониторинг, логирование, алертинг, бэкапирование)
+## Технические требования
+Host system:
+* OS - Linux x86_64
+* RAM >= 16GB
+* CPU >= 4 cores
+
+Software requirements:
+* Ansible version - 2.8.0
+* Vagrant version - 2.2.10
+* VirtualBox version - 5.2.42
+## Механизм работы
+Для корректной работы стенда в файле [roles/jira-restore/defaults/main.yml](roles/jira-restore/defaults/main.yml) измените параметр *parent_host_ip* на IP-адрес вашей хостовой системы, на которой будете разворачивать стенд.
+
+Стенд разворачивается командой *vagrant up*
+
+## Проверка работоспособности
+После отработки vagrant'а будут доступны следующие веб-интерфейсы:
+* Jira Server - http://127.0.0.1:8081
+* Zabbix Server - http://127.0.0.1:8080
+* ELK - http://127.0.0.1:5601
+
+Доступ ко всем хостам по ssh доступен по команде *vagrant ssh hostname*
+
+Проверка включённого файрвола: "*sudo systemctl status firewalld*"
+
+Проверка selinux: "*sudo sestatus*"
+
+В выводе должно быть: "*Current mode: enforcing*"
