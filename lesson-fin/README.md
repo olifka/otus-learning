@@ -52,3 +52,9 @@ Software requirements:
 Проверка selinux: "*sudo sestatus*"
 
 В выводе должно быть: "*Current mode: enforcing*"
+
+## Учётные данные
+Login/Password
+* Jira Server - http://127.0.0.1:8081 - jira.otus/otus
+* Zabbix Server - https://127.0.0.1:8443 - Admin/zabbix
+* ELK - http://127.0.0.1:5601 - elastic/lAM34W0KV0jwuZD8chuh
