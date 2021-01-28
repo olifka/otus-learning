@@ -8,9 +8,15 @@
     - ssh-keychange
     - elk
   tasks:
-    - name: Open 5000 port for default zone
+    - name: Open 5000/tcp port for default zone
       firewalld:
         port: 5000/tcp
+        permanent: yes
+        state: enabled
+
+    - name: Open 5000/udp port for default zone
+      firewalld:
+        port: 5000/udp
         permanent: yes
         state: enabled
 

@@ -24,13 +24,7 @@
   tasks:
     - name: Open HTTP port for default zone
       firewalld:
-        service: http
-        permanent: yes
-        state: enabled
-
-    - name: Open HTTPS port for default zone
-      firewalld:
-        service: https
+        port: 80/tcp
         permanent: yes
         state: enabled
 

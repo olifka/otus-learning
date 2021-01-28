@@ -26,29 +26,31 @@ http {
 
     server_tokens  off;
 
-#    server {
-#        listen 80;
-#        server_name  <IP-ADDRESS>;
-#        rewrite ^ https://$server_name$request_uri? permanent;
-#    }
+    server {
+        listen 80;
+        server_name  zabbix;
+        ssl_certificate /etc/ssl/zabbix.cert;
+        ssl_certificate_key /etc/ssl/zabbix.key;
+        return 301 https://$server_name$request_uri;
+    }
 
     server {
-        listen       80;
-        server_name  _;
+        listen       443 ssl;
+        server_name  zabbix;
 
         charset  utf-8;
 
         access_log  /var/log/nginx/zabbix.access.log  main;
 
-#        ssl                  on;
-#        ssl_certificate      /etc/ssl/certs/zabbix.pem;
-#        ssl_certificate_key  /etc/ssl/private/zabbix.key;
+        ssl                  on;
+        ssl_certificate      /etc/ssl/zabbix.cert;
+        ssl_certificate_key  /etc/ssl/zabbix.key;
 
-#        ssl_session_timeout  5m;
+        ssl_session_timeout  5m;
 
-#        ssl_protocols  SSLv3 TLSv1;
-#        ssl_ciphers  HIGH:!aNULL:!MD5;
-#        ssl_prefer_server_ciphers  on;
+        ssl_protocols  SSLv3 TLSv1.2;
+        ssl_ciphers  HIGH:!aNULL:!MD5;
+        ssl_prefer_server_ciphers  on;
 
         location / {
             root   /usr/share/zabbix;
@@ -64,14 +66,6 @@ http {
 
         # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
         #
-#        location ~ \.php$ {
-#            root           html;
-#            fastcgi_pass   unix:/run/php-fpm/php-fpm.sock;
-#            fastcgi_index  index.php;
-#            fastcgi_param  SCRIPT_FILENAME  /srv/http/zabbix$fastcgi_script_name;
-#            fastcgi_param  SCRIPT_FILENAME  $fastcgi_script_name;
-#            include        fastcgi_params;
-#        }
         location ~ [^/]\.php(/|$) {
                 fastcgi_pass    unix:/run/php-fpm/php-fpm.sock;
                 fastcgi_split_path_info ^(.+\.php)(/.+)$;

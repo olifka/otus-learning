@@ -41,6 +41,22 @@
     src: zabbix.conf.php.j2
     dest: /etc/zabbix/web/zabbix.conf.php
 
+- name: Copy zabbix cert
+  template:
+    src: zabbix.cert
+    dest: /etc/ssl/zabbix.cert
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
+
+- name: Copy zabbix key
+  template:
+    src: zabbix.key
+    dest: /etc/ssl/zabbix.key
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
+
 - name: Disable SeLinux
   shell: setenforce 0 && sleep 3
 
