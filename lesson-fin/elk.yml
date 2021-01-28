@@ -2,11 +2,10 @@
 - hosts: elk
   become: true
   roles:
-    # - postgresql-client
-    # - zabbix-agent
     - firewall-setup
     - ssh-keychange
     - elk
+    - zabbix-agent
   tasks:
     - name: Open 5000/tcp port for default zone
       firewalld:
