@@ -45,8 +45,8 @@
 - name: Restore jira DB
   shell: psql -U {{ DBUser }} -w -d {{ DBName }} -p 5432 -h {{ DBHost }} < /vagrant/backups/jira/jira.sql
 
-- name: Temporary disable SeLinux
-  shell: setenforce 0
+# - name: Temporary disable SeLinux
+#   shell: setenforce 0
 
 - name: setup running JIRA as service
   template:

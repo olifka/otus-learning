@@ -18,6 +18,9 @@
         keep_daily: 7
         keep_weekly: 4
         keep_monthly: 6
+    - role: selinux-master
+      selinux_booleans:
+        - { name: 'httpd_can_network_connect', state: 'on', persistent: 'yes' }
     - ssh-keychange
     - jira-restore
 
