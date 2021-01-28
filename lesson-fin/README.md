@@ -39,7 +39,7 @@ Software requirements:
 ## Проверка работоспособности
 После отработки vagrant'а будут доступны следующие веб-интерфейсы:
 * Jira Server - http://127.0.0.1:8081
-* Zabbix Server - http://127.0.0.1:8080
+* Zabbix Server - https://127.0.0.1:8443
 * ELK - http://127.0.0.1:5601
 
 Доступ ко всем хостам по ssh доступен по команде "*vagrant ssh hostname*"
