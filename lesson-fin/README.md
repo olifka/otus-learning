@@ -44,7 +44,10 @@ Software requirements:
 
 Доступ ко всем хостам по ssh доступен по команде *vagrant ssh hostname*
 
-Проверка включённого файрвола: "*sudo systemctl status firewalld*"
+Проверка включённого фаервола: "*sudo systemctl status firewalld*"
+
+В выводе должно быть: "*Active: active (running)*"
+
 
 Проверка selinux: "*sudo sestatus*"
 
