@@ -42,7 +42,7 @@ Software requirements:
 * Zabbix Server - http://127.0.0.1:8080
 * ELK - http://127.0.0.1:5601
 
-Доступ ко всем хостам по ssh доступен по команде *vagrant ssh hostname*
+Доступ ко всем хостам по ssh доступен по команде "*vagrant ssh hostname*"
 
 Проверка включённого фаервола: "*sudo systemctl status firewalld*"
 
